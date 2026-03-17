@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace LevelsOnIceSalon.Web.Controllers;
 
 [Route("services")]
-public class ServicesController(ISitePageContentService sitePageContentService) : Controller
+public class ServicesController(IServicesPageService servicesPageService) : Controller
 {
     [HttpGet("")]
-    public IActionResult Index()
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        return View(sitePageContentService.GetServicesPage());
+        var model = await servicesPageService.GetServicesPageAsync(cancellationToken);
+        return View(model);
     }
 }

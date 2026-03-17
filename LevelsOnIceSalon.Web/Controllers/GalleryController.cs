@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace LevelsOnIceSalon.Web.Controllers;
 
 [Route("gallery")]
-public class GalleryController(ISitePageContentService sitePageContentService) : Controller
+public class GalleryController(IGalleryPageService galleryPageService) : Controller
 {
     [HttpGet("")]
-    public IActionResult Index()
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        return View(sitePageContentService.GetGalleryPage());
+        var model = await galleryPageService.GetGalleryPageAsync(cancellationToken);
+        return View(model);
     }
 }

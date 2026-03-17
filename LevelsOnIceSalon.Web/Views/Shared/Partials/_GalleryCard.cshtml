@@ -1,0 +1,28 @@
+@model GalleryItemViewModel
+
+<figure class="gallery-masonry-card @(Model.IsFeatured ? "gallery-masonry-card-featured" : string.Empty)" data-gallery-item data-category="@Model.Category">
+    <button
+        type="button"
+        class="gallery-card-button"
+        data-bs-toggle="modal"
+        data-bs-target="#galleryLightbox"
+        data-gallery-image="@Model.ImageUrl"
+        data-gallery-alt="@Model.AltText"
+        data-gallery-title="@Model.Title"
+        data-gallery-category="@Model.Category"
+        data-gallery-caption="@Model.Caption">
+        <img
+            src="@Model.ImageUrl"
+            alt="@Model.AltText"
+            loading="lazy"
+            decoding="async" />
+        <span class="gallery-card-overlay">
+            <span class="gallery-card-category">@Model.Category</span>
+            <span class="gallery-card-title">@Model.Title</span>
+            @if (!string.IsNullOrWhiteSpace(Model.Caption))
+            {
+                <span class="gallery-card-caption">@Model.Caption</span>
+            }
+        </span>
+    </button>
+</figure>

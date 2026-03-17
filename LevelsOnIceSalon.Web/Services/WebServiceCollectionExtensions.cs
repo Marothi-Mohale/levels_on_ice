@@ -7,6 +7,8 @@ public static class WebServiceCollectionExtensions
     public static IServiceCollection AddWebServices(this IServiceCollection services)
     {
         services.AddScoped<ISitePageContentService, SitePageContentService>();
+        services.AddScoped<IServicesPageService, ServicesPageService>();
+        services.AddScoped<IGalleryPageService, GalleryPageService>();
         return services;
     }
 }

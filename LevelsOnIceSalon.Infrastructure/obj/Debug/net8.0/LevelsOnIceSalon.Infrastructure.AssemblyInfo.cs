@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LevelsOnIceSalon.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+253bc293ed350310dadec1f38f4b338fc821922b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+272f538cb7e69520f2085a3ad963af56efb84f94")]
 [assembly: System.Reflection.AssemblyProductAttribute("LevelsOnIceSalon.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LevelsOnIceSalon.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

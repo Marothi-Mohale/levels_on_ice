@@ -1,6 +1,92 @@
-@model PageBlueprintViewModel
+@model ServicesPageViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<partial name="Partials/_PageBlueprint" model="Model" />
+<section class="page-hero services-hero">
+    <div class="container">
+        <div class="services-banner">
+            <div class="services-banner-copy">
+                <p class="eyebrow">@Model.NavigationTitle</p>
+                <h1 class="display-title page-title">@Model.BannerTitle</h1>
+                <p class="hero-copy">@Model.BannerCopy</p>
+                <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn btn-brand" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
+                    <a class="btn btn-soft" href="#service-categories">Browse Categories</a>
+                </div>
+            </div>
+            <aside class="services-banner-aside">
+                <p class="eyebrow">Quick Categories</p>
+                <nav class="services-filter-nav" aria-label="Service categories">
+                    <a class="services-filter-chip" href="#featured-services">Featured</a>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a class="services-filter-chip" href="#@category.Slug">@category.Name</a>
+                    }
+                </nav>
+            </aside>
+        </div>
+    </div>
+</section>
+
+@if (Model.FeaturedServices.Any())
+{
+    <section id="featured-services" class="content-section">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">Featured Services</p>
+                <h2>Most-loved looks for clients who want something polished, current, and easy to say yes to.</h2>
+            </div>
+            <div class="row g-4">
+                @foreach (var service in Model.FeaturedServices)
+                {
+                    <div class="col-md-6 col-xl-3">
+                        <partial name="Partials/_ServiceCard" model="service" />
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<section id="service-categories" class="content-section alt-section">
+    <div class="container">
+        @foreach (var category in Model.Categories)
+        {
+            <section id="@category.Slug" class="services-category-block">
+                <div class="section-heading services-category-heading">
+                    <p class="eyebrow">@category.Name</p>
+                    <h2>@category.Name designed for style, confidence, and beautifully finished results.</h2>
+                    @if (!string.IsNullOrWhiteSpace(category.Description))
+                    {
+                        <p class="u-text-muted">@category.Description</p>
+                    }
+                </div>
+                <div class="row g-4">
+                    @foreach (var service in category.Services)
+                    {
+                        <div class="col-md-6 col-xl-4">
+                            <partial name="Partials/_ServiceCard" model="service" />
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="final-cta-banner">
+            <div>
+                <p class="eyebrow">Ready To Book?</p>
+                <h2>Choose the service that fits your next beauty moment and send your appointment request.</h2>
+                <p>Whether it’s nails, protective styling, soft glam hair, or a special occasion look, booking should feel easy from here.</p>
+            </div>
+            <div class="final-cta-actions">
+                <a class="btn btn-brand btn-lg" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
+                <a class="btn btn-soft btn-lg" asp-controller="Contact" asp-action="Index">Ask A Question</a>
+            </div>
+        </div>
+    </div>
+</section>

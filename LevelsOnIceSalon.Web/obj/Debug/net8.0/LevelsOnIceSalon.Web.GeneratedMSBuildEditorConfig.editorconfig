@@ -134,12 +134,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_GalleryCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9HYWxsZXJ5Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_MobileBookingCta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Nb2JpbGVCb29raW5nQ3RhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_PageBlueprint.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9QYWdlQmx1ZXByaW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_ServiceCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9TZXJ2aWNlQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_ThemeScripts.cshtml]

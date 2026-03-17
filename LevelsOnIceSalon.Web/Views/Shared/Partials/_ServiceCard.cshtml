@@ -1,0 +1,21 @@
+@model ServiceCardViewModel
+
+<article class="feature-card service-catalog-card @(Model.IsFeatured ? "service-catalog-card-featured" : string.Empty)">
+    @if (Model.IsFeatured)
+    {
+        <span class="service-feature-badge">Featured</span>
+    }
+    <div class="u-stack-sm">
+        <h3>@Model.Name</h3>
+        <p class="service-summary">@Model.Summary</p>
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <p class="service-description">@Model.Description</p>
+        }
+    </div>
+    <div class="service-catalog-meta">
+        <span>@Model.DurationText</span>
+        <span>@Model.PriceText</span>
+    </div>
+    <a class="btn btn-brand service-card-cta" href="@Model.BookingUrl">Book This Service</a>
+</article>
