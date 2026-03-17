@@ -680,6 +680,12 @@ main {
     gap: var(--space-3);
 }
 
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
 .testimonial-card {
     padding: 1.75rem;
     border-radius: var(--radius-lg);
@@ -693,10 +699,31 @@ main {
     line-height: 1.8;
 }
 
+.testimonial-card-featured {
+    background:
+        radial-gradient(circle at top right, rgba(184, 154, 104, 0.12), transparent 24%),
+        rgba(255, 252, 249, 0.92);
+}
+
 .testimonial-stars {
     margin-bottom: var(--space-3);
     color: var(--color-gold);
     letter-spacing: 0.14em;
+}
+
+.testimonial-meta {
+    display: grid;
+    gap: 0.3rem;
+    margin-top: var(--space-3);
+}
+
+.testimonial-meta span {
+    color: var(--color-ink-700);
+    font-size: 0.95rem;
+}
+
+.empty-state-panel {
+    text-align: center;
 }
 
 .perks-panel {
@@ -1417,6 +1444,57 @@ main {
     pointer-events: none !important;
 }
 
+.faq-category-stack {
+    display: grid;
+    gap: var(--space-5);
+}
+
+.faq-category-panel {
+    padding: clamp(1.7rem, 4vw, 2.4rem);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 252, 249, 0.86);
+    border: 1px solid rgba(111, 57, 67, 0.08);
+    box-shadow: var(--shadow-soft);
+}
+
+.faq-section-heading {
+    margin-bottom: var(--space-4);
+}
+
+.faq-accordion-item {
+    border: 1px solid var(--color-line) !important;
+    border-radius: 1.1rem !important;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.faq-accordion-item + .faq-accordion-item {
+    margin-top: 0.85rem;
+}
+
+.faq-accordion .accordion-button {
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--color-ink-900);
+    font-weight: 700;
+    padding: 1.2rem 1.25rem;
+    box-shadow: none;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    background: rgba(243, 223, 220, 0.45);
+    color: var(--color-wine);
+}
+
+.faq-accordion .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(168, 95, 104, 0.12);
+}
+
+.faq-accordion .accordion-body {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--color-ink-700);
+    line-height: 1.8;
+}
+
 .contact-hero {
     padding-top: clamp(4rem, 7vw, 6rem);
 }
@@ -1628,6 +1706,7 @@ main {
     .contact-map-shell,
     .gallery-lightbox-body,
     .social-proof-grid,
+    .testimonials-grid,
     .testimonials-strip {
         grid-template-columns: 1fr;
     }

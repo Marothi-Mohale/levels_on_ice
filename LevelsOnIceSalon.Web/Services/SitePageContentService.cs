@@ -17,6 +17,36 @@ public class SitePageContentService : ISitePageContentService
             Address = "102 Main Road, Mowbray, Cape Town",
             PhoneNumber = "081 390 6634",
             Email = "levelsonicegroup@gmail.com",
+            FeaturedTestimonials =
+            [
+                new TestimonialCardViewModel
+                {
+                    CustomerName = "Zinhle, Cape Town",
+                    Quote = "My nails looked expensive, clean, and feminine. I left feeling like the best version of myself.",
+                    Rating = 5,
+                    ServiceName = "Gloss Theory Gel Set",
+                    IsFeatured = true,
+                    SourceLabel = "Client review"
+                },
+                new TestimonialCardViewModel
+                {
+                    CustomerName = "Anele, Mowbray",
+                    Quote = "The hairstyle was soft glam perfection. It held beautifully and looked incredible in every photo.",
+                    Rating = 5,
+                    ServiceName = "Soft Glam Curls Styling",
+                    IsFeatured = true,
+                    SourceLabel = "Client review"
+                },
+                new TestimonialCardViewModel
+                {
+                    CustomerName = "Kayla, Observatory",
+                    Quote = "You can feel the quality in the details. The salon is stylish, welcoming, and the results speak for themselves.",
+                    Rating = 5,
+                    ServiceName = "Boho Knotless Luxe",
+                    IsFeatured = true,
+                    SourceLabel = "Client review"
+                }
+            ],
             PrimaryCta = new CallToActionViewModel
             {
                 Label = "Request Appointment",

@@ -41,6 +41,11 @@ public static class SeedData
             dbContext.Faqs.AddRange(SampleData.Faqs);
         }
 
+        if (!await dbContext.Testimonials.AnyAsync())
+        {
+            dbContext.Testimonials.AddRange(SampleData.Testimonials);
+        }
+
         if (!await dbContext.SiteSettings.AnyAsync(setting => setting.Group == "Contact"))
         {
             dbContext.SiteSettings.AddRange(

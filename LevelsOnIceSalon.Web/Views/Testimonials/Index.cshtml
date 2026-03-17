@@ -1,6 +1,44 @@
-@model PageBlueprintViewModel
+@model TestimonialsPageViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<partial name="Partials/_PageBlueprint" model="Model" />
+<section class="page-hero testimonials-hero">
+    <div class="container">
+        <div class="services-banner">
+            <div class="services-banner-copy">
+                <p class="eyebrow">Testimonials</p>
+                <h1 class="display-title page-title">@Model.BannerTitle</h1>
+                <p class="hero-copy">@Model.BannerCopy</p>
+                <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn btn-brand" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
+                    <a class="btn btn-soft" asp-controller="Gallery" asp-action="Index">See The Results</a>
+                </div>
+            </div>
+            <aside class="services-banner-aside">
+                <p class="eyebrow">Social Proof</p>
+                <p class="u-text-muted mb-0">Every published review is designed to give new clients the confidence to book polished beauty services in Mowbray, Cape Town.</p>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Featured Client Love</p>
+            <h2>Proof that the salon experience feels as good as the final look.</h2>
+        </div>
+        <partial name="Partials/_TestimonialsCollection" model="Model.FeaturedTestimonials" />
+    </div>
+</section>
+
+<section class="content-section alt-section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">More Reviews</p>
+            <h2>Browse the wider mix of service praise, event feedback, and everyday beauty wins.</h2>
+        </div>
+        <partial name="Partials/_TestimonialsCollection" model="Model.Testimonials" />
+    </div>
+</section>

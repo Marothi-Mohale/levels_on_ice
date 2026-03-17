@@ -12,5 +12,7 @@ public class HomePageViewModel : PageBlueprintViewModel
 
     public string Email { get; set; } = string.Empty;
 
+    public IList<TestimonialCardViewModel> FeaturedTestimonials { get; set; } = [];
+
     public IList<HomeSectionPlanViewModel> Sections { get; set; } = [];
 }

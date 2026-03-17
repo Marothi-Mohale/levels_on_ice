@@ -344,6 +344,118 @@ public static class SampleData
             DisplayOrder = 4,
             IsPublished = true,
             CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new FAQ
+        {
+            Id = 5,
+            Question = "Can I book a bridal or matric glam appointment in advance?",
+            Answer = "Yes. Special occasion appointments should be requested as early as possible so the salon can plan the timing, styling direction, and beauty details properly.",
+            Category = "Special Occasion",
+            DisplayOrder = 5,
+            IsPublished = true,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new FAQ
+        {
+            Id = 6,
+            Question = "Should I send inspiration before my appointment?",
+            Answer = "Absolutely. Inspiration photos help the salon understand the look you want, especially for custom hair, protective styles, bridal appointments, and statement nail sets.",
+            Category = "Services",
+            DisplayOrder = 6,
+            IsPublished = true,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new FAQ
+        {
+            Id = 7,
+            Question = "Do you welcome first-time clients who need guidance on what to book?",
+            Answer = "Yes. If you are unsure which service fits your look, use the contact form or booking notes and the salon can help guide you toward the best option.",
+            Category = "Booking",
+            DisplayOrder = 7,
+            IsPublished = true,
+            CreatedAtUtc = SeedCreatedAtUtc
+        }
+    ];
+
+    public static IEnumerable<Testimonial> Testimonials =>
+    [
+        new Testimonial
+        {
+            Id = 1,
+            CustomerName = "Zinhle M.",
+            Quote = "My nails looked expensive, clean, and feminine. The finish was soft luxury from every angle and I kept getting compliments all week.",
+            Rating = 5,
+            ServiceName = "Gloss Theory Gel Set",
+            SourceType = TestimonialSourceType.Direct,
+            IsFeatured = true,
+            IsPublished = true,
+            DisplayOrder = 1,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new Testimonial
+        {
+            Id = 2,
+            CustomerName = "Anele R.",
+            Quote = "The hairstyle was soft glam perfection. It held beautifully, felt comfortable all night, and looked incredible in every photo.",
+            Rating = 5,
+            ServiceName = "Soft Glam Curls Styling",
+            SourceType = TestimonialSourceType.Direct,
+            IsFeatured = true,
+            IsPublished = true,
+            DisplayOrder = 2,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new Testimonial
+        {
+            Id = 3,
+            CustomerName = "Kayla P.",
+            Quote = "You can feel the quality in the details. The salon is stylish, welcoming, and the final look felt premium without trying too hard.",
+            Rating = 5,
+            ServiceName = "Boho Knotless Luxe",
+            SourceType = TestimonialSourceType.Direct,
+            IsFeatured = true,
+            IsPublished = true,
+            DisplayOrder = 3,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new Testimonial
+        {
+            Id = 4,
+            CustomerName = "Liyema T.",
+            Quote = "My matric glam felt age-appropriate, classy, and camera-ready. I looked polished from the first photo to the last dance.",
+            Rating = 5,
+            ServiceName = "Matric Dance Signature Glam",
+            SourceType = TestimonialSourceType.Direct,
+            IsFeatured = false,
+            IsPublished = true,
+            DisplayOrder = 4,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new Testimonial
+        {
+            Id = 5,
+            CustomerName = "Nomonde S.",
+            Quote = "Booking felt easy, the atmosphere was calm and pretty, and the team really understood the look I was going for.",
+            Rating = 5,
+            ServiceName = "Silk Press & Sway Finish",
+            SourceType = TestimonialSourceType.Direct,
+            IsFeatured = false,
+            IsPublished = true,
+            DisplayOrder = 5,
+            CreatedAtUtc = SeedCreatedAtUtc
+        },
+        new Testimonial
+        {
+            Id = 6,
+            CustomerName = "Tara B.",
+            Quote = "The bridal preview gave me so much peace of mind. Everything felt organised, elegant, and genuinely tailored to my day.",
+            Rating = 5,
+            ServiceName = "Bridal Preview Styling Session",
+            SourceType = TestimonialSourceType.Direct,
+            IsFeatured = false,
+            IsPublished = true,
+            DisplayOrder = 6,
+            CreatedAtUtc = SeedCreatedAtUtc
         }
     ];
 }

@@ -1,0 +1,47 @@
+@model IEnumerable<FaqCategoryViewModel>
+@{
+    var categories = Model.ToList();
+}
+
+@if (categories.Count == 0)
+{
+    <div class="section-shell empty-state-panel">
+        <p class="eyebrow">No FAQs Yet</p>
+        <h3 class="footer-title">Helpful answers will appear here soon.</h3>
+        <p class="u-text-muted mb-0">Once FAQ content is published from admin, this section will guide new clients through bookings, visits, and salon expectations.</p>
+    </div>
+}
+else
+{
+    <div class="faq-category-stack">
+        @foreach (var category in categories)
+        {
+            <section id="@category.Slug" class="faq-category-panel">
+                <div class="section-heading faq-section-heading">
+                    <p class="eyebrow">@category.Name</p>
+                    <h2>@category.Name questions, answered clearly.</h2>
+                </div>
+                <div class="accordion faq-accordion" id="faq-accordion-@category.Slug">
+                    @for (var index = 0; index < category.Items.Count; index++)
+                    {
+                        var item = category.Items[index];
+                        var headingId = $"faq-heading-{item.Id}";
+                        var collapseId = $"faq-collapse-{item.Id}";
+                        <div class="accordion-item faq-accordion-item">
+                            <h3 class="accordion-header" id="@headingId">
+                                <button class="accordion-button @(index == 0 ? string.Empty : "collapsed")" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId" aria-expanded="@(index == 0 ? "true" : "false")" aria-controls="@collapseId">
+                                    @item.Question
+                                </button>
+                            </h3>
+                            <div id="@collapseId" class="accordion-collapse collapse @(index == 0 ? "show" : string.Empty)" aria-labelledby="@headingId" data-bs-parent="#faq-accordion-@category.Slug">
+                                <div class="accordion-body">
+                                    @item.Answer
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+        }
+    </div>
+}

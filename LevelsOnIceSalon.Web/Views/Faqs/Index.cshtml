@@ -1,6 +1,45 @@
-@model PageBlueprintViewModel
+@model FaqsPageViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<partial name="Partials/_PageBlueprint" model="Model" />
+<section class="page-hero faqs-hero">
+    <div class="container">
+        <div class="services-banner">
+            <div class="services-banner-copy">
+                <p class="eyebrow">Frequently Asked Questions</p>
+                <h1 class="display-title page-title">@Model.BannerTitle</h1>
+                <p class="hero-copy">@Model.BannerCopy</p>
+                <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn btn-brand" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
+                    @if (Model.Categories.Any())
+                    {
+                        <a class="btn btn-soft" href="#faq-sections">Browse Questions</a>
+                    }
+                </div>
+            </div>
+            <aside class="services-banner-aside">
+                <p class="eyebrow">Quick Categories</p>
+                @if (Model.Categories.Any())
+                {
+                    <nav class="services-filter-nav" aria-label="FAQ categories">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <a class="services-filter-chip" href="#@category.Slug">@category.Name</a>
+                        }
+                    </nav>
+                }
+                else
+                {
+                    <p class="u-text-muted mb-0">Published FAQs will appear here as soon as the salon adds them in admin.</p>
+                }
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section id="faq-sections" class="content-section">
+    <div class="container">
+        <partial name="Partials/_FaqAccordion" model="Model.Categories" />
+    </div>
+</section>

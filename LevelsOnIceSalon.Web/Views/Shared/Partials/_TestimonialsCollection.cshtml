@@ -1,0 +1,36 @@
+@model IEnumerable<TestimonialCardViewModel>
+@{
+    var items = Model.ToList();
+}
+
+@if (items.Count == 0)
+{
+    <div class="section-shell empty-state-panel">
+        <p class="eyebrow">No Testimonials Yet</p>
+        <h3 class="footer-title">Fresh client reviews will appear here soon.</h3>
+        <p class="u-text-muted mb-0">The salon is ready to showcase real client love as soon as testimonials are published from admin.</p>
+    </div>
+}
+else
+{
+    <div class="testimonials-grid" aria-label="Client testimonials">
+        @foreach (var testimonial in items)
+        {
+            <article class="testimonial-card @(testimonial.IsFeatured ? "testimonial-card-featured" : string.Empty)">
+                @if (!string.IsNullOrWhiteSpace(testimonial.SourceLabel))
+                {
+                    <span class="social-proof-tag">@testimonial.SourceLabel</span>
+                }
+                <div class="testimonial-stars" aria-label="@testimonial.Rating out of 5 stars">@(new string('*', testimonial.Rating))</div>
+                <p>"@testimonial.Quote"</p>
+                <div class="testimonial-meta">
+                    <strong>@testimonial.CustomerName</strong>
+                    @if (!string.IsNullOrWhiteSpace(testimonial.ServiceName))
+                    {
+                        <span>@testimonial.ServiceName</span>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+}

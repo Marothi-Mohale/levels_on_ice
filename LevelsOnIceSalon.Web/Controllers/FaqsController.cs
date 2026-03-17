@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace LevelsOnIceSalon.Web.Controllers;
 
 [Route("faqs")]
-public class FaqsController(ISitePageContentService sitePageContentService) : Controller
+public class FaqsController(IFaqsPageService faqsPageService) : Controller
 {
     [HttpGet("")]
-    public IActionResult Index()
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        return View(sitePageContentService.GetFaqsPage());
+        var model = await faqsPageService.BuildPageModelAsync(cancellationToken);
+        ViewData["MetaDescription"] = model.MetaDescription;
+        return View(model);
     }
 }
