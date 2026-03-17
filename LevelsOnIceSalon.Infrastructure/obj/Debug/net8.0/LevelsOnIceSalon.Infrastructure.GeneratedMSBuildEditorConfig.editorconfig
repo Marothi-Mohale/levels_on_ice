@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LevelsOnIceSalon.Infrastructure
-build_property.ProjectDir = C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Infrastructure\
+build_property.ProjectDir = /workspaces/levels_on_ice/LevelsOnIceSalon.Infrastructure/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

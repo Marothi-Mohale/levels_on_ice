@@ -1,12 +1,13 @@
-using LevelsOnIceSalon.Domain.Entities;
 using LevelsOnIceSalon.Infrastructure.Data;
 using LevelsOnIceSalon.Web.ViewModels;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 
 namespace LevelsOnIceSalon.Web.Services;
 
-public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironment environment) : IGalleryPageService
+public class GalleryPageService(
+    ApplicationDbContext dbContext,
+    IWebHostEnvironment environment,
+    IImageMetadataService imageMetadataService) : IGalleryPageService
 {
     private static readonly string[] SupportedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
 
@@ -18,21 +19,14 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
             .OrderByDescending(image => image.IsFeatured)
             .ThenBy(image => image.DisplayOrder)
             .ThenBy(image => image.Title)
-            .Select(image => new GalleryItemViewModel
-            {
-                Title = image.Title,
-                ImageUrl = image.ImagePath.StartsWith("/") ? image.ImagePath : "/" + image.ImagePath.TrimStart('/'),
-                ThumbnailUrl = image.ThumbnailPath == null ? null : (image.ThumbnailPath.StartsWith("/") ? image.ThumbnailPath : "/" + image.ThumbnailPath.TrimStart('/')),
-                AltText = image.AltText,
-                Category = image.ImageType.ToString(),
-                Caption = image.Caption,
-                IsFeatured = image.IsFeatured,
-                DisplayOrder = image.DisplayOrder
-            })
             .ToListAsync(cancellationToken);
 
-        var items = databaseItems.Any()
-            ? databaseItems
+        var databaseViewModels = databaseItems
+            .Select(image => MapDatabaseImage(image))
+            .ToList();
+
+        var items = databaseViewModels.Any()
+            ? databaseViewModels
             : GetStaticFallbackImages();
 
         var categories = items
@@ -52,7 +46,7 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
                 Url = "/book-appointment",
                 SupportingText = "Turn inspiration into a booking request."
             },
-            IsUsingDatabaseImages = databaseItems.Any(),
+            IsUsingDatabaseImages = databaseViewModels.Any(),
             Categories = categories,
             Items = items
         };
@@ -84,18 +78,48 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
             || normalized.StartsWith("hero-detail.", StringComparison.Ordinal);
     }
 
-    private static GalleryItemViewModel MapStaticFile(string filePath, int index)
+    private GalleryItemViewModel MapDatabaseImage(LevelsOnIceSalon.Domain.Entities.GalleryImage image)
+    {
+        var imageUrl = image.ImagePath.StartsWith("/") ? image.ImagePath : "/" + image.ImagePath.TrimStart('/');
+        var thumbnailUrl = image.ThumbnailPath == null ? null : (image.ThumbnailPath.StartsWith("/") ? image.ThumbnailPath : "/" + image.ThumbnailPath.TrimStart('/'));
+        var imageMetadata = imageMetadataService.GetMetadata(imageUrl);
+        var thumbnailMetadata = imageMetadataService.GetMetadata(thumbnailUrl);
+
+        return new GalleryItemViewModel
+        {
+            Title = image.Title,
+            ImageUrl = imageUrl,
+            ThumbnailUrl = thumbnailUrl,
+            ImageWidth = imageMetadata?.Width,
+            ImageHeight = imageMetadata?.Height,
+            ThumbnailWidth = thumbnailMetadata?.Width,
+            ThumbnailHeight = thumbnailMetadata?.Height,
+            AltText = image.AltText,
+            Category = image.ImageType.ToString(),
+            Caption = image.Caption,
+            IsFeatured = image.IsFeatured,
+            DisplayOrder = image.DisplayOrder
+        };
+    }
+
+    private GalleryItemViewModel MapStaticFile(string filePath, int index)
     {
         var fileName = Path.GetFileName(filePath);
         var nameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
         var title = HumanizeFileName(nameWithoutExtension);
         var category = InferCategory(nameWithoutExtension);
+        var imageUrl = $"/images/salon/{fileName}";
+        var imageMetadata = imageMetadataService.GetMetadata(imageUrl);
 
         return new GalleryItemViewModel
         {
             Title = title,
-            ImageUrl = $"/images/salon/{fileName}",
-            ThumbnailUrl = $"/images/salon/{fileName}",
+            ImageUrl = imageUrl,
+            ThumbnailUrl = imageUrl,
+            ImageWidth = imageMetadata?.Width,
+            ImageHeight = imageMetadata?.Height,
+            ThumbnailWidth = imageMetadata?.Width,
+            ThumbnailHeight = imageMetadata?.Height,
             AltText = ImageAltTextBuilder.ForGallery(title, category),
             Category = category,
             Caption = $"Levels On Ice Salon {category.ToLowerInvariant()} showcase",

@@ -8,6 +8,14 @@ public class GalleryItemViewModel
 
     public string? ThumbnailUrl { get; set; }
 
+    public int? ImageWidth { get; set; }
+
+    public int? ImageHeight { get; set; }
+
+    public int? ThumbnailWidth { get; set; }
+
+    public int? ThumbnailHeight { get; set; }
+
     public string AltText { get; set; } = string.Empty;
 
     public string Category { get; set; } = string.Empty;

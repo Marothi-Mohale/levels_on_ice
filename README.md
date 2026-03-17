@@ -113,3 +113,31 @@ If you later want PostgreSQL again:
 
 - The `wwwroot/images/salon/` folder is ready for your real salon imagery.
 - Facebook gallery importing should remain a controlled content workflow rather than live scraping.
+
+## Production Performance Notes
+
+- Static assets in `wwwroot` are fingerprinted in the views with `asp-append-version="true"` and are now safe to cache aggressively at the HTTP layer.
+- Public image-heavy views reserve space for images early, lazy-load non-critical media, and prefer thumbnail-sized gallery assets when available.
+- The public site no longer depends on the Bootstrap JavaScript bundle for navigation, FAQs, and the gallery lightbox, which reduces shipped JavaScript and avoids loading a heavier runtime than this site needs.
+
+## Minification And Bundling Strategy
+
+This repo currently keeps CSS and JS intentionally lightweight, so the recommended production path is:
+
+1. Keep authoring in:
+   - `LevelsOnIceSalon.Web/wwwroot/css/site.css`
+   - `LevelsOnIceSalon.Web/wwwroot/js/site.js`
+2. Add a very small build step with `esbuild` instead of a larger front-end toolchain:
+
+```bash
+npx esbuild LevelsOnIceSalon.Web/wwwroot/js/site.js --bundle --minify --outfile=LevelsOnIceSalon.Web/wwwroot/js/site.min.js
+npx esbuild LevelsOnIceSalon.Web/wwwroot/css/site.css --minify --outfile=LevelsOnIceSalon.Web/wwwroot/css/site.min.css
+```
+
+3. In production, point the layouts at the minified files while keeping `asp-append-version="true"` for cache busting.
+
+Why this approach:
+
+- `esbuild` is fast and small.
+- It avoids introducing a heavier SPA-style pipeline for a server-rendered MVC site.
+- It fits the current codebase, where there is one main CSS file and one main JS file.

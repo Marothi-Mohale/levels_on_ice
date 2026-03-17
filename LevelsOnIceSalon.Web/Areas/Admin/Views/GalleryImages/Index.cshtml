@@ -11,7 +11,7 @@
             @foreach (var item in Model.Items)
             {
                 <tr>
-                    <td><div class="d-flex align-items-center gap-3">@if (!string.IsNullOrWhiteSpace(item.ImagePath)) { <img src="@item.ImagePath" alt="@item.AltText" class="admin-thumb" /> }<div><strong>@item.Title</strong><div class="admin-table-subtext">@item.Caption</div></div></div></td>
+                    <td><div class="d-flex align-items-center gap-3">@if (!string.IsNullOrWhiteSpace(item.ImagePath)) { <img src="@item.ImagePath" alt="@item.AltText" class="admin-thumb" loading="lazy" decoding="async" /> }<div><strong>@item.Title</strong><div class="admin-table-subtext">@item.Caption</div></div></div></td>
                     <td>@item.ImageType</td>
                     <td>@item.Service?.Name</td>
                     <td>@(item.IsPublished ? "Published" : "Draft") / @(item.IsFeatured ? "Featured" : "Standard")</td>

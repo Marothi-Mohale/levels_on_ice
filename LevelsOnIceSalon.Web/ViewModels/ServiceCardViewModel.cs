@@ -6,6 +6,10 @@ public class ServiceCardViewModel
 
     public string? ImageUrl { get; set; }
 
+    public int? ImageWidth { get; set; }
+
+    public int? ImageHeight { get; set; }
+
     public string ImageAltText { get; set; } = string.Empty;
 
     public string Summary { get; set; } = string.Empty;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UsR4QSm5fRL23eYNdGlKK0EwBUbSkGo2uDF5jXL8O4s=",
+  "Hash": "J+4Kk8O2twjKRr55uMZUXPQPJxOC8JgS7v6oUyZjntE=",
   "Source": "LevelsOnIceSalon.Web",
   "BasePath": "_content/LevelsOnIceSalon.Web",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "LevelsOnIceSalon.Web\\wwwroot",
+      "Name": "LevelsOnIceSalon.Web/wwwroot",
       "Source": "LevelsOnIceSalon.Web",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\css\\site.css",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/css/site.css",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\.gitkeep",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/.gitkeep",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/.gitkeep",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\.gitkeep"
+      "OriginalItemSpec": "wwwroot/images/salon/.gitkeep"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\gallery-01.svg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-01.svg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/gallery-01.svg",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\gallery-01.svg"
+      "OriginalItemSpec": "wwwroot/images/salon/gallery-01.svg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\gallery-02.svg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-02.svg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/gallery-02.svg",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\gallery-02.svg"
+      "OriginalItemSpec": "wwwroot/images/salon/gallery-02.svg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\gallery-03.svg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-03.svg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/gallery-03.svg",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\gallery-03.svg"
+      "OriginalItemSpec": "wwwroot/images/salon/gallery-03.svg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\gallery-04.svg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-04.svg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/gallery-04.svg",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\gallery-04.svg"
+      "OriginalItemSpec": "wwwroot/images/salon/gallery-04.svg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-braids-boho-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-boho-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-braids-boho-01.jpg",
       "AssetKind": "All",
@@ -147,13 +147,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-braids-boho-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-braids-boho-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-braids-boho-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-boho-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-braids-boho-02.jpg",
       "AssetKind": "All",
@@ -166,13 +166,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-braids-boho-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-braids-boho-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-braids-knotless-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-knotless-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-braids-knotless-01.jpg",
       "AssetKind": "All",
@@ -185,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-braids-knotless-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-braids-knotless-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-braids-knotless-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-knotless-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-braids-knotless-02.jpg",
       "AssetKind": "All",
@@ -204,13 +204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-braids-knotless-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-braids-knotless-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-bridal-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-bridal-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-bridal-01.jpg",
       "AssetKind": "All",
@@ -223,13 +223,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-bridal-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-bridal-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-bridal-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-bridal-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-bridal-02.jpg",
       "AssetKind": "All",
@@ -242,13 +242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-bridal-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-bridal-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-cornrows-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-cornrows-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-cornrows-01.jpg",
       "AssetKind": "All",
@@ -261,13 +261,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-cornrows-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-cornrows-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-cornrows-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-cornrows-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-cornrows-02.jpg",
       "AssetKind": "All",
@@ -280,13 +280,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-cornrows-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-cornrows-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-cornrows.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-cornrows.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-cornrows.jpg",
       "AssetKind": "All",
@@ -299,13 +299,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-cornrows.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-cornrows.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-curls-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-curls-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-curls-01.jpg",
       "AssetKind": "All",
@@ -318,13 +318,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-curls-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-curls-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-curls-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-curls-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-curls-02.jpg",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-curls-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-curls-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-featured-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-featured-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-featured-01.jpg",
       "AssetKind": "All",
@@ -356,13 +356,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-featured-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-featured-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-featured-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-featured-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-featured-02.jpg",
       "AssetKind": "All",
@@ -375,13 +375,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-featured-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-featured-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-featured-03.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-featured-03.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-featured-03.jpg",
       "AssetKind": "All",
@@ -394,13 +394,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-featured-03.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-featured-03.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-silk-press-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-silk-press-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-silk-press-02.jpg",
       "AssetKind": "All",
@@ -413,13 +413,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-silk-press-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-silk-press-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hair-silk-press.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-silk-press.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hair-silk-press.jpg",
       "AssetKind": "All",
@@ -432,13 +432,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hair-silk-press.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/hair-silk-press.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hero-detail.svg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hero-detail.svg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hero-detail.svg",
       "AssetKind": "All",
@@ -451,13 +451,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hero-detail.svg"
+      "OriginalItemSpec": "wwwroot/images/salon/hero-detail.svg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\hero-main.svg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hero-main.svg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/hero-main.svg",
       "AssetKind": "All",
@@ -470,13 +470,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\hero-main.svg"
+      "OriginalItemSpec": "wwwroot/images/salon/hero-main.svg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\logo.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/logo.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/logo.jpg",
       "AssetKind": "All",
@@ -489,13 +489,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\logo.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/logo.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-acrylic-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-acrylic-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-acrylic-01.jpg",
       "AssetKind": "All",
@@ -508,13 +508,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-acrylic-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-acrylic-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-acrylic-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-acrylic-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-acrylic-02.jpg",
       "AssetKind": "All",
@@ -527,13 +527,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-acrylic-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-acrylic-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-detail-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-detail-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-detail-01.jpg",
       "AssetKind": "All",
@@ -546,13 +546,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-detail-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-detail-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-detail-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-detail-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-detail-02.jpg",
       "AssetKind": "All",
@@ -565,13 +565,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-detail-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-detail-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-detail-03.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-detail-03.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-detail-03.jpg",
       "AssetKind": "All",
@@ -584,13 +584,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-detail-03.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-detail-03.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-featured-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-featured-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-featured-01.jpg",
       "AssetKind": "All",
@@ -603,13 +603,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-featured-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-featured-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-featured-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-featured-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-featured-02.jpg",
       "AssetKind": "All",
@@ -622,13 +622,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-featured-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-featured-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-featured-03.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-featured-03.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-featured-03.jpg",
       "AssetKind": "All",
@@ -641,13 +641,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-featured-03.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-featured-03.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-gel-set-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-gel-set-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-gel-set-01.jpg",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-gel-set-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-gel-set-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\nails-gel-set-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-gel-set-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/nails-gel-set-02.jpg",
       "AssetKind": "All",
@@ -679,13 +679,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\nails-gel-set-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/nails-gel-set-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\salon-interior-01.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/salon-interior-01.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/salon-interior-01.jpg",
       "AssetKind": "All",
@@ -698,13 +698,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\salon-interior-01.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/salon-interior-01.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\images\\salon\\salon-interior-02.jpg",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/salon-interior-02.jpg",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "images/salon/salon-interior-02.jpg",
       "AssetKind": "All",
@@ -717,13 +717,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\salon\\salon-interior-02.jpg"
+      "OriginalItemSpec": "wwwroot/images/salon/salon-interior-02.jpg"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\js\\site.js",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/js/site.js",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -736,13 +736,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
-      "Identity": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\uploads\\gallery\\.gitkeep",
+      "Identity": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/uploads/gallery/.gitkeep",
       "SourceId": "LevelsOnIceSalon.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\wwwroot\\",
+      "ContentRoot": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/",
       "BasePath": "_content/LevelsOnIceSalon.Web",
       "RelativePath": "uploads/gallery/.gitkeep",
       "AssetKind": "All",
@@ -755,7 +755,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\gallery\\.gitkeep"
+      "OriginalItemSpec": "wwwroot/uploads/gallery/.gitkeep"
     }
   ]
 }

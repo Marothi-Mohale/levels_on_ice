@@ -8,7 +8,7 @@
     @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
     {
         <figure class="service-card-media">
-            <img src="@Model.ImageUrl" alt="@Model.ImageAltText" loading="lazy" decoding="async" />
+            <img src="@Model.ImageUrl" alt="@Model.ImageAltText" loading="lazy" decoding="async" width="@Model.ImageWidth" height="@Model.ImageHeight" sizes="(min-width: 1200px) 22rem, (min-width: 768px) 45vw, 100vw" />
         </figure>
     }
     <div class="u-stack-sm">

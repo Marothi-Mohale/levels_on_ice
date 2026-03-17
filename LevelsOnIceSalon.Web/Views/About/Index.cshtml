@@ -3,6 +3,10 @@
     ViewData["Title"] = Model.PageTitle;
 }
 
+@section Head {
+    <link rel="preload" as="image" href="~/images/salon/salon-interior-01.jpg" asp-append-version="true" fetchpriority="high" />
+}
+
 <partial name="Partials/About/_HeroSection" model="Model" />
 <partial name="Partials/About/_BrandStorySection" model="Model" />
 <partial name="Partials/About/_DifferenceSection" model="Model" />

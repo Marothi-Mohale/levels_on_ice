@@ -4,18 +4,23 @@
     <button
         type="button"
         class="gallery-card-button"
-        data-bs-toggle="modal"
-        data-bs-target="#galleryLightbox"
+        data-gallery-trigger
         data-gallery-image="@Model.ImageUrl"
         data-gallery-alt="@Model.AltText"
         data-gallery-title="@Model.Title"
         data-gallery-category="@Model.Category"
-        data-gallery-caption="@Model.Caption">
+        data-gallery-caption="@Model.Caption"
+        aria-haspopup="dialog"
+        aria-controls="galleryLightbox">
         <img
-            src="@Model.ImageUrl"
+            src="@(Model.ThumbnailUrl ?? Model.ImageUrl)"
             alt="@Model.AltText"
             loading="lazy"
-            decoding="async" />
+            decoding="async"
+            width="@(Model.ThumbnailWidth ?? Model.ImageWidth)"
+            height="@(Model.ThumbnailHeight ?? Model.ImageHeight)"
+            sizes="(min-width: 1200px) 30vw, (min-width: 768px) 45vw, 100vw"
+            srcset="@(Model.ThumbnailUrl is not null && !string.Equals(Model.ThumbnailUrl, Model.ImageUrl, StringComparison.OrdinalIgnoreCase) && Model.ThumbnailWidth.HasValue && Model.ImageWidth.HasValue ? $"{Model.ThumbnailUrl} {Model.ThumbnailWidth.Value}w, {Model.ImageUrl} {Model.ImageWidth.Value}w" : null)" />
         <span class="gallery-card-overlay">
             <span class="gallery-card-category">@Model.Category</span>
             <span class="gallery-card-title">@Model.Title</span>

@@ -9,6 +9,7 @@ public static class WebServiceCollectionExtensions
     public static IServiceCollection AddWebServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<SiteOptions>(configuration.GetSection(SiteOptions.SectionName));
+        services.AddSingleton<IImageMetadataService, ImageMetadataService>();
         services.AddScoped<ISitePageContentService, SitePageContentService>();
         services.AddScoped<IServicesPageService, ServicesPageService>();
         services.AddScoped<IGalleryPageService, GalleryPageService>();

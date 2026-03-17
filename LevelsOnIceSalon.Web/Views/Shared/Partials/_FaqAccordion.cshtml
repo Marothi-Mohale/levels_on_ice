@@ -29,11 +29,11 @@ else
                         var collapseId = $"faq-collapse-{item.Id}";
                         <div class="accordion-item faq-accordion-item">
                             <h3 class="accordion-header" id="@headingId">
-                                <button class="accordion-button @(index == 0 ? string.Empty : "collapsed")" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseId" aria-expanded="@(index == 0 ? "true" : "false")" aria-controls="@collapseId">
+                                <button class="accordion-button @(index == 0 ? string.Empty : "collapsed")" type="button" data-accordion-trigger aria-expanded="@(index == 0 ? "true" : "false")" aria-controls="@collapseId">
                                     @item.Question
                                 </button>
                             </h3>
-                            <div id="@collapseId" class="accordion-collapse collapse @(index == 0 ? "show" : string.Empty)" aria-labelledby="@headingId" data-bs-parent="#faq-accordion-@category.Slug">
+                            <div id="@collapseId" class="accordion-collapse collapse @(index == 0 ? "show" : string.Empty)" aria-labelledby="@headingId" hidden="@(index == 0 ? null : "hidden")">
                                 <div class="accordion-body">
                                     @item.Answer
                                 </div>

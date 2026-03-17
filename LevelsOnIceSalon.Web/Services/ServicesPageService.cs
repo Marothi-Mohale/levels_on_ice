@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LevelsOnIceSalon.Web.Services;
 
-public class ServicesPageService(ApplicationDbContext dbContext) : IServicesPageService
+public class ServicesPageService(ApplicationDbContext dbContext, IImageMetadataService imageMetadataService) : IServicesPageService
 {
     private static readonly IReadOnlyDictionary<string, string> ServiceImageMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
     {
@@ -43,7 +43,7 @@ public class ServicesPageService(ApplicationDbContext dbContext) : IServicesPage
                 Description = category.Description,
                 Services = category.Services
                     .OrderBy(service => service.DisplayOrder)
-                    .Select(MapServiceCard)
+                    .Select(service => MapServiceCard(service, imageMetadataService))
                     .ToList()
             })
             .ToList();
@@ -71,12 +71,17 @@ public class ServicesPageService(ApplicationDbContext dbContext) : IServicesPage
         };
     }
 
-    private static ServiceCardViewModel MapServiceCard(Service service)
+    private static ServiceCardViewModel MapServiceCard(Service service, IImageMetadataService imageMetadataService)
     {
+        var imageUrl = ResolveServiceImage(service);
+        var imageMetadata = imageMetadataService.GetMetadata(imageUrl);
+
         return new ServiceCardViewModel
         {
             Name = service.Name,
-            ImageUrl = ResolveServiceImage(service),
+            ImageUrl = imageUrl,
+            ImageWidth = imageMetadata?.Width,
+            ImageHeight = imageMetadata?.Height,
             ImageAltText = ImageAltTextBuilder.ForService(service.Name),
             Summary = service.ShortDescription ?? string.Empty,
             Description = service.FullDescription,

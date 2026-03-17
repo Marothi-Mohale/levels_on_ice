@@ -9,323 +9,327 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LevelsOnIceSalon.Web
 build_property.RootNamespace = LevelsOnIceSalon.Web
-build_property.ProjectDir = C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\
+build_property.ProjectDir = /workspaces/levels_on_ice/LevelsOnIceSalon.Web/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web
+build_property.MSBuildProjectDirectory = /workspaces/levels_on_ice/LevelsOnIceSalon.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/AppointmentRequests/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRSZXF1ZXN0c1xEZXRhaWxzLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/AppointmentRequests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQXBwb2ludG1lbnRSZXF1ZXN0cy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/AppointmentRequests/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRSZXF1ZXN0c1xFZGl0LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/AppointmentRequests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQXBwb2ludG1lbnRSZXF1ZXN0cy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/AppointmentRequests/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXBwb2ludG1lbnRSZXF1ZXN0c1xJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/AppointmentRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQXBwb2ludG1lbnRSZXF1ZXN0cy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ContactMessages/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29udGFjdE1lc3NhZ2VzXERldGFpbHMuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQXV0aC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ContactMessages/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29udGFjdE1lc3NhZ2VzXEVkaXQuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ContactMessages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQ29udGFjdE1lc3NhZ2VzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ContactMessages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ29udGFjdE1lc3NhZ2VzXEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ContactMessages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQ29udGFjdE1lc3NhZ2VzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Dashboard/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ContactMessages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvQ29udGFjdE1lc3NhZ2VzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Faqs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc1xEZWxldGUuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Faqs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc1xFZGl0LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Faqs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvRmFxcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Faqs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc1xJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Faqs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvRmFxcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/GalleryImages/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FsbGVyeUltYWdlc1xEZWxldGUuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Faqs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvRmFxcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/GalleryImages/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FsbGVyeUltYWdlc1xFZGl0LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/GalleryImages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvR2FsbGVyeUltYWdlcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/GalleryImages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FsbGVyeUltYWdlc1xJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/GalleryImages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvR2FsbGVyeUltYWdlcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/OpeningHours/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3BlbmluZ0hvdXJzXERlbGV0ZS5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/GalleryImages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvR2FsbGVyeUltYWdlcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/OpeningHours/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3BlbmluZ0hvdXJzXEVkaXQuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/OpeningHours/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvT3BlbmluZ0hvdXJzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/OpeningHours/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3BlbmluZ0hvdXJzXEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/OpeningHours/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvT3BlbmluZ0hvdXJzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ServiceCategories/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZUNhdGVnb3JpZXNcRGVsZXRlLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/OpeningHours/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvT3BlbmluZ0hvdXJzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ServiceCategories/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZUNhdGVnb3JpZXNcRWRpdC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ServiceCategories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2VydmljZUNhdGVnb3JpZXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ServiceCategories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZUNhdGVnb3JpZXNcSW5kZXguY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ServiceCategories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2VydmljZUNhdGVnb3JpZXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Services/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcRGVsZXRlLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/ServiceCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2VydmljZUNhdGVnb3JpZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Services/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcRWRpdC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Services/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2VydmljZXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Services/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Services/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2VydmljZXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Services/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2VydmljZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Shared/_AdminPagination.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblBhZ2luYXRpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Shared/_AdminStatusMessage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblN0YXR1c01lc3NhZ2UuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Shared/_AdminPagination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19BZG1pblBhZ2luYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/SiteSettings/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2l0ZVNldHRpbmdzXERlbGV0ZS5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Shared/_AdminStatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19BZG1pblN0YXR1c01lc3NhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/SiteSettings/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2l0ZVNldHRpbmdzXEVkaXQuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/SiteSettings/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2l0ZVNldHRpbmdzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/SiteSettings/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2l0ZVNldHRpbmdzXEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/SiteSettings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2l0ZVNldHRpbmdzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Testimonials/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxzXERlbGV0ZS5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/SiteSettings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2l0ZVNldHRpbmdzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Testimonials/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxzXEVkaXQuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Testimonials/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvVGVzdGltb25pYWxzL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Testimonials/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdGltb25pYWxzXEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Testimonials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvVGVzdGltb25pYWxzL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/Testimonials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvVGVzdGltb25pYWxzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/About/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/BookAppointment/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0FwcG9pbnRtZW50XEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWJvdXQvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Contact/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/BookAppointment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va0FwcG9pbnRtZW50L0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Faqs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFxc1xJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29udGFjdC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Gallery/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsbGVyeVxJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Faqs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmFxcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Home/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Gallery/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR2FsbGVyeS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Services/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_AtmosphereSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9BdG1vc3BoZXJlU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Services/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_AudienceSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9BdWRpZW5jZVNlY3Rpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_AtmosphereSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19BdG1vc3BoZXJlU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_BrandStorySection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9CcmFuZFN0b3J5U2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_AudienceSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19BdWRpZW5jZVNlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_CallToActionSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9DYWxsVG9BY3Rpb25TZWN0aW9uLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_BrandStorySection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19CcmFuZFN0b3J5U2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_DifferenceSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9EaWZmZXJlbmNlU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_CallToActionSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19DYWxsVG9BY3Rpb25TZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_HeroSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9IZXJvU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_DifferenceSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19EaWZmZXJlbmNlU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_TeamSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9UZWFtU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_HeroSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19IZXJvU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_BookingCtaSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXENvbnRhY3RcX0Jvb2tpbmdDdGFTZWN0aW9uLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_TeamSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0Fib3V0L19UZWFtU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_ContactDetailsSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXENvbnRhY3RcX0NvbnRhY3REZXRhaWxzU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_BookingCtaSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0NvbnRhY3QvX0Jvb2tpbmdDdGFTZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_ContactFormSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXENvbnRhY3RcX0NvbnRhY3RGb3JtU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_ContactDetailsSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0NvbnRhY3QvX0NvbnRhY3REZXRhaWxzU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_HeroSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXENvbnRhY3RcX0hlcm9TZWN0aW9uLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_ContactFormSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0NvbnRhY3QvX0NvbnRhY3RGb3JtU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_MapSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXENvbnRhY3RcX01hcFNlY3Rpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_HeroSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0NvbnRhY3QvX0hlcm9TZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_OpeningHoursSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXENvbnRhY3RcX09wZW5pbmdIb3Vyc1NlY3Rpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_MapSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0NvbnRhY3QvX01hcFNlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_FeaturedServicesSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX0ZlYXR1cmVkU2VydmljZXNTZWN0aW9uLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Contact/_OpeningHoursSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0NvbnRhY3QvX09wZW5pbmdIb3Vyc1NlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_FinalConversionBanner.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX0ZpbmFsQ29udmVyc2lvbkJhbm5lci5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_FeaturedServicesSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX0ZlYXR1cmVkU2VydmljZXNTZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_GalleryPreviewSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX0dhbGxlcnlQcmV2aWV3U2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_FinalConversionBanner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX0ZpbmFsQ29udmVyc2lvbkJhbm5lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_HeroSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX0hlcm9TZWN0aW9uLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_GalleryPreviewSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX0dhbGxlcnlQcmV2aWV3U2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_LocationContactSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX0xvY2F0aW9uQ29udGFjdFNlY3Rpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_HeroSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX0hlcm9TZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_PerksSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX1BlcmtzU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_LocationContactSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX0xvY2F0aW9uQ29udGFjdFNlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_SocialProofSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX1NvY2lhbFByb29mU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_PerksSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX1BlcmtzU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_TestimonialsSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX1Rlc3RpbW9uaWFsc1NlY3Rpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_SocialProofSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX1NvY2lhbFByb29mU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_WhyChooseUsSection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX1doeUNob29zZVVzU2VjdGlvbi5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_TestimonialsSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX1Rlc3RpbW9uaWFsc1NlY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_FaqAccordion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9GYXFBY2NvcmRpb24uY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_WhyChooseUsSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL0hvbWUvX1doeUNob29zZVVzU2VjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_Footer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Gb290ZXIuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_FaqAccordion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19GYXFBY2NvcmRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_GalleryCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9HYWxsZXJ5Q2FyZC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19Gb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_MobileBookingCta.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Nb2JpbGVCb29raW5nQ3RhLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_GalleryCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19HYWxsZXJ5Q2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_PageBlueprint.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9QYWdlQmx1ZXByaW50LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_MobileBookingCta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19Nb2JpbGVCb29raW5nQ3RhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_SeoHead.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9TZW9IZWFkLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_PageBlueprint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19QYWdlQmx1ZXByaW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_ServiceCard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9TZXJ2aWNlQ2FyZC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_SeoHead.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19TZW9IZWFkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_TestimonialsCollection.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9UZXN0aW1vbmlhbHNDb2xsZWN0aW9uLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_ServiceCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19TZXJ2aWNlQ2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_ThemeScripts.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9UaGVtZVNjcmlwdHMuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_TestimonialsCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19UZXN0aW1vbmlhbHNDb2xsZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_TopBar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Ub3BCYXIuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_ThemeScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19UaGVtZVNjcmlwdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/_TopBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19Ub3BCYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Testimonials/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxzXEluZGV4LmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/Testimonials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdGltb25pYWxzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/workspaces/levels_on_ice/LevelsOnIceSalon.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

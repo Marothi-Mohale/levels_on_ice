@@ -17,7 +17,7 @@
         <div class="col-12"><label asp-for="Caption" class="form-label"></label><textarea asp-for="Caption" class="form-control booking-input" rows="3"></textarea></div>
         <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsFeatured" class="form-check-input" /><label asp-for="IsFeatured" class="form-check-label"></label></div></div>
         <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsPublished" class="form-check-input" /><label asp-for="IsPublished" class="form-check-label"></label></div></div>
-        @if (!string.IsNullOrWhiteSpace(Model.ExistingImagePath)) { <div class="col-12"><img src="@Model.ExistingImagePath" alt="@Model.AltText" class="admin-preview-image" /></div> }
+        @if (!string.IsNullOrWhiteSpace(Model.ExistingImagePath)) { <div class="col-12"><img src="@Model.ExistingImagePath" alt="@Model.AltText" class="admin-preview-image" loading="lazy" decoding="async" /></div> }
     </div>
     <div class="admin-form-actions"><button type="submit" class="btn btn-brand">Save Image</button><a class="btn btn-soft" asp-action="Index">Cancel</a></div>
 </form>

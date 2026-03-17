@@ -8,20 +8,20 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Student\\.nuget\\packages\\": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\LevelsOnIceSalon.Domain.csproj",
+      "projectUniqueName": "/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/LevelsOnIceSalon.Domain.csproj",
       "projectName": "LevelsOnIceSalon.Domain",
-      "projectPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\LevelsOnIceSalon.Domain.csproj",
-      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\obj\\",
+      "projectPath": "/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/LevelsOnIceSalon.Domain.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Student\\levels_on_ice\\NuGet.Config",
-        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/workspaces/levels_on_ice/NuGet.Config",
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.419/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.419/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

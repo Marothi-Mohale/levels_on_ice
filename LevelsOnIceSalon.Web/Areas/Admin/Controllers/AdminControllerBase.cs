@@ -9,7 +9,7 @@ namespace LevelsOnIceSalon.Web.Areas.Admin.Controllers;
 [AutoValidateAntiforgeryToken]
 public abstract class AdminControllerBase : Controller
 {
-    protected const string AdminRoleName = "Admin";
+    public const string AdminRoleName = "Admin";
     private const string StatusMessageKey = "AdminStatusMessage";
     private const string StatusTypeKey = "AdminStatusType";
 

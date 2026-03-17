@@ -23,10 +23,10 @@
                         : "Currently loading from static files in wwwroot/images/salon/.")
                 </p>
                 <nav class="services-filter-nav gallery-filter-nav" aria-label="Gallery categories">
-                    <button type="button" class="services-filter-chip gallery-filter-chip is-active" data-gallery-filter="all">All</button>
+                    <button type="button" class="services-filter-chip gallery-filter-chip is-active" data-gallery-filter="all" aria-pressed="true">All</button>
                     @foreach (var category in Model.Categories)
                     {
-                        <button type="button" class="services-filter-chip gallery-filter-chip" data-gallery-filter="@category">@category</button>
+                        <button type="button" class="services-filter-chip gallery-filter-chip" data-gallery-filter="@category" aria-pressed="false">@category</button>
                     }
                 </nav>
             </aside>
@@ -49,12 +49,12 @@
     </div>
 </section>
 
-<div class="modal fade gallery-lightbox" id="galleryLightbox" tabindex="-1" aria-labelledby="galleryLightboxTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content gallery-lightbox-content">
-            <button type="button" class="gallery-lightbox-close" data-bs-dismiss="modal" aria-label="Close image viewer"></button>
+<div class="gallery-lightbox" id="galleryLightbox" hidden aria-hidden="true">
+    <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="galleryLightboxTitle">
+        <div class="gallery-lightbox-content">
+            <button type="button" class="gallery-lightbox-close" data-gallery-close aria-label="Close image viewer"></button>
             <div class="gallery-lightbox-body">
-                <img id="galleryLightboxImage" src="" alt="" loading="eager" />
+                <img id="galleryLightboxImage" src="" alt="" loading="eager" decoding="async" />
                 <div class="gallery-lightbox-copy">
                     <p class="eyebrow" id="galleryLightboxCategory"></p>
                     <h2 id="galleryLightboxTitle"></h2>

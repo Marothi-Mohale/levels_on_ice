@@ -2,4 +2,4 @@
 @{
     ViewData["Title"] = "Delete Gallery Image";
 }
-<div class="admin-delete-card"><p class="eyebrow">Delete Image</p><h2>@Model.Title</h2>@if (!string.IsNullOrWhiteSpace(Model.ImagePath)) { <img src="@Model.ImagePath" alt="@Model.AltText" class="admin-preview-image mb-3" /> }<form method="post" class="admin-form-actions"><button type="submit" class="btn btn-danger">Confirm Delete</button><a class="btn btn-soft" asp-action="Index">Cancel</a></form></div>
+<div class="admin-delete-card"><p class="eyebrow">Delete Image</p><h2>@Model.Title</h2>@if (!string.IsNullOrWhiteSpace(Model.ImagePath)) { <img src="@Model.ImagePath" alt="@Model.AltText" class="admin-preview-image mb-3" loading="lazy" decoding="async" /> }<form method="post" class="admin-form-actions"><button type="submit" class="btn btn-danger">Confirm Delete</button><a class="btn btn-soft" asp-action="Index">Cancel</a></form></div>
