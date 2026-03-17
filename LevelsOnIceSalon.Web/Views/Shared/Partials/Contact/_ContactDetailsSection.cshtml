@@ -1,0 +1,28 @@
+@model ContactPageViewModel
+
+<section class="section-shell contact-panel u-stack-md">
+    <div>
+        <p class="eyebrow">Reach Us</p>
+        <h2 class="footer-title">Everything you need before your visit.</h2>
+    </div>
+
+    @foreach (var detail in Model.ContactDetails)
+    {
+        <div class="contact-detail-card">
+            <span class="card-kicker">@detail.Label</span>
+            @if (!string.IsNullOrWhiteSpace(detail.Url))
+            {
+                <a class="contact-detail-link" href="@detail.Url">@detail.Value</a>
+            }
+            else
+            {
+                <strong class="contact-detail-text">@detail.Value</strong>
+            }
+            <p class="u-text-muted mb-0">@detail.SupportingText</p>
+        </div>
+    }
+    <div class="contact-quick-actions">
+        <a class="btn btn-soft" href="tel:@Model.PhoneNumber.Replace(" ", string.Empty)">Call Salon</a>
+        <a class="btn btn-soft" href="mailto:@Model.Email">Email Salon</a>
+    </div>
+</section>

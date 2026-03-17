@@ -1,0 +1,24 @@
+@model ContactPageViewModel
+
+<section class="page-hero contact-hero">
+    <div class="container">
+        <div class="contact-hero-shell">
+            <div class="contact-hero-copy">
+                <p class="eyebrow">Contact Levels On Ice Salon</p>
+                <h1 class="display-title page-title">@Model.BannerTitle</h1>
+                <p class="hero-copy">@Model.BannerCopy</p>
+                <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn btn-brand" href="#contact-form">Send A Message</a>
+                    <a class="btn btn-soft" href="@Model.BookingCta.Url">@Model.BookingCta.Label</a>
+                </div>
+            </div>
+            <aside class="contact-hero-card section-shell u-stack-md">
+                <div>
+                    <p class="eyebrow">Cape Town Salon Details</p>
+                    <h2 class="footer-title">Mowbray location, clear contact options, and a polished visit experience.</h2>
+                </div>
+                <p class="u-text-muted mb-0">@Model.IntroCopy</p>
+            </aside>
+        </div>
+    </div>
+</section>

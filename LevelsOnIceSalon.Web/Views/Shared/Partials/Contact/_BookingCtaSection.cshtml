@@ -1,0 +1,17 @@
+@model ContactPageViewModel
+
+<section class="content-section">
+    <div class="container">
+        <div class="final-cta-banner">
+            <div>
+                <p class="eyebrow">Ready For Your Appointment?</p>
+                <h2>Move from questions to your next beauty booking.</h2>
+                <p>If you're already sure about your service, skip the back-and-forth and send your appointment request directly.</p>
+            </div>
+            <div class="final-cta-actions">
+                <a class="btn btn-brand btn-lg" href="@Model.BookingCta.Url">@Model.BookingCta.Label</a>
+                <a class="btn btn-soft btn-lg" href="tel:@Model.PhoneNumber.Replace(" ", string.Empty)">Call First</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+@model ContactPageViewModel
+
+<section class="section-shell contact-panel u-stack-md">
+    <div>
+        <p class="eyebrow">Opening Hours</p>
+        <h2 class="footer-title">Plan your visit with confidence.</h2>
+    </div>
+    <div class="opening-hours-list" aria-label="Salon opening hours">
+        @foreach (var hour in Model.OpeningHours)
+        {
+            <div class="opening-hours-item @(hour.IsToday ? "opening-hours-item-today" : string.Empty)">
+                <span>@hour.DayLabel</span>
+                <strong>@hour.HoursLabel</strong>
+            </div>
+        }
+    </div>
+    <p class="u-text-muted mb-0">Walk-ins are welcome, and bookings help secure preferred service times during busy periods.</p>
+</section>

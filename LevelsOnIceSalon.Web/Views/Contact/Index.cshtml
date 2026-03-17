@@ -1,6 +1,30 @@
-@model PageBlueprintViewModel
+@model ContactPageViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<partial name="Partials/_PageBlueprint" model="Model" />
+<partial name="Partials/Contact/_HeroSection" model="Model" />
+<partial name="Partials/Contact/_ContactFormSection" model="Model" />
+<partial name="Partials/Contact/_MapSection" model="Model" />
+<partial name="Partials/Contact/_BookingCtaSection" model="Model" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "BeautySalon",
+          "name": "Levels On Ice Salon",
+          "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "@Model.AddressLine",
+            "addressLocality": "Mowbray",
+            "addressRegion": "Cape Town",
+            "addressCountry": "ZA"
+          },
+          "telephone": "@Model.PhoneNumber",
+          "email": "@Model.Email",
+          "areaServed": "Cape Town"
+        }
+    </script>
+}

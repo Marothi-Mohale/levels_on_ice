@@ -1,0 +1,28 @@
+@model ContactPageViewModel
+
+<section class="content-section alt-section">
+    <div class="container">
+        <div class="contact-map-shell">
+            <div class="contact-map-card">
+                <p class="eyebrow">@Model.MapPlaceholderLabel</p>
+                <h2 class="footer-title">Find the salon on Main Road in Mowbray.</h2>
+                <p class="u-text-muted">@Model.MapPlaceholderCopy</p>
+                <div class="contact-map-placeholder" role="img" aria-label="Map placeholder for Levels On Ice Salon in Mowbray, Cape Town">
+                    <div class="contact-map-pin"></div>
+                    <div>
+                        <strong>@Model.AddressLine</strong>
+                        <p class="mb-0">@Model.Area</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-location-card section-shell u-stack-md">
+                <div>
+                    <p class="eyebrow">Local Search Intent</p>
+                    <h2 class="footer-title">Premium salon destination for Mowbray and greater Cape Town.</h2>
+                </div>
+                <p class="u-text-muted mb-0">This page is written to support local searches for salon contact details, beauty appointments, and directions in Mowbray, Cape Town while still feeling polished for real clients.</p>
+                <a class="btn btn-brand" href="@Model.BookingCta.Url">@Model.BookingCta.Label</a>
+            </div>
+        </div>
+    </div>
+</section>

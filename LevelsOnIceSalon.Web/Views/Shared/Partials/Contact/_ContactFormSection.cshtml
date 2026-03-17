@@ -1,0 +1,69 @@
+@model ContactPageViewModel
+
+<section class="content-section">
+    <div class="container">
+        <div class="contact-main-grid">
+            <div id="contact-form" class="contact-form-shell">
+                <div class="section-heading contact-heading">
+                    <p class="eyebrow">Send A Message</p>
+                    <h2>@Model.IntroTitle</h2>
+                    <p class="u-text-muted">@Model.IntroCopy</p>
+                </div>
+
+                @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+                {
+                    <div class="booking-status @(Model.IsSuccess ? "booking-status-success" : "booking-status-error")" role="status" aria-live="polite">
+                        @Model.StatusMessage
+                    </div>
+                }
+
+                @if (!ViewData.ModelState.IsValid && ViewData.ModelState[string.Empty]?.Errors.Count > 0)
+                {
+                    <div class="booking-status booking-status-error" asp-validation-summary="ModelOnly" role="alert"></div>
+                }
+
+                <form asp-action="Index" asp-controller="Contact" method="post" novalidate class="booking-form">
+                    @Html.AntiForgeryToken()
+                    <input asp-for="Form.Website" class="booking-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                    <input asp-for="Form.FormRenderedAtUnix" type="hidden" />
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label asp-for="Form.FullName" class="form-label"></label>
+                            <input asp-for="Form.FullName" class="form-control booking-input" autocomplete="name" />
+                            <span asp-validation-for="Form.FullName" class="text-danger field-validation"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Form.Email" class="form-label"></label>
+                            <input asp-for="Form.Email" class="form-control booking-input" autocomplete="email" />
+                            <span asp-validation-for="Form.Email" class="text-danger field-validation"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Form.PhoneNumber" class="form-label"></label>
+                            <input asp-for="Form.PhoneNumber" class="form-control booking-input" autocomplete="tel" />
+                            <span asp-validation-for="Form.PhoneNumber" class="text-danger field-validation"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Form.Subject" class="form-label"></label>
+                            <input asp-for="Form.Subject" class="form-control booking-input" autocomplete="off" />
+                            <span asp-validation-for="Form.Subject" class="text-danger field-validation"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Form.Message" class="form-label"></label>
+                            <textarea asp-for="Form.Message" class="form-control booking-input booking-textarea" rows="6" placeholder="Tell the salon what you need help with, whether it's service advice, appointment planning, bridal enquiries, or visit details."></textarea>
+                            <span asp-validation-for="Form.Message" class="text-danger field-validation"></span>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-brand btn-lg booking-submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contact-side-stack">
+                <partial name="Partials/Contact/_ContactDetailsSection" model="Model" />
+                <partial name="Partials/Contact/_OpeningHoursSection" model="Model" />
+            </div>
+        </div>
+    </div>
+</section>
