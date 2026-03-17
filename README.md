@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Levels On Ice Salon
 
 Initial production-oriented ASP.NET Core MVC solution scaffold for the Levels On Ice Salon marketing website.
@@ -56,3 +57,7 @@ dotnet run --project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj
 
 - The `wwwroot/images/salon/` folder is ready for salon imagery.
 - The gallery import from Facebook should be handled as a controlled content workflow rather than live scraping.
+=======
+# levels_on_ice
+Luxury Hair Salon Web Platform!
+>>>>>>> a9e14e151571a3e88a65772b4b6387d423ed001b
