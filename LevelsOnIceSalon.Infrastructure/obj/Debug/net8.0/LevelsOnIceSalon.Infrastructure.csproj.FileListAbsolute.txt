@@ -15,3 +15,4 @@ C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Infrastructure\obj\Debug\net8.0\
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Infrastructure\obj\Debug\net8.0\LevelsOnIceSalon.Infrastructure.pdb
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Infrastructure\obj\Debug\net8.0\LevelsOnIceSalon.Infrastructure.genruntimeconfig.cache
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Infrastructure\obj\Debug\net8.0\ref\LevelsOnIceSalon.Infrastructure.dll
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Infrastructure\obj\Debug\net8.0\LevelsOnIceSalon.Infrastructure.sourcelink.json

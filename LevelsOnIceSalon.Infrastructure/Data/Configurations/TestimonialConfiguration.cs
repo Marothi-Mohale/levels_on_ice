@@ -13,5 +13,6 @@ public class TestimonialConfiguration : IEntityTypeConfiguration<Testimonial>
         builder.Property(x => x.CustomerName).HasMaxLength(120).IsRequired();
         builder.Property(x => x.Quote).HasMaxLength(1000).IsRequired();
         builder.Property(x => x.ServiceName).HasMaxLength(120);
+        builder.Property(x => x.SourceUrl).HasMaxLength(400);
     }
 }

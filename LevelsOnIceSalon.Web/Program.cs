@@ -1,3 +1,4 @@
+using LevelsOnIceSalon.Web.Data;
 using LevelsOnIceSalon.Infrastructure.DependencyInjection;
 using LevelsOnIceSalon.Web.Services;
 
@@ -29,5 +30,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+await SeedData.InitializeAsync(app.Services);
 
 app.Run();

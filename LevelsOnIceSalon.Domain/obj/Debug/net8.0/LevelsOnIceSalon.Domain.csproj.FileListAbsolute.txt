@@ -9,3 +9,4 @@ C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOn
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\refint\LevelsOnIceSalon.Domain.dll
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.pdb
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\ref\LevelsOnIceSalon.Domain.dll
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.sourcelink.json

@@ -1,0 +1,31 @@
+@model HomePageViewModel
+
+<section class="content-section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Gallery Preview</p>
+            <h2>Finished looks that make booking feel exciting before you even step through the door.</h2>
+        </div>
+        <div class="homepage-gallery-grid">
+            <figure class="homepage-gallery-card gallery-card-large">
+                <img src="~/images/salon/gallery-01.svg" asp-append-version="true" alt="Polished nail artistry placeholder image." loading="lazy" />
+                <figcaption>Polished nail artistry</figcaption>
+            </figure>
+            <figure class="homepage-gallery-card gallery-card-tall">
+                <img src="~/images/salon/gallery-02.svg" asp-append-version="true" alt="Occasion hairstyle placeholder image." loading="lazy" />
+                <figcaption>Occasion-ready hair</figcaption>
+            </figure>
+            <figure class="homepage-gallery-card">
+                <img src="~/images/salon/gallery-03.svg" asp-append-version="true" alt="Beauty finish placeholder image." loading="lazy" />
+                <figcaption>Soft luxury finishes</figcaption>
+            </figure>
+            <figure class="homepage-gallery-card gallery-card-wide">
+                <img src="~/images/salon/gallery-04.svg" asp-append-version="true" alt="Editorial style salon placeholder image." loading="lazy" />
+                <figcaption>Editorial beauty energy</figcaption>
+            </figure>
+        </div>
+        <div class="section-actions">
+            <a class="btn btn-soft" asp-controller="Gallery" asp-action="Index">See Full Gallery</a>
+        </div>
+    </div>
+</section>

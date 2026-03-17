@@ -1,0 +1,25 @@
+@model HomePageViewModel
+
+<section class="content-section alt-section">
+    <div class="container">
+        <div class="location-cta-grid">
+            <div class="section-shell">
+                <p class="eyebrow">Visit Us</p>
+                <h2 class="footer-title">Your next salon stop is in Mowbray.</h2>
+                <p class="u-text-muted">Drop in for a walk-in, plan your next special occasion look, or send a booking request and let the team confirm the details.</p>
+            </div>
+            <aside class="section-shell location-card">
+                <div class="u-stack-sm">
+                    <p class="eyebrow">Contact Snapshot</p>
+                    <p><strong>Address:</strong> @Model.Address</p>
+                    <p><strong>Phone:</strong> <a href="tel:0813906634">@Model.PhoneNumber</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:@Model.Email">@Model.Email</a></p>
+                </div>
+                <div class="hero-actions d-flex flex-wrap gap-3">
+                    <a class="btn btn-brand" asp-controller="BookAppointment" asp-action="Index">Book Appointment</a>
+                    <a class="btn btn-soft" asp-controller="Contact" asp-action="Index">Contact Us</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

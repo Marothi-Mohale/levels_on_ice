@@ -1,0 +1,59 @@
+@model PageBlueprintViewModel
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-shell">
+            <p class="eyebrow">@Model.NavigationTitle</p>
+            <h1 class="display-title page-title">@Model.PageTitle</h1>
+            <p class="hero-copy u-text-balance">@Model.Intro</p>
+            <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-brand" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
+                <a class="btn btn-soft" asp-controller="Contact" asp-action="Index">Contact the Salon</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="section-shell">
+                    <div class="section-heading">
+                        <p class="eyebrow">Purpose</p>
+                        <h2>@Model.Purpose</h2>
+                    </div>
+                    <div class="row g-4">
+                        @foreach (var block in Model.ContentBlocks)
+                        {
+                            <div class="col-md-6">
+                                <article class="feature-card">
+                                    <h3>@block.Title</h3>
+                                    <p>@block.Description</p>
+                                </article>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="section-shell page-plan-meta u-stack-md">
+                    <div>
+                        <p class="eyebrow">Primary CTA</p>
+                        <h3>@Model.PrimaryCta.Label</h3>
+                        <p>@Model.PrimaryCta.SupportingText</p>
+                    </div>
+                    <div>
+                        <p class="eyebrow">Data Source</p>
+                        <p>@Model.DataSource</p>
+                    </div>
+                    <div>
+                        <p class="eyebrow">SEO Intent</p>
+                        <p>@Model.SeoIntent</p>
+                    </div>
+                    <a class="btn btn-brand" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

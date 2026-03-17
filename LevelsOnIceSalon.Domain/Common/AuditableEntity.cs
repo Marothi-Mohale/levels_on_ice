@@ -6,5 +6,7 @@ public abstract class AuditableEntity : BaseEntity
 
     public DateTime? UpdatedAtUtc { get; set; }
 
+    public DateTime? PublishedAtUtc { get; set; }
+
     public bool IsDeleted { get; set; }
 }
