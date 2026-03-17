@@ -2493,7 +2493,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages": {}
+    "C:\\Users\\Student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2501,11 +2501,12 @@
       "projectUniqueName": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\LevelsOnIceSalon.Web.csproj",
       "projectName": "LevelsOnIceSalon.Web",
       "projectPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\LevelsOnIceSalon.Web.csproj",
-      "packagesPath": "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Student\\levels_on_ice\\NuGet.Config"
+        "C:\\Users\\Student\\levels_on_ice\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

@@ -1,0 +1,1658 @@
+dbug: Microsoft.EntityFrameworkCore.Infrastructure[10401]
+      An 'IServiceProvider' was created for internal use by Entity Framework.
+dbug: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 8.0.12 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:8.0.12' with options: MigrationsAssembly=LevelsOnIceSalon.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20005]
+      Creating DbConnection.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20006]
+      Created DbConnection. (4ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20004]
+      An error occurred using the connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20007]
+      Disposing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20008]
+      Disposed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20005]
+      Creating DbConnection.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20006]
+      Created DbConnection. (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (3ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (7ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA journal_mode = 'wal';
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA journal_mode = 'wal';
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (1ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20209]
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20200]
+      Began transaction with isolation level 'Serializable'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ContactMessages" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_ContactMessages" PRIMARY KEY AUTOINCREMENT,
+          "FullName" TEXT NOT NULL,
+          "Email" TEXT NOT NULL,
+          "PhoneNumber" TEXT NULL,
+          "Subject" TEXT NOT NULL,
+          "Message" TEXT NOT NULL,
+          "Status" INTEGER NOT NULL,
+          "AdminReplyNotes" TEXT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ContactMessages" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_ContactMessages" PRIMARY KEY AUTOINCREMENT,
+          "FullName" TEXT NOT NULL,
+          "Email" TEXT NOT NULL,
+          "PhoneNumber" TEXT NULL,
+          "Subject" TEXT NOT NULL,
+          "Message" TEXT NOT NULL,
+          "Status" INTEGER NOT NULL,
+          "AdminReplyNotes" TEXT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Faqs" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Faqs" PRIMARY KEY AUTOINCREMENT,
+          "Question" TEXT NOT NULL,
+          "Answer" TEXT NOT NULL,
+          "Category" TEXT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "IsPublished" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Faqs" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Faqs" PRIMARY KEY AUTOINCREMENT,
+          "Question" TEXT NOT NULL,
+          "Answer" TEXT NOT NULL,
+          "Category" TEXT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "IsPublished" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "OpeningHours" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_OpeningHours" PRIMARY KEY AUTOINCREMENT,
+          "DayOfWeek" INTEGER NOT NULL,
+          "OpenTime" TEXT NULL,
+          "CloseTime" TEXT NULL,
+          "Notes" TEXT NULL,
+          "IsClosed" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "OpeningHours" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_OpeningHours" PRIMARY KEY AUTOINCREMENT,
+          "DayOfWeek" INTEGER NOT NULL,
+          "OpenTime" TEXT NULL,
+          "CloseTime" TEXT NULL,
+          "Notes" TEXT NULL,
+          "IsClosed" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "PromotionBanners" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_PromotionBanners" PRIMARY KEY AUTOINCREMENT,
+          "Title" TEXT NOT NULL,
+          "Subtitle" TEXT NULL,
+          "CallToActionText" TEXT NULL,
+          "CallToActionUrl" TEXT NULL,
+          "Style" INTEGER NOT NULL,
+          "StartsOn" TEXT NULL,
+          "EndsOn" TEXT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "PromotionBanners" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_PromotionBanners" PRIMARY KEY AUTOINCREMENT,
+          "Title" TEXT NOT NULL,
+          "Subtitle" TEXT NULL,
+          "CallToActionText" TEXT NULL,
+          "CallToActionUrl" TEXT NULL,
+          "Style" INTEGER NOT NULL,
+          "StartsOn" TEXT NULL,
+          "EndsOn" TEXT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ServiceCategories" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_ServiceCategories" PRIMARY KEY AUTOINCREMENT,
+          "Name" TEXT NOT NULL,
+          "Slug" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "ServiceCategories" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_ServiceCategories" PRIMARY KEY AUTOINCREMENT,
+          "Name" TEXT NOT NULL,
+          "Slug" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "SiteSettings" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_SiteSettings" PRIMARY KEY AUTOINCREMENT,
+          "Key" TEXT NOT NULL,
+          "Value" TEXT NOT NULL,
+          "Group" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "SiteSettings" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_SiteSettings" PRIMARY KEY AUTOINCREMENT,
+          "Key" TEXT NOT NULL,
+          "Value" TEXT NOT NULL,
+          "Group" TEXT NOT NULL,
+          "Description" TEXT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "TeamMembers" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_TeamMembers" PRIMARY KEY AUTOINCREMENT,
+          "FullName" TEXT NOT NULL,
+          "Role" INTEGER NOT NULL,
+          "ShortBio" TEXT NULL,
+          "FullBio" TEXT NULL,
+          "PhotoPath" TEXT NULL,
+          "InstagramHandle" TEXT NULL,
+          "Specialty" TEXT NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "TeamMembers" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_TeamMembers" PRIMARY KEY AUTOINCREMENT,
+          "FullName" TEXT NOT NULL,
+          "Role" INTEGER NOT NULL,
+          "ShortBio" TEXT NULL,
+          "FullBio" TEXT NULL,
+          "PhotoPath" TEXT NULL,
+          "InstagramHandle" TEXT NULL,
+          "Specialty" TEXT NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Testimonials" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Testimonials" PRIMARY KEY AUTOINCREMENT,
+          "CustomerName" TEXT NOT NULL,
+          "Quote" TEXT NOT NULL,
+          "Rating" INTEGER NOT NULL,
+          "ServiceName" TEXT NULL,
+          "SourceType" INTEGER NOT NULL,
+          "SourceUrl" TEXT NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "IsPublished" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Testimonials" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Testimonials" PRIMARY KEY AUTOINCREMENT,
+          "CustomerName" TEXT NOT NULL,
+          "Quote" TEXT NOT NULL,
+          "Rating" INTEGER NOT NULL,
+          "ServiceName" TEXT NULL,
+          "SourceType" INTEGER NOT NULL,
+          "SourceUrl" TEXT NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "IsPublished" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Services" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Services" PRIMARY KEY AUTOINCREMENT,
+          "ServiceCategoryId" INTEGER NOT NULL,
+          "Name" TEXT NOT NULL,
+          "Slug" TEXT NOT NULL,
+          "ShortDescription" TEXT NULL,
+          "FullDescription" TEXT NULL,
+          "Price" numeric(10,2) NULL,
+          "PricingType" INTEGER NOT NULL,
+          "DurationMinutes" INTEGER NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "IsBookableOnline" INTEGER NOT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL,
+          CONSTRAINT "FK_Services_ServiceCategories_ServiceCategoryId" FOREIGN KEY ("ServiceCategoryId") REFERENCES "ServiceCategories" ("Id") ON DELETE RESTRICT
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Services" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Services" PRIMARY KEY AUTOINCREMENT,
+          "ServiceCategoryId" INTEGER NOT NULL,
+          "Name" TEXT NOT NULL,
+          "Slug" TEXT NOT NULL,
+          "ShortDescription" TEXT NULL,
+          "FullDescription" TEXT NULL,
+          "Price" numeric(10,2) NULL,
+          "PricingType" INTEGER NOT NULL,
+          "DurationMinutes" INTEGER NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "IsBookableOnline" INTEGER NOT NULL,
+          "IsActive" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL,
+          CONSTRAINT "FK_Services_ServiceCategories_ServiceCategoryId" FOREIGN KEY ("ServiceCategoryId") REFERENCES "ServiceCategories" ("Id") ON DELETE RESTRICT
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "AppointmentRequests" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_AppointmentRequests" PRIMARY KEY AUTOINCREMENT,
+          "ServiceId" INTEGER NULL,
+          "TeamMemberId" INTEGER NULL,
+          "FullName" TEXT NOT NULL,
+          "PhoneNumber" TEXT NOT NULL,
+          "Email" TEXT NULL,
+          "PreferredStylistName" TEXT NULL,
+          "PreferredDate" TEXT NULL,
+          "PreferredTime" TEXT NULL,
+          "Occasion" TEXT NULL,
+          "Notes" TEXT NULL,
+          "InspirationReference" TEXT NULL,
+          "IsFirstTimeClient" INTEGER NOT NULL,
+          "Status" INTEGER NOT NULL,
+          "Source" INTEGER NOT NULL,
+          "AdminNotes" TEXT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL,
+          CONSTRAINT "FK_AppointmentRequests_Services_ServiceId" FOREIGN KEY ("ServiceId") REFERENCES "Services" ("Id") ON DELETE SET NULL,
+          CONSTRAINT "FK_AppointmentRequests_TeamMembers_TeamMemberId" FOREIGN KEY ("TeamMemberId") REFERENCES "TeamMembers" ("Id") ON DELETE SET NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "AppointmentRequests" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_AppointmentRequests" PRIMARY KEY AUTOINCREMENT,
+          "ServiceId" INTEGER NULL,
+          "TeamMemberId" INTEGER NULL,
+          "FullName" TEXT NOT NULL,
+          "PhoneNumber" TEXT NOT NULL,
+          "Email" TEXT NULL,
+          "PreferredStylistName" TEXT NULL,
+          "PreferredDate" TEXT NULL,
+          "PreferredTime" TEXT NULL,
+          "Occasion" TEXT NULL,
+          "Notes" TEXT NULL,
+          "InspirationReference" TEXT NULL,
+          "IsFirstTimeClient" INTEGER NOT NULL,
+          "Status" INTEGER NOT NULL,
+          "Source" INTEGER NOT NULL,
+          "AdminNotes" TEXT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL,
+          CONSTRAINT "FK_AppointmentRequests_Services_ServiceId" FOREIGN KEY ("ServiceId") REFERENCES "Services" ("Id") ON DELETE SET NULL,
+          CONSTRAINT "FK_AppointmentRequests_TeamMembers_TeamMemberId" FOREIGN KEY ("TeamMemberId") REFERENCES "TeamMembers" ("Id") ON DELETE SET NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "GalleryImages" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_GalleryImages" PRIMARY KEY AUTOINCREMENT,
+          "ServiceId" INTEGER NULL,
+          "Title" TEXT NOT NULL,
+          "ImagePath" TEXT NOT NULL,
+          "ThumbnailPath" TEXT NULL,
+          "AltText" TEXT NOT NULL,
+          "ImageType" INTEGER NOT NULL,
+          "Caption" TEXT NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "SourceType" TEXT NULL,
+          "SourceUrl" TEXT NULL,
+          "IsPublished" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL,
+          CONSTRAINT "FK_GalleryImages_Services_ServiceId" FOREIGN KEY ("ServiceId") REFERENCES "Services" ("Id") ON DELETE SET NULL
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "GalleryImages" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_GalleryImages" PRIMARY KEY AUTOINCREMENT,
+          "ServiceId" INTEGER NULL,
+          "Title" TEXT NOT NULL,
+          "ImagePath" TEXT NOT NULL,
+          "ThumbnailPath" TEXT NULL,
+          "AltText" TEXT NOT NULL,
+          "ImageType" INTEGER NOT NULL,
+          "Caption" TEXT NULL,
+          "IsFeatured" INTEGER NOT NULL,
+          "DisplayOrder" INTEGER NOT NULL,
+          "SourceType" TEXT NULL,
+          "SourceUrl" TEXT NULL,
+          "IsPublished" INTEGER NOT NULL,
+          "CreatedAtUtc" TEXT NOT NULL,
+          "UpdatedAtUtc" TEXT NULL,
+          "PublishedAtUtc" TEXT NULL,
+          "IsDeleted" INTEGER NOT NULL,
+          CONSTRAINT "FK_GalleryImages_Services_ServiceId" FOREIGN KEY ("ServiceId") REFERENCES "Services" ("Id") ON DELETE SET NULL
+      );
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (1, 'Yes. Walk-ins are welcome, but bookings are recommended for busy periods and longer appointments.', 'Booking', '2026-01-01 00:00:00', 1, 0, 1, NULL, 'Do you accept walk-ins?', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (2, 'You submit a booking request online, and the salon follows up to confirm the final time and service details.', 'Booking', '2026-01-01 00:00:00', 2, 0, 1, NULL, 'How does the appointment request work?', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (3, 'Yes. Levels On Ice Salon offers premium styling suitable for bridal, events, and special occasion beauty needs.', 'Services', '2026-01-01 00:00:00', 3, 0, 1, NULL, 'Do you offer bridal or special occasion services?', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (4, 'Clients can enjoy free WiFi, complimentary refreshments, and a stylish atmosphere designed for comfort and confidence.', 'Visit', '2026-01-01 00:00:00', 4, 0, 1, NULL, 'What makes the salon experience comfortable?', NULL);
+      SELECT changes();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (1, 'Yes. Walk-ins are welcome, but bookings are recommended for busy periods and longer appointments.', 'Booking', '2026-01-01 00:00:00', 1, 0, 1, NULL, 'Do you accept walk-ins?', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (2, 'You submit a booking request online, and the salon follows up to confirm the final time and service details.', 'Booking', '2026-01-01 00:00:00', 2, 0, 1, NULL, 'How does the appointment request work?', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (3, 'Yes. Levels On Ice Salon offers premium styling suitable for bridal, events, and special occasion beauty needs.', 'Services', '2026-01-01 00:00:00', 3, 0, 1, NULL, 'Do you offer bridal or special occasion services?', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Faqs" ("Id", "Answer", "Category", "CreatedAtUtc", "DisplayOrder", "IsDeleted", "IsPublished", "PublishedAtUtc", "Question", "UpdatedAtUtc")
+      VALUES (4, 'Clients can enjoy free WiFi, complimentary refreshments, and a stylish atmosphere designed for comfort and confidence.', 'Visit', '2026-01-01 00:00:00', 4, 0, 1, NULL, 'What makes the salon experience comfortable?', NULL);
+      SELECT changes();
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (1, '2026-01-01 00:00:00', 'High-gloss nail artistry for soft luxury girls, statement sets, and polished everyday confidence.', 1, 1, 0, 'Nails', NULL, 'nails', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (2, '2026-01-01 00:00:00', 'Effortless glam, soft luxury styling, and event-ready looks with a premium salon finish.', 2, 1, 0, 'Hairstyles', NULL, 'hairstyles', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (3, '2026-01-01 00:00:00', 'Protective styling that feels neat, feminine, trend-aware, and beautifully camera-ready.', 3, 1, 0, 'Braids & Protective Styles', NULL, 'braids-protective-styles', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (4, '2026-01-01 00:00:00', 'Finishing touches that elevate your appointment from simple upkeep to a full beauty moment.', 4, 1, 0, 'Beauty Add-ons', NULL, 'beauty-add-ons', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (5, '2026-01-01 00:00:00', 'Elegant beauty styling for weddings, celebrations, shoots, graduations, and unforgettable entrances.', 5, 1, 0, 'Bridal / Special Occasion', NULL, 'bridal-special-occasion', NULL);
+      SELECT changes();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (1, '2026-01-01 00:00:00', 'High-gloss nail artistry for soft luxury girls, statement sets, and polished everyday confidence.', 1, 1, 0, 'Nails', NULL, 'nails', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (2, '2026-01-01 00:00:00', 'Effortless glam, soft luxury styling, and event-ready looks with a premium salon finish.', 2, 1, 0, 'Hairstyles', NULL, 'hairstyles', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (3, '2026-01-01 00:00:00', 'Protective styling that feels neat, feminine, trend-aware, and beautifully camera-ready.', 3, 1, 0, 'Braids & Protective Styles', NULL, 'braids-protective-styles', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (4, '2026-01-01 00:00:00', 'Finishing touches that elevate your appointment from simple upkeep to a full beauty moment.', 4, 1, 0, 'Beauty Add-ons', NULL, 'beauty-add-ons', NULL);
+      SELECT changes();
+      
+      INSERT INTO "ServiceCategories" ("Id", "CreatedAtUtc", "Description", "DisplayOrder", "IsActive", "IsDeleted", "Name", "PublishedAtUtc", "Slug", "UpdatedAtUtc")
+      VALUES (5, '2026-01-01 00:00:00', 'Elegant beauty styling for weddings, celebrations, shoots, graduations, and unforgettable entrances.', 5, 1, 0, 'Bridal / Special Occasion', NULL, 'bridal-special-occasion', NULL);
+      SELECT changes();
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (1, '2026-01-01 00:00:00', 1, 80, 'A premium gel manicure with precision prep, shaping, cuticle care, and a glossy salon finish that feels polished, soft, and photo-ready.', 1, 1, 0, 1, 'Gloss Theory Gel Set', '320.0', 2, NULL, 1, 'A sleek gel finish for girls who love clean, expensive-looking nails every day.', 'gloss-theory-gel-set', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (2, '2026-01-01 00:00:00', 2, 140, 'Our statement acrylic set is built for noticeable beauty with sculpted shape, length customization, and a crisp, luxe finish that photographs beautifully.', 1, 1, 0, 1, 'Iced-Out Acrylic Signature Set', '520.0', 2, NULL, 1, 'A bold acrylic look with shape, length, and attitude for girls who love a standout finish.', 'iced-out-acrylic-signature-set', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (3, '2026-01-01 00:00:00', 3, 90, 'Perfect for maintaining a polished acrylic or gel look, this refill includes reshaping, balancing, and a refined finish that keeps your set looking elevated.', 1, 1, 0, 0, 'French Girl Refill', '380.0', 2, NULL, 1, 'A fresh refill for clients who love soft luxury nails with a clean designer finish.', 'french-girl-refill', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (4, '2026-01-01 00:00:00', 1, 120, 'This silk press service is designed for sleek movement, healthy shine, and a refined finish that feels expensive without looking overdone.', 1, 1, 0, 1, 'Silk Press & Sway Finish', '650.0', 2, NULL, 2, 'A smooth, bouncy finish with movement, shine, and soft luxury energy.', 'silk-press-sway-finish', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (5, '2026-01-01 00:00:00', 2, 90, 'A styled finish built around volume, shape, and softness for clients who want occasion-ready hair that still feels modern and wearable.', 1, 1, 0, 1, 'Soft Glam Curls Styling', '480.0', 2, NULL, 2, 'Defined curls and a glossy finish for birthdays, dinners, graduations, and pretty-girl weekends.', 'soft-glam-curls-styling', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (6, '2026-01-01 00:00:00', 1, 300, 'A client-favorite protective style with a clean parting pattern, natural fall, and a polished result that feels stylish from day one.', 1, 1, 0, 1, 'Knotless Braids, Mid-Back', '950.0', 2, NULL, 3, 'Neat, lightweight knotless braids with a soft feminine finish and everyday luxury feel.', 'knotless-braids-mid-back', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (7, '2026-01-01 00:00:00', 2, 360, 'This premium boho knotless style blends neat structure with soft loose detail, making it ideal for clients who want protective styling with movement and personality.', 1, 1, 0, 1, 'Boho Knotless Luxe', '1350.0', 2, NULL, 3, 'A soft, romantic protective style with loose textured pieces for an elevated look.', 'boho-knotless-luxe', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (8, '2026-01-01 00:00:00', 3, 120, 'A neat protective style with detail-focused parting and a sleek finish that works beautifully for everyday wear, holidays, and active weeks.', 1, 1, 0, 0, 'Sleek Cornrow Design', '450.0', 2, NULL, 3, 'A clean braided look with precise lines for sporty-chic, low-maintenance beauty.', 'sleek-cornrow-design', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (9, '2026-01-01 00:00:00', 1, 35, 'A quick beauty add-on that shapes, tidies, and softly defines the brows for a more put-together finish.', 1, 1, 0, 0, 'Brow Clean-Up & Tint', '180.0', 1, NULL, 4, 'A polished brow refresh that sharpens your whole face in under an hour.', 'brow-clean-up-tint', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (10, '2026-01-01 00:00:00', 2, 60, 'A lightweight glam makeup add-on designed to enhance features and complete your salon look without needing a full separate appointment.', 1, 1, 0, 1, 'Soft Glam Face Beat Add-On', '420.0', 2, NULL, 4, 'A camera-friendly glam touch-up for clients pairing hair and beauty in one visit.', 'soft-glam-face-beat-add-on', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (11, '2026-01-01 00:00:00', 3, 20, 'An easy beauty add-on that adds eye definition and softness, ideal before events, dates, birthdays, and content days.', 1, 1, 0, 0, 'Lash Flick Finish', '150.0', 1, NULL, 4, 'A flirty finishing touch for girls who want their salon look to feel complete.', 'lash-flick-finish', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (12, '2026-01-01 00:00:00', 1, 150, 'A bridal planning appointment focused on trying the look, refining the finish, and building confidence around your final beauty direction.', 1, 1, 0, 1, 'Bridal Preview Styling Session', '950.0', 2, NULL, 5, 'A consultation-led preview for brides who want to feel fully sure before the big day.', 'bridal-preview-styling-session', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (13, '2026-01-01 00:00:00', 2, 180, 'A bespoke bridal hair service tailored to the dress, mood board, veil, and wedding energy, with a refined finish that still feels modern and youthful.', 1, 1, 0, 1, 'Wedding Morning Glam Hair', NULL, 3, NULL, 5, 'Elegant bridal hairstyling with a soft luxury finish made for photos and unforgettable entrances.', 'wedding-morning-glam-hair', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (14, '2026-01-01 00:00:00', 3, 180, 'Created for matric dance and milestone celebrations, this signature glam service is youthful, elegant, and styled to feel memorable on camera and in person.', 1, 1, 0, 1, 'Matric Dance Signature Glam', '1200.0', 2, NULL, 5, 'A polished hair-and-beauty look for entrance moments, photos, and all-night confidence.', 'matric-dance-signature-glam', NULL);
+      SELECT changes();
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (1, '2026-01-01 00:00:00', 1, 80, 'A premium gel manicure with precision prep, shaping, cuticle care, and a glossy salon finish that feels polished, soft, and photo-ready.', 1, 1, 0, 1, 'Gloss Theory Gel Set', '320.0', 2, NULL, 1, 'A sleek gel finish for girls who love clean, expensive-looking nails every day.', 'gloss-theory-gel-set', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (2, '2026-01-01 00:00:00', 2, 140, 'Our statement acrylic set is built for noticeable beauty with sculpted shape, length customization, and a crisp, luxe finish that photographs beautifully.', 1, 1, 0, 1, 'Iced-Out Acrylic Signature Set', '520.0', 2, NULL, 1, 'A bold acrylic look with shape, length, and attitude for girls who love a standout finish.', 'iced-out-acrylic-signature-set', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (3, '2026-01-01 00:00:00', 3, 90, 'Perfect for maintaining a polished acrylic or gel look, this refill includes reshaping, balancing, and a refined finish that keeps your set looking elevated.', 1, 1, 0, 0, 'French Girl Refill', '380.0', 2, NULL, 1, 'A fresh refill for clients who love soft luxury nails with a clean designer finish.', 'french-girl-refill', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (4, '2026-01-01 00:00:00', 1, 120, 'This silk press service is designed for sleek movement, healthy shine, and a refined finish that feels expensive without looking overdone.', 1, 1, 0, 1, 'Silk Press & Sway Finish', '650.0', 2, NULL, 2, 'A smooth, bouncy finish with movement, shine, and soft luxury energy.', 'silk-press-sway-finish', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (5, '2026-01-01 00:00:00', 2, 90, 'A styled finish built around volume, shape, and softness for clients who want occasion-ready hair that still feels modern and wearable.', 1, 1, 0, 1, 'Soft Glam Curls Styling', '480.0', 2, NULL, 2, 'Defined curls and a glossy finish for birthdays, dinners, graduations, and pretty-girl weekends.', 'soft-glam-curls-styling', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (6, '2026-01-01 00:00:00', 1, 300, 'A client-favorite protective style with a clean parting pattern, natural fall, and a polished result that feels stylish from day one.', 1, 1, 0, 1, 'Knotless Braids, Mid-Back', '950.0', 2, NULL, 3, 'Neat, lightweight knotless braids with a soft feminine finish and everyday luxury feel.', 'knotless-braids-mid-back', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (7, '2026-01-01 00:00:00', 2, 360, 'This premium boho knotless style blends neat structure with soft loose detail, making it ideal for clients who want protective styling with movement and personality.', 1, 1, 0, 1, 'Boho Knotless Luxe', '1350.0', 2, NULL, 3, 'A soft, romantic protective style with loose textured pieces for an elevated look.', 'boho-knotless-luxe', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (8, '2026-01-01 00:00:00', 3, 120, 'A neat protective style with detail-focused parting and a sleek finish that works beautifully for everyday wear, holidays, and active weeks.', 1, 1, 0, 0, 'Sleek Cornrow Design', '450.0', 2, NULL, 3, 'A clean braided look with precise lines for sporty-chic, low-maintenance beauty.', 'sleek-cornrow-design', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (9, '2026-01-01 00:00:00', 1, 35, 'A quick beauty add-on that shapes, tidies, and softly defines the brows for a more put-together finish.', 1, 1, 0, 0, 'Brow Clean-Up & Tint', '180.0', 1, NULL, 4, 'A polished brow refresh that sharpens your whole face in under an hour.', 'brow-clean-up-tint', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (10, '2026-01-01 00:00:00', 2, 60, 'A lightweight glam makeup add-on designed to enhance features and complete your salon look without needing a full separate appointment.', 1, 1, 0, 1, 'Soft Glam Face Beat Add-On', '420.0', 2, NULL, 4, 'A camera-friendly glam touch-up for clients pairing hair and beauty in one visit.', 'soft-glam-face-beat-add-on', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (11, '2026-01-01 00:00:00', 3, 20, 'An easy beauty add-on that adds eye definition and softness, ideal before events, dates, birthdays, and content days.', 1, 1, 0, 0, 'Lash Flick Finish', '150.0', 1, NULL, 4, 'A flirty finishing touch for girls who want their salon look to feel complete.', 'lash-flick-finish', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (12, '2026-01-01 00:00:00', 1, 150, 'A bridal planning appointment focused on trying the look, refining the finish, and building confidence around your final beauty direction.', 1, 1, 0, 1, 'Bridal Preview Styling Session', '950.0', 2, NULL, 5, 'A consultation-led preview for brides who want to feel fully sure before the big day.', 'bridal-preview-styling-session', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (13, '2026-01-01 00:00:00', 2, 180, 'A bespoke bridal hair service tailored to the dress, mood board, veil, and wedding energy, with a refined finish that still feels modern and youthful.', 1, 1, 0, 1, 'Wedding Morning Glam Hair', NULL, 3, NULL, 5, 'Elegant bridal hairstyling with a soft luxury finish made for photos and unforgettable entrances.', 'wedding-morning-glam-hair', NULL);
+      SELECT changes();
+      
+      INSERT INTO "Services" ("Id", "CreatedAtUtc", "DisplayOrder", "DurationMinutes", "FullDescription", "IsActive", "IsBookableOnline", "IsDeleted", "IsFeatured", "Name", "Price", "PricingType", "PublishedAtUtc", "ServiceCategoryId", "ShortDescription", "Slug", "UpdatedAtUtc")
+      VALUES (14, '2026-01-01 00:00:00', 3, 180, 'Created for matric dance and milestone celebrations, this signature glam service is youthful, elegant, and styled to feel memorable on camera and in person.', 1, 1, 0, 1, 'Matric Dance Signature Glam', '1200.0', 2, NULL, 5, 'A polished hair-and-beauty look for entrance moments, photos, and all-night confidence.', 'matric-dance-signature-glam', NULL);
+      SELECT changes();
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_AppointmentRequests_ServiceId" ON "AppointmentRequests" ("ServiceId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_AppointmentRequests_ServiceId" ON "AppointmentRequests" ("ServiceId");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_AppointmentRequests_TeamMemberId" ON "AppointmentRequests" ("TeamMemberId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_AppointmentRequests_TeamMemberId" ON "AppointmentRequests" ("TeamMemberId");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_GalleryImages_ServiceId" ON "GalleryImages" ("ServiceId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_GalleryImages_ServiceId" ON "GalleryImages" ("ServiceId");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_OpeningHours_DayOfWeek" ON "OpeningHours" ("DayOfWeek");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_OpeningHours_DayOfWeek" ON "OpeningHours" ("DayOfWeek");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_ServiceCategories_Slug" ON "ServiceCategories" ("Slug");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_ServiceCategories_Slug" ON "ServiceCategories" ("Slug");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Services_ServiceCategoryId" ON "Services" ("ServiceCategoryId");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Services_ServiceCategoryId" ON "Services" ("ServiceCategoryId");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_Services_Slug" ON "Services" ("Slug");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_Services_Slug" ON "Services" ("Slug");
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_SiteSettings_Key" ON "SiteSettings" ("Key");
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX "IX_SiteSettings_Key" ON "SiteSettings" ("Key");
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20210]
+      Committing transaction.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20202]
+      Committed transaction.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20204]
+      Disposing transaction.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Query[10111]
+      Compiling query expression: 
+      'DbSet<ServiceCategory>()
+          .Any()'
+dbug: Microsoft.EntityFrameworkCore.Query[10107]
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+          asyncEnumerable: new SingleQueryingEnumerable<bool>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> 0
+                  SELECT EXISTS (
+                      SELECT 1
+                      FROM ServiceCategories AS s)), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+              LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "ServiceCategories" AS "s")
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "ServiceCategories" AS "s")
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 3ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Query[10111]
+      Compiling query expression: 
+      'DbSet<Service>()
+          .Any()'
+dbug: Microsoft.EntityFrameworkCore.Query[10107]
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+          asyncEnumerable: new SingleQueryingEnumerable<bool>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> 0
+                  SELECT EXISTS (
+                      SELECT 1
+                      FROM Services AS s)), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+              LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Services" AS "s")
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Services" AS "s")
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Query[10111]
+      Compiling query expression: 
+      'DbSet<FAQ>()
+          .Any()'
+dbug: Microsoft.EntityFrameworkCore.Query[10107]
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+          asyncEnumerable: new SingleQueryingEnumerable<bool>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> 0
+                  SELECT EXISTS (
+                      SELECT 1
+                      FROM Faqs AS f)), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+              LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Faqs" AS "f")
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Faqs" AS "f")
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Query[10111]
+      Compiling query expression: 
+      'DbSet<SiteSetting>()
+          .Any(setting => setting.Group == "Contact")'
+dbug: Microsoft.EntityFrameworkCore.Query[10107]
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+          asyncEnumerable: new SingleQueryingEnumerable<bool>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> 0
+                  SELECT EXISTS (
+                      SELECT 1
+                      FROM SiteSettings AS s
+                      WHERE s.Group == 'Contact')), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+              LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "SiteSettings" AS "s"
+          WHERE "s"."Group" = 'Contact')
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "SiteSettings" AS "s"
+          WHERE "s"."Group" = 'Contact')
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'SiteSetting.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'SiteSetting' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'SiteSetting.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'SiteSetting' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'SiteSetting.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'SiteSetting' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'SiteSetting.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'SiteSetting' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.Query[10111]
+      Compiling query expression: 
+      'DbSet<OpeningHour>()
+          .Any()'
+dbug: Microsoft.EntityFrameworkCore.Query[10107]
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+          asyncEnumerable: new SingleQueryingEnumerable<bool>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> 0
+                  SELECT EXISTS (
+                      SELECT 1
+                      FROM OpeningHours AS o)), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+              LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "OpeningHours" AS "o")
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "OpeningHours" AS "o")
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10808]
+      'ApplicationDbContext' generated a temporary value for the property 'OpeningHour.Id'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10806]
+      Context 'ApplicationDbContext' started tracking 'OpeningHour' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10800]
+      DetectChanges starting for 'ApplicationDbContext'.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10801]
+      DetectChanges completed for 'ApplicationDbContext'.
+dbug: Microsoft.EntityFrameworkCore.Update[10004]
+      SaveChanges starting for 'ApplicationDbContext'.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10800]
+      DetectChanges starting for 'ApplicationDbContext'.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10801]
+      DetectChanges completed for 'ApplicationDbContext'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20000]
+      Opening connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20001]
+      Opened connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20209]
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20200]
+      Began transaction with isolation level 'Serializable'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 8ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (Size = 23), @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Time), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Boolean), @p5='?' (Size = 23), @p6='?' (DbType = Time), @p7='?' (DbType = DateTime), @p8='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "OpeningHours" ("CloseTime", "CreatedAtUtc", "DayOfWeek", "IsClosed", "IsDeleted", "Notes", "OpenTime", "PublishedAtUtc", "UpdatedAtUtc")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'OpeningHour.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 7), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 33)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 7), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 33)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'SiteSetting.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 4), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 18)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 4), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 18)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'SiteSetting.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 11), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 12)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 11), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 12)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'SiteSetting.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20103]
+      Creating DbCommand for 'ExecuteReader'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20104]
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20106]
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20100]
+      Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 5), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (Size = 7), @p3='?' (DbType = Boolean), @p4='?' (Size = 5), @p5='?' (DbType = DateTime), @p6='?' (DbType = DateTime), @p7='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "SiteSettings" ("CreatedAtUtc", "Description", "Group", "IsDeleted", "Key", "PublishedAtUtc", "UpdatedAtUtc", "Value")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "Id";
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10803]
+      The foreign key property 'SiteSetting.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20301]
+      Closing data reader to 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Command[20300]
+      A data reader for 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' is being disposed after spending 0ms reading results.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20210]
+      Committing transaction.
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20202]
+      Committed transaction.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20002]
+      Closing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20003]
+      Closed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.EntityFrameworkCore.Database.Transaction[20204]
+      Disposing transaction.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'SiteSetting' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'SiteSetting' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'SiteSetting' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'SiteSetting' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.ChangeTracking[10807]
+      An entity of type 'OpeningHour' tracked by 'ApplicationDbContext' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+dbug: Microsoft.EntityFrameworkCore.Update[10005]
+      SaveChanges completed for 'ApplicationDbContext' with 11 entities written to the database.
+dbug: Microsoft.EntityFrameworkCore.Infrastructure[10407]
+      'ApplicationDbContext' disposed.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20007]
+      Disposing connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db'.
+dbug: Microsoft.EntityFrameworkCore.Database.Connection[20008]
+      Disposed connection to database 'main' on server 'C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\App_Data\levels-on-ice-salon.dev.db' (0ms).
+dbug: Microsoft.Extensions.Hosting.Internal.Host[1]
+      Hosting starting
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5100
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web
+dbug: Microsoft.Extensions.Hosting.Internal.Host[2]
+      Hosting started
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5100/ - - -
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger`1.Microsoft.Extensions.Logging.ILogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass8_0.<Define>g__Log|0(ILogger logger, Exception exception)
+         at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.TryGetHttpsPort()
+         at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+         at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+         at System.Lazy`1.CreateValue()
+         at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+fail: Microsoft.AspNetCore.Server.Kestrel[13]
+      Connection id "0HNK40KS2GAOR", Request id "0HNK40KS2GAOR:00000001": An unhandled exception was thrown by the application.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger`1.Microsoft.Extensions.Logging.ILogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass8_0.<Define>g__Log|0(ILogger logger, Exception exception)
+         at Microsoft.AspNetCore.Diagnostics.DiagnosticsTelemetry.ReportUnhandledException(ILogger logger, HttpContext context, Exception ex)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+warn: Microsoft.AspNetCore.Server.Kestrel[0]
+      Connection processing ended abnormally.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass12_0`2.<Define>g__Log|0(ILogger logger, T1 arg1, T2 arg2, Exception exception)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelTrace.GeneralLog.ApplicationError(ILogger logger, String connectionId, String traceIdentifier, Exception ex)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+crit: Microsoft.AspNetCore.Server.Kestrel[0]
+      Unexpected exception in HttpConnection.ProcessRequestsAsync.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelTrace.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.Extensions.Logging.LoggerExtensions.LogWarning(ILogger logger, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.HttpConnection.ProcessRequestsAsync[TContext](IHttpApplication`1 httpApplication)
+fail: Microsoft.AspNetCore.Server.Kestrel[0]
+      Unhandled exception while processing 0HNK40KS2GAOR.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelTrace.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.Extensions.Logging.LoggerExtensions.LogCritical(ILogger logger, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.HttpConnection.ProcessRequestsAsync[TContext](IHttpApplication`1 httpApplication)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelConnection`1.ExecuteAsync()
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5100/ - - -
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger`1.Microsoft.Extensions.Logging.ILogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass8_0.<Define>g__Log|0(ILogger logger, Exception exception)
+         at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.TryGetHttpsPort()
+         at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+      --- End of stack trace from previous location ---
+         at System.Lazy`1.CreateValue()
+         at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+fail: Microsoft.AspNetCore.Server.Kestrel[13]
+      Connection id "0HNK40KS2GAOS", Request id "0HNK40KS2GAOS:00000001": An unhandled exception was thrown by the application.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger`1.Microsoft.Extensions.Logging.ILogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass8_0.<Define>g__Log|0(ILogger logger, Exception exception)
+         at Microsoft.AspNetCore.Diagnostics.DiagnosticsTelemetry.ReportUnhandledException(ILogger logger, HttpContext context, Exception ex)
+         at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+warn: Microsoft.AspNetCore.Server.Kestrel[0]
+      Connection processing ended abnormally.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass12_0`2.<Define>g__Log|0(ILogger logger, T1 arg1, T2 arg2, Exception exception)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelTrace.GeneralLog.ApplicationError(ILogger logger, String connectionId, String traceIdentifier, Exception ex)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+crit: Microsoft.AspNetCore.Server.Kestrel[0]
+      Unexpected exception in HttpConnection.ProcessRequestsAsync.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelTrace.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.Extensions.Logging.LoggerExtensions.LogWarning(ILogger logger, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.HttpConnection.ProcessRequestsAsync[TContext](IHttpApplication`1 httpApplication)
+fail: Microsoft.AspNetCore.Server.Kestrel[0]
+      Unhandled exception while processing 0HNK40KS2GAOS.
+      System.AggregateException: An error occurred while writing to logger(s). (Cannot open log for source '.NET Runtime'. You may not have write access.)
+       ---> System.InvalidOperationException: Cannot open log for source '.NET Runtime'. You may not have write access.
+       ---> System.ComponentModel.Win32Exception (5): Access is denied.
+         --- End of inner exception stack trace ---
+         at System.Diagnostics.EventLogInternal.OpenForWrite(String currentMachineName)
+         at System.Diagnostics.EventLogInternal.InternalWriteEvent(UInt32 eventID, UInt16 category, EventLogEntryType type, String[] strings, Byte[] rawData, String currentMachineName)
+         at System.Diagnostics.EventLogInternal.WriteEvent(EventInstance instance, Byte[] data, Object[] values)
+         at Microsoft.Extensions.Logging.EventLog.WindowsEventLog.WriteEntry(String message, EventLogEntryType type, Int32 eventID, Int16 category)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.WriteMessage(String message, EventLogEntryType eventLogEntryType, Int32 eventId)
+         at Microsoft.Extensions.Logging.EventLog.EventLogLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|14_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+         --- End of inner exception stack trace ---
+         at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+         at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelTrace.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+         at Microsoft.Extensions.Logging.LoggerExtensions.Log(ILogger logger, LogLevel logLevel, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.Extensions.Logging.LoggerExtensions.LogCritical(ILogger logger, EventId eventId, Exception exception, String message, Object[] args)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.HttpConnection.ProcessRequestsAsync[TContext](IHttpApplication`1 httpApplication)
+         at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.KestrelConnection`1.ExecuteAsync()

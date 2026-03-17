@@ -5,8 +5,6 @@ namespace LevelsOnIceSalon.Web.Controllers;
 
 public class HomeController(ISitePageContentService sitePageContentService) : Controller
 {
-    [HttpGet("")]
-    [HttpGet("/")]
     public IActionResult Index()
     {
         var model = sitePageContentService.GetHomePage();
