@@ -8,7 +8,7 @@ namespace LevelsOnIceSalon.Web.Services;
 
 public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironment environment) : IGalleryPageService
 {
-    private static readonly string[] SupportedExtensions = [".jpg", ".jpeg", ".png", ".webp", ".svg"];
+    private static readonly string[] SupportedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
 
     public async Task<GalleryPageViewModel> GetGalleryPageAsync(CancellationToken cancellationToken = default)
     {
@@ -69,9 +69,19 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
         return Directory.EnumerateFiles(salonPath)
             .Where(file => SupportedExtensions.Contains(Path.GetExtension(file), StringComparer.OrdinalIgnoreCase))
             .Where(file => !Path.GetFileName(file).StartsWith(".", StringComparison.Ordinal))
+            .Where(file => !ShouldSkipStaticFile(Path.GetFileName(file)))
             .OrderBy(file => Path.GetFileName(file))
             .Select((file, index) => MapStaticFile(file, index))
             .ToList();
+    }
+
+    private static bool ShouldSkipStaticFile(string fileName)
+    {
+        var normalized = fileName.ToLowerInvariant();
+
+        return normalized.StartsWith("logo.", StringComparison.Ordinal)
+            || normalized.StartsWith("hero-main.", StringComparison.Ordinal)
+            || normalized.StartsWith("hero-detail.", StringComparison.Ordinal);
     }
 
     private static GalleryItemViewModel MapStaticFile(string filePath, int index)
@@ -112,14 +122,27 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
             return "Braids & Protective Styles";
         }
 
-        if (normalized.Contains("hair", StringComparison.Ordinal) || normalized.Contains("hero", StringComparison.Ordinal))
-        {
-            return "Hairstyles";
-        }
-
         if (normalized.Contains("bridal", StringComparison.Ordinal) || normalized.Contains("occasion", StringComparison.Ordinal))
         {
             return "Bridal / Special Occasion";
+        }
+
+        if (normalized.Contains("nails", StringComparison.Ordinal) || normalized.Contains("acrylic", StringComparison.Ordinal) || normalized.Contains("gel", StringComparison.Ordinal))
+        {
+            return "Nails";
+        }
+
+        if (normalized.Contains("interior", StringComparison.Ordinal) || normalized.Contains("salon", StringComparison.Ordinal) || normalized.Contains("refreshment", StringComparison.Ordinal))
+        {
+            return "Salon Experience";
+        }
+
+        if (normalized.Contains("hair", StringComparison.Ordinal)
+            || normalized.Contains("curl", StringComparison.Ordinal)
+            || normalized.Contains("cornrow", StringComparison.Ordinal)
+            || normalized.Contains("silk", StringComparison.Ordinal))
+        {
+            return "Hairstyles";
         }
 
         return "Gallery Highlights";
