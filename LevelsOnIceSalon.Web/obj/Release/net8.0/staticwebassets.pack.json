@@ -1,0 +1,177 @@
+{
+  "Files": [
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/.gitkeep",
+      "PackagePath": "staticwebassets/images/salon/.gitkeep"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-01.svg",
+      "PackagePath": "staticwebassets/images/salon/gallery-01.svg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-02.svg",
+      "PackagePath": "staticwebassets/images/salon/gallery-02.svg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-03.svg",
+      "PackagePath": "staticwebassets/images/salon/gallery-03.svg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/gallery-04.svg",
+      "PackagePath": "staticwebassets/images/salon/gallery-04.svg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-boho-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-braids-boho-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-boho-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-braids-boho-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-knotless-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-braids-knotless-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-braids-knotless-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-braids-knotless-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-bridal-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-bridal-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-bridal-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-bridal-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-cornrows-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-cornrows-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-cornrows-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-cornrows-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-cornrows.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-cornrows.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-curls-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-curls-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-curls-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-curls-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-featured-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-featured-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-featured-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-featured-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-featured-03.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-featured-03.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-silk-press-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-silk-press-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hair-silk-press.jpg",
+      "PackagePath": "staticwebassets/images/salon/hair-silk-press.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hero-detail.svg",
+      "PackagePath": "staticwebassets/images/salon/hero-detail.svg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/hero-main.svg",
+      "PackagePath": "staticwebassets/images/salon/hero-main.svg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/logo.jpg",
+      "PackagePath": "staticwebassets/images/salon/logo.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-acrylic-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-acrylic-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-acrylic-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-acrylic-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-detail-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-detail-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-detail-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-detail-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-detail-03.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-detail-03.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-featured-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-featured-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-featured-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-featured-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-featured-03.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-featured-03.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-gel-set-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-gel-set-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/nails-gel-set-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/nails-gel-set-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/salon-interior-01.jpg",
+      "PackagePath": "staticwebassets/images/salon/salon-interior-01.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/images/salon/salon-interior-02.jpg",
+      "PackagePath": "staticwebassets/images/salon/salon-interior-02.jpg"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/wwwroot/uploads/gallery/.gitkeep",
+      "PackagePath": "staticwebassets/uploads/gallery/.gitkeep"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.LevelsOnIceSalon.Web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.build.LevelsOnIceSalon.Web.props",
+      "PackagePath": "build\\LevelsOnIceSalon.Web.props"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.buildMultiTargeting.LevelsOnIceSalon.Web.props",
+      "PackagePath": "buildMultiTargeting\\LevelsOnIceSalon.Web.props"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.buildTransitive.LevelsOnIceSalon.Web.props",
+      "PackagePath": "buildTransitive\\LevelsOnIceSalon.Web.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

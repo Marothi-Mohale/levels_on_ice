@@ -1,0 +1,12 @@
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/bin/Release/net8.0/LevelsOnIceSalon.Domain.deps.json
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/bin/Release/net8.0/LevelsOnIceSalon.Domain.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/bin/Release/net8.0/LevelsOnIceSalon.Domain.pdb
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.AssemblyInfoInputs.cache
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.AssemblyInfo.cs
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.csproj.CoreCompileInputs.cache
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.sourcelink.json
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/refint/LevelsOnIceSalon.Domain.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/LevelsOnIceSalon.Domain.pdb
+/workspaces/levels_on_ice/LevelsOnIceSalon.Domain/obj/Release/net8.0/ref/LevelsOnIceSalon.Domain.dll

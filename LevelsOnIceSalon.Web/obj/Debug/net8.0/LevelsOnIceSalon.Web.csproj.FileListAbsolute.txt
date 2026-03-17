@@ -274,3 +274,4 @@ C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/staticwebas
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/LevelsOn.147AF7BF.Up2Date
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/LevelsOnIceSalon.Web.genruntimeconfig.cache
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/ref/LevelsOnIceSalon.Web.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/App_Data/levels-on-ice-salon.db
