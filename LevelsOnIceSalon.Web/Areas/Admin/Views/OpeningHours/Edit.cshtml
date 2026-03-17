@@ -1,4 +1,49 @@
 @model OpeningHourFormViewModel
-@{ ViewData["Title"] = Model.Id.HasValue ? "Edit Opening Hour" : "Create Opening Hour"; }
-<form method="post" class="admin-form-card"><div asp-validation-summary="ModelOnly" class="booking-status booking-status-error" role="alert"></div><div class="row g-4"><div class="col-md-4"><label asp-for="DayOfWeek" class="form-label"></label><select asp-for="DayOfWeek" class="form-select booking-input">@for (var day = 0; day <= 6; day++){<option value="@day">@Enum.GetName(typeof(DayOfWeek), day)</option>}</select></div><div class="col-md-4"><label asp-for="OpenTime" class="form-label"></label><input asp-for="OpenTime" type="time" class="form-control booking-input" /></div><div class="col-md-4"><label asp-for="CloseTime" class="form-label"></label><input asp-for="CloseTime" type="time" class="form-control booking-input" /></div><div class="col-12"><label asp-for="Notes" class="form-label"></label><input asp-for="Notes" class="form-control booking-input" /></div><div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsClosed" class="form-check-input" /><label asp-for="IsClosed" class="form-check-label"></label></div></div></div><div class="admin-form-actions"><button type="submit" class="btn btn-brand">Save Hours</button><a class="btn btn-soft" asp-action="Index">Cancel</a></div></form>
-@section Scripts { <partial name="_ValidationScriptsPartial" /> }
+@{
+    ViewData["Title"] = Model.Id.HasValue ? "Edit Opening Hour" : "Create Opening Hour";
+}
+
+<form method="post" class="admin-form-card">
+    <div asp-validation-summary="ModelOnly" class="booking-status booking-status-error" role="alert"></div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <label asp-for="DayOfWeek" class="form-label"></label>
+            <select asp-for="DayOfWeek" class="form-select booking-input">
+                @for (var day = 0; day <= 6; day++)
+                {
+                    <option value="@day">@Enum.GetName(typeof(DayOfWeek), day)</option>
+                }
+            </select>
+            <span asp-validation-for="DayOfWeek" class="field-validation text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="OpenTime" class="form-label"></label>
+            <input asp-for="OpenTime" type="time" class="form-control booking-input" />
+            <span asp-validation-for="OpenTime" class="field-validation text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="CloseTime" class="form-label"></label>
+            <input asp-for="CloseTime" type="time" class="form-control booking-input" />
+            <span asp-validation-for="CloseTime" class="field-validation text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="Notes" class="form-label"></label>
+            <input asp-for="Notes" class="form-control booking-input" />
+            <span asp-validation-for="Notes" class="field-validation text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <div class="form-check mt-3">
+                <input asp-for="IsClosed" class="form-check-input" />
+                <label asp-for="IsClosed" class="form-check-label"></label>
+            </div>
+        </div>
+    </div>
+    <div class="admin-form-actions">
+        <button type="submit" class="btn btn-brand">Save Hours</button>
+        <a class="btn btn-soft" asp-action="Index">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

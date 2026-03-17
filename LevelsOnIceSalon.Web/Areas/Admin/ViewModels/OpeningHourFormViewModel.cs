@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace LevelsOnIceSalon.Web.Areas.Admin.ViewModels;
 
-public class OpeningHourFormViewModel
+public class OpeningHourFormViewModel : IValidatableObject
 {
     public int? Id { get; set; }
 
@@ -21,4 +22,27 @@ public class OpeningHourFormViewModel
 
     [Display(Name = "Closed")]
     public bool IsClosed { get; set; }
+
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+    {
+        if (IsClosed)
+        {
+            yield break;
+        }
+
+        if (!OpenTime.HasValue)
+        {
+            yield return new ValidationResult("Open time is required unless the day is closed.", [nameof(OpenTime)]);
+        }
+
+        if (!CloseTime.HasValue)
+        {
+            yield return new ValidationResult("Close time is required unless the day is closed.", [nameof(CloseTime)]);
+        }
+
+        if (OpenTime.HasValue && CloseTime.HasValue && CloseTime <= OpenTime)
+        {
+            yield return new ValidationResult("Close time must be later than open time.", [nameof(CloseTime)]);
+        }
+    }
 }

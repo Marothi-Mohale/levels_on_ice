@@ -12,6 +12,7 @@ public class ServiceCategoryFormViewModel
 
     [Required]
     [StringLength(160)]
+    [RegularExpression("^[a-z0-9]+(?:-[a-z0-9]+)*$", ErrorMessage = "Use lowercase letters, numbers, and hyphens only.")]
     public string Slug { get; set; } = string.Empty;
 
     [StringLength(500)]

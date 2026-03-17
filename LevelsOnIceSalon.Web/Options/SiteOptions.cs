@@ -1,9 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace LevelsOnIceSalon.Web.Options;
 
 public class SiteOptions
 {
     public const string SectionName = "Site";
 
+    [Required]
     public string BaseUrl { get; set; } = string.Empty;
 
     public string Name { get; set; } = "Levels On Ice Salon";

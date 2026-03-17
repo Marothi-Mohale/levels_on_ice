@@ -5,13 +5,16 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
 
 namespace LevelsOnIceSalon.Web.Areas.Admin.Controllers;
 
 [Area("Admin")]
 [AllowAnonymous]
-public class AuthController(IOptions<AdminAuthOptions> adminAuthOptions) : Controller
+public class AuthController(
+    IOptions<AdminAuthOptions> adminAuthOptions,
+    ILogger<AuthController> logger) : Controller
 {
     private readonly AdminAuthOptions authOptions = adminAuthOptions.Value;
 
@@ -29,6 +32,7 @@ public class AuthController(IOptions<AdminAuthOptions> adminAuthOptions) : Contr
         });
     }
 
+    [EnableRateLimiting("admin-login")]
     [HttpPost("/admin/login")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(AdminLoginViewModel model, CancellationToken cancellationToken)
@@ -40,6 +44,10 @@ public class AuthController(IOptions<AdminAuthOptions> adminAuthOptions) : Contr
 
         if (!IsValidCredentials(model.Username, model.Password))
         {
+            logger.LogWarning(
+                "Invalid admin login attempt for username '{Username}' from IP '{IpAddress}'.",
+                model.Username?.Trim(),
+                HttpContext.Connection.RemoteIpAddress?.ToString());
             ModelState.AddModelError(string.Empty, "The username or password is incorrect.");
             model.StatusMessage = "Please use the configured admin login details.";
             return View(model);
@@ -63,6 +71,11 @@ public class AuthController(IOptions<AdminAuthOptions> adminAuthOptions) : Contr
                 ExpiresUtc = DateTimeOffset.UtcNow.AddHours(8)
             });
 
+        logger.LogInformation(
+            "Admin user '{Username}' signed in from IP '{IpAddress}'.",
+            model.Username.Trim(),
+            HttpContext.Connection.RemoteIpAddress?.ToString());
+
         return RedirectToLocal(model.ReturnUrl);
     }
 
@@ -71,6 +84,9 @@ public class AuthController(IOptions<AdminAuthOptions> adminAuthOptions) : Contr
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Logout()
     {
+        logger.LogInformation(
+            "Admin user '{Username}' signed out.",
+            User.Identity?.Name);
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction(nameof(Login));
     }

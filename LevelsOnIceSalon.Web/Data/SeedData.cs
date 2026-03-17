@@ -23,15 +23,27 @@ public static class SeedData
         "PromotionBanners"
     ];
 
-    public static async Task InitializeAsync(IServiceProvider serviceProvider)
+    public static async Task InitializeAsync(
+        IServiceProvider serviceProvider,
+        bool applyMigrations,
+        bool seedSampleData)
     {
         await using var scope = serviceProvider.CreateAsyncScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        var logger = scope.ServiceProvider.GetRequiredService<ILoggerFactory>().CreateLogger("SeedData");
 
-        await RecoverLegacySqliteDatabaseAsync(dbContext);
-        await dbContext.Database.MigrateAsync();
+        logger.LogInformation("Starting database initialization.");
+        if (applyMigrations)
+        {
+            await RecoverLegacySqliteDatabaseAsync(dbContext);
+            await dbContext.Database.MigrateAsync();
+        }
 
-        await EnsureApplicationSeedAsync(dbContext);
+        if (seedSampleData)
+        {
+            await EnsureApplicationSeedAsync(dbContext);
+        }
+        logger.LogInformation("Completed database initialization.");
     }
 
     private static async Task RecoverLegacySqliteDatabaseAsync(ApplicationDbContext dbContext)

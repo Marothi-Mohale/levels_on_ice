@@ -27,6 +27,7 @@ public class TestimonialFormViewModel
     public TestimonialSourceType SourceType { get; set; } = TestimonialSourceType.Direct;
 
     [StringLength(400)]
+    [Url]
     [Display(Name = "Source URL")]
     public string? SourceUrl { get; set; }
 

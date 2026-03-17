@@ -42,6 +42,7 @@ public class GalleryImageFormViewModel
     public string? SourceType { get; set; }
 
     [StringLength(400)]
+    [Url]
     [Display(Name = "Source URL")]
     public string? SourceUrl { get; set; }
 

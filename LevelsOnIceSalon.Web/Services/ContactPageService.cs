@@ -6,7 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LevelsOnIceSalon.Web.Services;
 
-public class ContactPageService(ApplicationDbContext dbContext) : IContactPageService
+public class ContactPageService(
+    ApplicationDbContext dbContext,
+    ILogger<ContactPageService> logger) : IContactPageService
 {
     private const int MinimumSubmitSeconds = 3;
     private const string DefaultAddress = "102 Main Road, Mowbray, Cape Town";
@@ -92,12 +94,14 @@ public class ContactPageService(ApplicationDbContext dbContext) : IContactPageSe
     {
         if (!string.IsNullOrWhiteSpace(form.Website))
         {
+            logger.LogWarning("Rejected contact form submission because honeypot field was populated.");
             return ContactSubmissionResult.Failure("We could not process your message. Please try again.");
         }
 
         var nowUnix = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         if (form.FormRenderedAtUnix <= 0 || nowUnix - form.FormRenderedAtUnix < MinimumSubmitSeconds)
         {
+            logger.LogWarning("Rejected contact form submission because the form was submitted too quickly.");
             return ContactSubmissionResult.Failure("Please take a moment to review your message and submit again.");
         }
 
@@ -113,6 +117,10 @@ public class ContactPageService(ApplicationDbContext dbContext) : IContactPageSe
 
         dbContext.ContactMessages.Add(contactMessage);
         await dbContext.SaveChangesAsync(cancellationToken);
+        logger.LogInformation(
+            "Created contact message {ContactMessageId} from {Email}.",
+            contactMessage.Id,
+            contactMessage.Email);
 
         return ContactSubmissionResult.Successful("Your message is in. We will get back to you as soon as we can.");
     }

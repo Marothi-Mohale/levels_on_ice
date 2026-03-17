@@ -8,7 +8,8 @@ namespace LevelsOnIceSalon.Web.Services;
 
 public class BookAppointmentService(
     ApplicationDbContext dbContext,
-    IAppointmentNotificationService appointmentNotificationService) : IBookAppointmentService
+    IAppointmentNotificationService appointmentNotificationService,
+    ILogger<BookAppointmentService> logger) : IBookAppointmentService
 {
     private const int MinimumSubmitSeconds = 3;
 
@@ -50,17 +51,20 @@ public class BookAppointmentService(
     {
         if (!string.IsNullOrWhiteSpace(form.Website))
         {
+            logger.LogWarning("Rejected booking request because honeypot field was populated.");
             return AppointmentSubmissionResult.Failure("We could not process your request. Please try again.");
         }
 
         var nowUnix = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         if (form.FormRenderedAtUnix <= 0 || nowUnix - form.FormRenderedAtUnix < MinimumSubmitSeconds)
         {
+            logger.LogWarning("Rejected booking request because the form was submitted too quickly.");
             return AppointmentSubmissionResult.Failure("Please take a moment to review your details and submit again.");
         }
 
         if (form.PreferredDate < DateOnly.FromDateTime(DateTime.Today))
         {
+            logger.LogWarning("Rejected booking request with past preferred date {PreferredDate}.", form.PreferredDate);
             return AppointmentSubmissionResult.Failure("Please choose a preferred date that is today or later.");
         }
 
@@ -70,6 +74,9 @@ public class BookAppointmentService(
 
         if (!serviceExists)
         {
+            logger.LogWarning(
+                "Rejected booking request for unavailable service id {ServiceId}.",
+                form.PreferredServiceId);
             return AppointmentSubmissionResult.Failure("The selected service is no longer available. Please choose another service.");
         }
 
@@ -89,6 +96,11 @@ public class BookAppointmentService(
         dbContext.AppointmentRequests.Add(appointmentRequest);
         await dbContext.SaveChangesAsync(cancellationToken);
         await appointmentNotificationService.NotifyNewAppointmentRequestAsync(appointmentRequest, cancellationToken);
+        logger.LogInformation(
+            "Created appointment request {AppointmentRequestId} for {FullName} and service {ServiceId}.",
+            appointmentRequest.Id,
+            appointmentRequest.FullName,
+            appointmentRequest.ServiceId);
 
         return AppointmentSubmissionResult.Successful("Your booking request is in. We will be in touch soon to confirm the final details.");
     }

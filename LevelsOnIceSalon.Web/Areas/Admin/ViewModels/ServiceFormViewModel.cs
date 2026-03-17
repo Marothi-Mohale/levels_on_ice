@@ -17,6 +17,7 @@ public class ServiceFormViewModel
 
     [Required]
     [StringLength(180)]
+    [RegularExpression("^[a-z0-9]+(?:-[a-z0-9]+)*$", ErrorMessage = "Use lowercase letters, numbers, and hyphens only.")]
     public string Slug { get; set; } = string.Empty;
 
     [StringLength(300)]
@@ -28,12 +29,14 @@ public class ServiceFormViewModel
     public string? FullDescription { get; set; }
 
     [Display(Name = "Starting Price")]
+    [Range(typeof(decimal), "0", "999999", ErrorMessage = "Enter a valid non-negative price.")]
     public decimal? Price { get; set; }
 
     [Display(Name = "Pricing Type")]
     public ServicePricingType PricingType { get; set; } = ServicePricingType.From;
 
     [Display(Name = "Duration (Minutes)")]
+    [Range(1, 1440, ErrorMessage = "Enter a duration between 1 and 1440 minutes.")]
     public int? DurationMinutes { get; set; }
 
     [Display(Name = "Featured")]

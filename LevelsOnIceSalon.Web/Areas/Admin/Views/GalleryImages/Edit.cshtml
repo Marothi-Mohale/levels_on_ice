@@ -6,15 +6,15 @@
     <div asp-validation-summary="ModelOnly" class="booking-status booking-status-error" role="alert"></div>
     <input asp-for="ExistingImagePath" type="hidden" />
     <div class="row g-4">
-        <div class="col-md-6"><label asp-for="Title" class="form-label"></label><input asp-for="Title" class="form-control booking-input" /></div>
-        <div class="col-md-6"><label asp-for="ServiceId" class="form-label"></label><select asp-for="ServiceId" asp-items="ViewBag.Services" class="form-select booking-input"><option value="">No linked service</option></select></div>
-        <div class="col-md-6"><label asp-for="ImageFile" class="form-label"></label><input asp-for="ImageFile" class="form-control booking-input" type="file" accept="image/*" /></div>
-        <div class="col-md-6"><label asp-for="AltText" class="form-label"></label><input asp-for="AltText" class="form-control booking-input" /></div>
-        <div class="col-md-4"><label asp-for="ImageType" class="form-label"></label><select asp-for="ImageType" asp-items="Html.GetEnumSelectList<GalleryImageType>()" class="form-select booking-input"></select></div>
-        <div class="col-md-4"><label asp-for="DisplayOrder" class="form-label"></label><input asp-for="DisplayOrder" class="form-control booking-input" /></div>
-        <div class="col-md-4"><label asp-for="SourceType" class="form-label"></label><input asp-for="SourceType" class="form-control booking-input" /></div>
-        <div class="col-12"><label asp-for="SourceUrl" class="form-label"></label><input asp-for="SourceUrl" class="form-control booking-input" /></div>
-        <div class="col-12"><label asp-for="Caption" class="form-label"></label><textarea asp-for="Caption" class="form-control booking-input" rows="3"></textarea></div>
+        <div class="col-md-6"><label asp-for="Title" class="form-label"></label><input asp-for="Title" class="form-control booking-input" /><span asp-validation-for="Title" class="field-validation text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="ServiceId" class="form-label"></label><select asp-for="ServiceId" asp-items="ViewBag.Services" class="form-select booking-input"><option value="">No linked service</option></select><span asp-validation-for="ServiceId" class="field-validation text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="ImageFile" class="form-label"></label><input asp-for="ImageFile" class="form-control booking-input" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" /><div class="form-text">JPG, PNG, or WebP up to 5 MB.</div><span asp-validation-for="ImageFile" class="field-validation text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="AltText" class="form-label"></label><input asp-for="AltText" class="form-control booking-input" /><span asp-validation-for="AltText" class="field-validation text-danger"></span></div>
+        <div class="col-md-4"><label asp-for="ImageType" class="form-label"></label><select asp-for="ImageType" asp-items="Html.GetEnumSelectList<GalleryImageType>()" class="form-select booking-input"></select><span asp-validation-for="ImageType" class="field-validation text-danger"></span></div>
+        <div class="col-md-4"><label asp-for="DisplayOrder" class="form-label"></label><input asp-for="DisplayOrder" class="form-control booking-input" /><span asp-validation-for="DisplayOrder" class="field-validation text-danger"></span></div>
+        <div class="col-md-4"><label asp-for="SourceType" class="form-label"></label><input asp-for="SourceType" class="form-control booking-input" /><span asp-validation-for="SourceType" class="field-validation text-danger"></span></div>
+        <div class="col-12"><label asp-for="SourceUrl" class="form-label"></label><input asp-for="SourceUrl" class="form-control booking-input" /><span asp-validation-for="SourceUrl" class="field-validation text-danger"></span></div>
+        <div class="col-12"><label asp-for="Caption" class="form-label"></label><textarea asp-for="Caption" class="form-control booking-input" rows="3"></textarea><span asp-validation-for="Caption" class="field-validation text-danger"></span></div>
         <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsFeatured" class="form-check-input" /><label asp-for="IsFeatured" class="form-check-label"></label></div></div>
         <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsPublished" class="form-check-input" /><label asp-for="IsPublished" class="form-check-label"></label></div></div>
         @if (!string.IsNullOrWhiteSpace(Model.ExistingImagePath)) { <div class="col-12"><img src="@Model.ExistingImagePath" alt="@Model.AltText" class="admin-preview-image" loading="lazy" decoding="async" /></div> }
