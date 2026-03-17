@@ -66,6 +66,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_AtmosphereSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9BdG1vc3BoZXJlU2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_AudienceSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9BdWRpZW5jZVNlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_BrandStorySection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9CcmFuZFN0b3J5U2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_CallToActionSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9DYWxsVG9BY3Rpb25TZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_DifferenceSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9EaWZmZXJlbmNlU2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_HeroSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9IZXJvU2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/About/_TeamSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEFib3V0XF9UZWFtU2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/Views/Shared/Partials/Home/_FeaturedServicesSection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXEhvbWVcX0ZlYXR1cmVkU2VydmljZXNTZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

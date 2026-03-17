@@ -9,6 +9,7 @@ public class AboutController(ISitePageContentService sitePageContentService) : C
     [HttpGet("")]
     public IActionResult Index()
     {
-        return View(sitePageContentService.GetAboutPage());
+        var model = sitePageContentService.GetAboutPage();
+        return View(model);
     }
 }

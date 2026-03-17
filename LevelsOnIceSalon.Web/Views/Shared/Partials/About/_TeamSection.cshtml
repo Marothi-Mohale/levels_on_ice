@@ -1,0 +1,26 @@
+@model AboutPageViewModel
+
+@if (Model.TeamMembers.Any())
+{
+    <section class="content-section">
+        <div class="container">
+            <div class="section-heading">
+                <p class="eyebrow">The Team</p>
+                <h2>The people behind the salon experience bring care, style, and attention to detail to every appointment.</h2>
+            </div>
+            <div class="row g-4">
+                @foreach (var member in Model.TeamMembers)
+                {
+                    <div class="col-lg-6">
+                        <article class="feature-card">
+                            <p class="service-spotlight-type">@member.Role</p>
+                            <h3>@member.Name</h3>
+                            <p>@member.Bio</p>
+                            <p class="u-text-muted mb-0"><strong>Specialty:</strong> @member.Specialty</p>
+                        </article>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}

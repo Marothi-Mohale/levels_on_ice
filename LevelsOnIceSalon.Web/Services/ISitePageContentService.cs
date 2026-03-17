@@ -6,7 +6,7 @@ public interface ISitePageContentService
 {
     HomePageViewModel GetHomePage();
 
-    PageBlueprintViewModel GetAboutPage();
+    AboutPageViewModel GetAboutPage();
 
     PageBlueprintViewModel GetServicesPage();
 

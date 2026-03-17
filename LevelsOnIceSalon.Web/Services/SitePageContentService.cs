@@ -133,21 +133,50 @@ public class SitePageContentService : ISitePageContentService
         };
     }
 
-    public PageBlueprintViewModel GetAboutPage() =>
-        CreatePage(
-            "About",
-            "About",
-            "Tell the salon story, positioning, and brand experience in a way that feels aspirational and trustworthy.",
-            "This page should deepen brand connection, explain the salon atmosphere, and reassure visitors that the experience is both stylish and welcoming.",
-            "/book-appointment",
-            "Book Your Visit",
-            "Site settings, founder story content, brand copy, and optional team information.",
-            "Target branded searches and about-intent queries for Levels On Ice Salon in Cape Town.",
+    public AboutPageViewModel GetAboutPage() =>
+        new()
+        {
+            PageTitle = "About",
+            NavigationTitle = "About",
+            Intro = "Levels On Ice Salon is built for women who want beauty that feels polished, fashion-forward, and genuinely worth booking ahead for.",
+            BrandStory = "The brand was shaped around a simple idea: salon visits should feel elevated from the moment you walk in to the moment you leave. Not stiff. Not intimidating. Just beautifully done, beautifully hosted, and designed for clients who love a classy finish with modern energy. Levels On Ice Salon brings together premium service, trend-aware beauty, and a warm atmosphere that makes clients feel looked after as much as they feel styled.",
+            AudienceFit = "The salon speaks naturally to young women aged 15 to 35 who want everything from everyday polish to standout occasion beauty. That includes the girl booking her maintenance set, the friend getting ready for a birthday dinner, the graduate planning her entrance look, and the bride wanting soft luxury that still feels personal and current.",
+            Atmosphere = "Inside the salon, the energy is stylish but welcoming. Clients can expect a clean, considered setting, a team that values detail, complimentary refreshments, free WiFi, and a beauty experience that never feels rushed. The goal is to make every appointment feel easy, personal, and quietly luxurious.",
+            PrimaryCta = new CallToActionViewModel
+            {
+                Label = "Book Your Visit",
+                Url = "/book-appointment",
+                SupportingText = "Turn brand confidence into an appointment request."
+            },
+            DifferencePoints =
             [
-                new ContentBlockViewModel { Title = "Brand Story", Description = "Origin, vision, and what the salon stands for." },
-                new ContentBlockViewModel { Title = "Salon Experience", Description = "What clients can expect from arrival to finished look." },
-                new ContentBlockViewModel { Title = "Audience Fit", Description = "How the salon serves both premium occasion clients and everyday beauty clients." }
-            ]);
+                new ContentBlockViewModel
+                {
+                    Title = "Refined, not generic",
+                    Description = "Every service is shaped to feel current, polished, and visually beautiful without slipping into cookie-cutter salon styling."
+                },
+                new ContentBlockViewModel
+                {
+                    Title = "Premium with warmth",
+                    Description = "Clients get quality, professionalism, and attention to detail in a space that still feels welcoming, relaxed, and easy to return to."
+                },
+                new ContentBlockViewModel
+                {
+                    Title = "Built for real-life beauty moments",
+                    Description = "From soft everyday maintenance to bridal, matric, and special occasions, the salon experience fits the rhythm of modern women."
+                }
+            ],
+            TeamMembers =
+            [
+                new TeamMemberProfileViewModel
+                {
+                    Name = "Levels On Ice Creative Team",
+                    Role = "Salon Beauty Specialists",
+                    Bio = "A style-aware team focused on polished finishes, client comfort, and details that make every after-look feel elevated.",
+                    Specialty = "Nails, occasion styling, protective looks, and beauty finishing touches"
+                }
+            ]
+        };
 
     public PageBlueprintViewModel GetServicesPage() =>
         CreatePage(

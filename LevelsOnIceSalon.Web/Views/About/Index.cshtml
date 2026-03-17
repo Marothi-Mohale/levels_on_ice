@@ -1,6 +1,12 @@
-@model PageBlueprintViewModel
+@model AboutPageViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<partial name="Partials/_PageBlueprint" model="Model" />
+<partial name="Partials/About/_HeroSection" model="Model" />
+<partial name="Partials/About/_BrandStorySection" model="Model" />
+<partial name="Partials/About/_DifferenceSection" model="Model" />
+<partial name="Partials/About/_AudienceSection" model="Model" />
+<partial name="Partials/About/_AtmosphereSection" model="Model" />
+<partial name="Partials/About/_TeamSection" model="Model" />
+<partial name="Partials/About/_CallToActionSection" model="Model" />
