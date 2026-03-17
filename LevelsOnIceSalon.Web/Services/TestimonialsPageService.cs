@@ -30,13 +30,13 @@ public class TestimonialsPageService(ApplicationDbContext dbContext) : ITestimon
         {
             PageTitle = "Testimonials",
             MetaDescription = "Read client testimonials for Levels On Ice Salon in Mowbray, Cape Town and see why women trust the salon for polished nails, hairstyles, and premium beauty appointments.",
-            BannerTitle = "Client love that makes booking feel easy.",
-            BannerCopy = "Real reactions, polished results, and the kind of social proof that helps first-time clients feel confident before they book.",
+            BannerTitle = "The kind of client feedback that makes booking feel like the obvious next step.",
+            BannerCopy = "Real words from women who loved the finish, the feeling, and the standard of care behind the appointment.",
             FeaturedTestimonials = testimonials.Where(testimonial => testimonial.IsFeatured).Take(3).ToList(),
             Testimonials = testimonials,
             PrimaryCta = new CallToActionViewModel
             {
-                Label = "Book With Confidence",
+                Label = "Book Your Visit",
                 Url = "/book-appointment",
                 SupportingText = "Turn social proof into your next beauty booking."
             }

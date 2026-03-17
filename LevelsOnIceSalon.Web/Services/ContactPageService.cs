@@ -39,21 +39,21 @@ public class ContactPageService(ApplicationDbContext dbContext) : IContactPageSe
         {
             PageTitle = "Contact",
             MetaDescription = "Contact Levels On Ice Salon in Mowbray, Cape Town for premium nails, hairstyles, beauty bookings, opening hours, and salon directions.",
-            BannerTitle = "Visit, call, or message Levels On Ice Salon in Mowbray, Cape Town.",
-            BannerCopy = "Whether you're ready to book, need help choosing a service, or want to confirm salon details before your visit, this is the easiest place to reach us.",
-            IntroTitle = "A polished beauty experience starts with clear, easy contact.",
-            IntroCopy = "Levels On Ice Salon is designed for women who want stylish results, a welcoming atmosphere, and beauty appointments that feel worth the trip. Reach out for bookings, service questions, or visit details in Cape Town.",
+            BannerTitle = "Visit, call, or message us when you are ready to plan your next polished appointment.",
+            BannerCopy = "Whether you already know the look or just need a little guidance first, this is the easiest way to reach us.",
+            IntroTitle = "Beautiful appointments start with clear, easy contact.",
+            IntroCopy = "Reach out for bookings, service advice, occasion planning, or visit details. We keep the process warm, helpful, and easy from the start.",
             AddressLine = address,
             Area = area,
             PhoneNumber = phone,
             Email = email,
             MapPlaceholderLabel = "Map & Directions",
-            MapPlaceholderCopy = "Use this section later for an embedded map, pin drop, or driving directions. For now, the address is ready for local search visibility and contact actions.",
+            MapPlaceholderCopy = "Use this section for an embedded map or directions. For now, the address is ready whenever you need to find us quickly.",
             StatusMessage = statusMessage,
             IsSuccess = isSuccess,
             BookingCta = new CallToActionViewModel
             {
-                Label = "Book Appointment",
+                Label = "Book Your Visit",
                 Url = "/book-appointment",
                 SupportingText = "Move from questions to a confirmed beauty plan."
             },
@@ -64,20 +64,20 @@ public class ContactPageService(ApplicationDbContext dbContext) : IContactPageSe
                     Label = "Phone",
                     Value = phone,
                     Url = $"tel:{phone.Replace(" ", string.Empty)}",
-                    SupportingText = "Call for quick salon questions, directions, or booking support."
+                    SupportingText = "Best for quick questions, booking support, or checking details before you come in."
                 },
                 new ContactDetailItemViewModel
                 {
                     Label = "Email",
                     Value = email,
                     Url = $"mailto:{email}",
-                    SupportingText = "Best for service questions, bridal enquiries, and detailed requests."
+                    SupportingText = "Ideal for service questions, occasion enquiries, and anything that needs a little more detail."
                 },
                 new ContactDetailItemViewModel
                 {
                     Label = "Location",
                     Value = address,
-                    SupportingText = "Located on Main Road in Mowbray for convenient Cape Town salon visits."
+                    SupportingText = "Easy to find on Main Road in Mowbray for polished appointments in Cape Town."
                 }
             ],
             OpeningHours = BuildOpeningHours(openingHours),
@@ -114,7 +114,7 @@ public class ContactPageService(ApplicationDbContext dbContext) : IContactPageSe
         dbContext.ContactMessages.Add(contactMessage);
         await dbContext.SaveChangesAsync(cancellationToken);
 
-        return ContactSubmissionResult.Successful("Your message has been sent. The salon will get back to you as soon as possible.");
+        return ContactSubmissionResult.Successful("Your message is in. We will get back to you as soon as we can.");
     }
 
     private static IList<ContactOpeningHourViewModel> BuildOpeningHours(IList<OpeningHour> openingHours)

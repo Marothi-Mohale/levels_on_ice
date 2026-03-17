@@ -33,8 +33,8 @@ public class BookAppointmentService(
         return new BookAppointmentPageViewModel
         {
             PageTitle = "Book Appointment",
-            BannerTitle = "Book your next beauty appointment in a way that feels easy, clear, and worth looking forward to.",
-            BannerCopy = "Choose your service, share your preferred date and time, and send your request to Levels On Ice Salon in Mowbray, Cape Town. The salon can confirm the details and follow up later by phone, WhatsApp, or email.",
+            BannerTitle = "Book your next appointment with the same ease and polish you expect from the final result.",
+            BannerCopy = "Choose your service, share your preferred date and time, and send your request. We will follow up to confirm the details and make your visit feel seamless from the start.",
             MinimumPreferredDate = DateOnly.FromDateTime(DateTime.Today).ToString("yyyy-MM-dd"),
             StatusMessage = statusMessage,
             IsSuccess = isSuccess,
@@ -90,7 +90,7 @@ public class BookAppointmentService(
         await dbContext.SaveChangesAsync(cancellationToken);
         await appointmentNotificationService.NotifyNewAppointmentRequestAsync(appointmentRequest, cancellationToken);
 
-        return AppointmentSubmissionResult.Successful("Your appointment request has been received. The salon will follow up to confirm the final details.");
+        return AppointmentSubmissionResult.Successful("Your booking request is in. We will be in touch soon to confirm the final details.");
     }
 
     private static string? Normalize(string? value)

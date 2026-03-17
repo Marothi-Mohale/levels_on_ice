@@ -58,11 +58,11 @@ public class ServicesPageService(ApplicationDbContext dbContext, IImageMetadataS
         {
             PageTitle = "Services",
             NavigationTitle = "Services",
-            BannerTitle = "Premium beauty services, styled for everyday confidence and standout occasions.",
-            BannerCopy = "Browse the Levels On Ice Salon service menu in Mowbray, Cape Town by category, discover featured looks, and book the treatment that matches your next beauty moment.",
+            BannerTitle = "A service menu designed for polished days, styled nights, and every version of you in between.",
+            BannerCopy = "Browse nails, hair, protective styling, and beauty services shaped with a modern eye and a refined finish, then book the one that fits your next moment.",
             PrimaryCta = new CallToActionViewModel
             {
-                Label = "Book An Appointment",
+                Label = "Book Your Visit",
                 Url = "/book-appointment",
                 SupportingText = "Move from browsing to booking with one clear action."
             },

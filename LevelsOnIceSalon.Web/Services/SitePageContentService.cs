@@ -11,8 +11,8 @@ public class SitePageContentService : ISitePageContentService
             PageTitle = "Home",
             NavigationTitle = "Home",
             SalonName = "Levels On Ice Salon",
-            Tagline = "Classy beauty experiences for bold, stylish women in Cape Town.",
-            Intro = "A premium beauty destination designed to convert first impressions into booked appointments.",
+            Tagline = "Polished beauty for women who like their style refined and current.",
+            Intro = "A modern beauty destination for women who want polished results, warm service, and a finish that feels worth booking ahead for.",
             Purpose = "Introduce the brand, establish trust, showcase the salon experience, and move visitors into gallery exploration or booking.",
             Address = "102 Main Road, Mowbray, Cape Town",
             PhoneNumber = "081 390 6634",
@@ -22,7 +22,7 @@ public class SitePageContentService : ISitePageContentService
                 new TestimonialCardViewModel
                 {
                     CustomerName = "Zinhle, Cape Town",
-                    Quote = "My nails looked expensive, clean, and feminine. I left feeling like the best version of myself.",
+                    Quote = "My nails looked clean, feminine, and so well finished. I left feeling instantly more put together.",
                     Rating = 5,
                     ServiceName = "Gloss Theory Gel Set",
                     IsFeatured = true,
@@ -31,7 +31,7 @@ public class SitePageContentService : ISitePageContentService
                 new TestimonialCardViewModel
                 {
                     CustomerName = "Anele, Mowbray",
-                    Quote = "The hairstyle was soft glam perfection. It held beautifully and looked incredible in every photo.",
+                    Quote = "The hairstyle was soft, polished, and beautiful in every photo. It felt exactly right for the moment.",
                     Rating = 5,
                     ServiceName = "Soft Glam Curls Styling",
                     IsFeatured = true,
@@ -40,7 +40,7 @@ public class SitePageContentService : ISitePageContentService
                 new TestimonialCardViewModel
                 {
                     CustomerName = "Kayla, Observatory",
-                    Quote = "You can feel the quality in the details. The salon is stylish, welcoming, and the results speak for themselves.",
+                    Quote = "You notice the care in every detail. The salon feels stylish, warm, and the results always land.",
                     Rating = 5,
                     ServiceName = "Boho Knotless Luxe",
                     IsFeatured = true,
@@ -49,7 +49,7 @@ public class SitePageContentService : ISitePageContentService
             ],
             PrimaryCta = new CallToActionViewModel
             {
-                Label = "Request Appointment",
+                Label = "Book Your Visit",
                 Url = "/book-appointment",
                 SupportingText = "Encourage visitors to start the booking journey quickly."
             },
@@ -168,10 +168,10 @@ public class SitePageContentService : ISitePageContentService
         {
             PageTitle = "About",
             NavigationTitle = "About",
-            Intro = "Levels On Ice Salon in Mowbray, Cape Town is built for women who want beauty that feels polished, fashion-forward, and genuinely worth booking ahead for.",
-            BrandStory = "The brand was shaped around a simple idea: salon visits should feel elevated from the moment you walk in to the moment you leave. Not stiff. Not intimidating. Just beautifully done, beautifully hosted, and designed for clients who love a classy finish with modern energy. Levels On Ice Salon brings together premium service, trend-aware beauty, and a warm atmosphere that makes clients feel looked after as much as they feel styled.",
-            AudienceFit = "The salon speaks naturally to young women aged 15 to 35 who want everything from everyday polish to standout occasion beauty. That includes the girl booking her maintenance set, the friend getting ready for a birthday dinner, the graduate planning her entrance look, and the bride wanting soft luxury that still feels personal and current.",
-            Atmosphere = "Inside the salon, the energy is stylish but welcoming. Clients can expect a clean, considered setting, a team that values detail, complimentary refreshments, free WiFi, and a beauty experience that never feels rushed. The goal is to make every appointment feel easy, personal, and quietly luxurious.",
+            Intro = "Levels On Ice Salon in Mowbray is made for women who want beauty that feels refined, current, and beautifully put together without losing warmth.",
+            BrandStory = "Levels On Ice was built around a clear idea: beauty should feel elevated in a way that still feels personal. We wanted a salon that looks stylish, feels calm, and delivers finishes that are modern, feminine, and genuinely well done. The result is a space where clients feel looked after just as much as they feel styled.",
+            AudienceFit = "The brand speaks naturally to women aged 15 to 35 who want beauty that fits real life and special moments equally well. From maintenance appointments and birthday plans to matric looks, bridal styling, and polished weekend glam, the standard stays the same: current, flattering, and beautifully finished.",
+            Atmosphere = "Inside the salon, the mood is polished without being intimidating. Expect a clean, considered space, warm service, thoughtful detail, and the kind of atmosphere that makes it easy to relax while still feeling like you are somewhere special.",
             PrimaryCta = new CallToActionViewModel
             {
                 Label = "Book Your Visit",
@@ -182,18 +182,18 @@ public class SitePageContentService : ISitePageContentService
             [
                 new ContentBlockViewModel
                 {
-                    Title = "Refined, not generic",
-                    Description = "Every service is shaped to feel current, polished, and visually beautiful without slipping into cookie-cutter salon styling."
+                    Title = "Refined, never generic",
+                    Description = "Every service is approached with taste, detail, and a finish that feels intentional rather than one-size-fits-all."
                 },
                 new ContentBlockViewModel
                 {
-                    Title = "Premium with warmth",
-                    Description = "Clients get quality, professionalism, and attention to detail in a space that still feels welcoming, relaxed, and easy to return to."
+                    Title = "High standard, warm energy",
+                    Description = "Clients get professionalism, detail, and quality in a space that still feels easy, welcoming, and genuinely inviting."
                 },
                 new ContentBlockViewModel
                 {
-                    Title = "Built for real-life beauty moments",
-                    Description = "From soft everyday maintenance to bridal, matric, and special occasions, the salon experience fits the rhythm of modern women."
+                    Title = "Made for real beauty moments",
+                    Description = "From everyday maintenance to bridal, matric, and occasion styling, the salon fits the rhythm of modern women beautifully."
                 }
             ],
             TeamMembers =
@@ -202,8 +202,8 @@ public class SitePageContentService : ISitePageContentService
                 {
                     Name = "Levels On Ice Creative Team",
                     Role = "Salon Beauty Specialists",
-                    Bio = "A style-aware team focused on polished finishes, client comfort, and details that make every after-look feel elevated.",
-                    Specialty = "Nails, occasion styling, protective looks, and beauty finishing touches"
+                    Bio = "A style-led team focused on polished finishes, client comfort, and the small details that make the final look feel complete.",
+                    Specialty = "Nails, occasion styling, protective looks, and beautifully finished details"
                 }
             ]
         };

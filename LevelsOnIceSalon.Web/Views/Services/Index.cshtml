@@ -12,7 +12,7 @@
                 <p class="hero-copy">@Model.BannerCopy</p>
                 <div class="hero-actions d-flex flex-wrap gap-3 mt-4">
                     <a class="btn btn-brand" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
-                    <a class="btn btn-soft" href="#service-categories">Browse Categories</a>
+                    <a class="btn btn-soft" href="#service-categories">View Categories</a>
                 </div>
             </div>
             <aside class="services-banner-aside">
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="section-heading">
                 <p class="eyebrow">Featured Services</p>
-                <h2>Most-loved looks for clients who want something polished, current, and easy to say yes to.</h2>
+                <h2>Most-loved appointments for women who know exactly how they want to feel when they leave.</h2>
             </div>
             <div class="row g-4">
                 @foreach (var service in Model.FeaturedServices)
@@ -56,7 +56,7 @@
             <section id="@category.Slug" class="services-category-block">
                 <div class="section-heading services-category-heading">
                     <p class="eyebrow">@category.Name</p>
-                    <h2>@category.Name designed for style, confidence, and beautifully finished results.</h2>
+                    <h2>@category.Name with a polished finish and a modern point of view.</h2>
                     @if (!string.IsNullOrWhiteSpace(category.Description))
                     {
                         <p class="u-text-muted">@category.Description</p>
@@ -80,14 +80,13 @@
         <div class="final-cta-banner">
             <div>
                 <p class="eyebrow">Ready To Book?</p>
-                <h2>Choose the service that fits your next beauty moment and send your appointment request.</h2>
-                <p>Whether it's nails, protective styling, soft glam hair, or a special occasion look, booking should feel easy from here.</p>
+                <h2>Choose the service that fits the version of you you want to arrive as.</h2>
+                <p>From fresh maintenance to full occasion styling, booking from here should feel effortless.</p>
             </div>
             <div class="final-cta-actions">
                 <a class="btn btn-brand btn-lg" href="@Model.PrimaryCta.Url">@Model.PrimaryCta.Label</a>
-                <a class="btn btn-soft btn-lg" asp-controller="Contact" asp-action="Index">Ask A Question</a>
+                <a class="btn btn-soft btn-lg" asp-controller="Contact" asp-action="Index">Ask About A Service</a>
             </div>
         </div>
     </div>
 </section>
-

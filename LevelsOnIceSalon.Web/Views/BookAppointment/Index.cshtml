@@ -13,7 +13,7 @@
             </div>
             <aside class="services-banner-aside">
                 <p class="eyebrow">Booking Notes</p>
-                <p class="u-text-muted mb-0">This form sends an appointment request, not an instant confirmation. The salon can later follow up by phone, email, or WhatsApp once notifications are connected.</p>
+                <p class="u-text-muted mb-0">This is a booking request, not an instant confirmation. We will follow up to confirm availability and the final details.</p>
             </aside>
         </div>
     </div>
@@ -76,11 +76,11 @@
                             </div>
                             <div class="col-12">
                                 <label asp-for="Form.Notes" class="form-label"></label>
-                                <textarea asp-for="Form.Notes" class="form-control booking-input booking-textarea" rows="5" placeholder="Tell the salon about your preferred look, occasion, or anything helpful for your appointment request."></textarea>
+                                <textarea asp-for="Form.Notes" class="form-control booking-input booking-textarea" rows="5" placeholder="Tell us about the look you want, the occasion, or anything helpful before we confirm your booking."></textarea>
                                 <span asp-validation-for="Form.Notes" class="text-danger field-validation"></span>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-brand btn-lg booking-submit">Send Appointment Request</button>
+                                <button type="submit" class="btn btn-brand btn-lg booking-submit">Send Booking Request</button>
                             </div>
                         </div>
                     </form>
@@ -90,20 +90,20 @@
                 <div class="section-shell booking-side-panel u-stack-md">
                     <div>
                         <p class="eyebrow">What Happens Next</p>
-                        <h2 class="footer-title">Simple, clear, and easy to follow.</h2>
-                        <p class="u-text-muted">Submit the form, let the salon review your preferred service and timing, and expect a follow-up to confirm the final appointment details.</p>
+                        <h2 class="footer-title">Clear, polished, and easy from here.</h2>
+                        <p class="u-text-muted">Submit your request, let us review your preferred timing, and expect a follow-up with the details that make your visit feel seamless.</p>
                     </div>
                     <div class="booking-step-card">
-                        <strong>1. Send your request</strong>
-                        <p>Share the basics so the salon knows what you want and when you'd prefer to come in.</p>
+                        <strong>1. Tell us what you want</strong>
+                        <p>Share the service, timing, and any notes that help us prepare your appointment properly.</p>
                     </div>
                     <div class="booking-step-card">
-                        <strong>2. Wait for confirmation</strong>
-                        <p>The team can confirm availability and follow up later through phone, email, or WhatsApp.</p>
+                        <strong>2. We confirm the details</strong>
+                        <p>We will check availability and follow up with everything you need before your visit.</p>
                     </div>
                     <div class="booking-step-card">
-                        <strong>3. Arrive ready for your beauty moment</strong>
-                        <p>Enjoy a polished, welcoming salon experience with the details already in place.</p>
+                        <strong>3. Arrive ready to be looked after</strong>
+                        <p>Walk into a warm, polished salon experience with the details already in place.</p>
                     </div>
                 </div>
             </div>
@@ -114,4 +114,3 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-

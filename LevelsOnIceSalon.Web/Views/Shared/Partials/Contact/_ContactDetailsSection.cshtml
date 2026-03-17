@@ -3,7 +3,7 @@
 <section class="section-shell contact-panel u-stack-md">
     <div>
         <p class="eyebrow">Reach Us</p>
-        <h2 class="footer-title">Everything you need before your visit.</h2>
+        <h2 class="footer-title">Everything you need before you arrive.</h2>
     </div>
 
     @foreach (var detail in Model.ContactDetails)
@@ -22,7 +22,7 @@
         </div>
     }
     <div class="contact-quick-actions">
-        <a class="btn btn-soft" href="tel:@Model.PhoneNumber.Replace(" ", string.Empty)">Call Salon</a>
-        <a class="btn btn-soft" href="mailto:@Model.Email">Email Salon</a>
+        <a class="btn btn-soft" href="tel:@Model.PhoneNumber.Replace(" ", string.Empty)">Call Us</a>
+        <a class="btn btn-soft" href="mailto:@Model.Email">Email Us</a>
     </div>
 </section>
