@@ -29,8 +29,18 @@
         <nav class="navbar navbar-expand-lg navbar-light site-navbar">
             <div class="container">
                 <a class="navbar-brand brand-mark" asp-controller="Home" asp-action="Index">
-                    <span class="brand-mark-top">Levels On Ice</span>
-                    <span class="brand-mark-bottom">Salon</span>
+                    <img
+                        class="brand-mark-logo"
+                        src="~/images/salon/logo.jpg"
+                        asp-append-version="true"
+                        alt="Levels On Ice Salon logo"
+                        width="958"
+                        height="958"
+                        decoding="async" />
+                    <span class="brand-mark-text">
+                        <span class="brand-mark-top">Levels On Ice</span>
+                        <span class="brand-mark-bottom">Salon</span>
+                    </span>
                 </a>
                 <button class="navbar-toggler site-toggler" type="button" data-nav-toggle aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="site-toggler-line"></span>

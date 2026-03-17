@@ -171,9 +171,26 @@ main {
 
 .brand-mark {
     display: inline-flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
     line-height: 0.94;
     color: var(--color-ink-900);
+}
+
+.brand-mark-logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(62, 35, 40, 0.14);
+    border: 1px solid rgba(111, 57, 67, 0.12);
+    background: rgba(255, 255, 255, 0.72);
+    flex: 0 0 auto;
+}
+
+.brand-mark-text {
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .brand-mark-top {
@@ -960,6 +977,23 @@ main {
 
 .site-footer {
     padding-bottom: 6rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-brand-logo {
+    width: 4.75rem;
+    height: 4.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+    border: 1px solid rgba(240, 208, 207, 0.18);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
 }
 
 .footer-panel {
@@ -2089,6 +2123,11 @@ main {
         padding: 0.85rem 0;
     }
 
+    .brand-mark-logo {
+        width: 3.3rem;
+        height: 3.3rem;
+    }
+
     .navbar-collapse {
         margin-top: var(--space-3);
         padding: var(--space-3);
@@ -2150,6 +2189,24 @@ main {
 
     .topbar-social-links {
         justify-content: center;
+    }
+
+    .brand-mark {
+        gap: 0.7rem;
+    }
+
+    .brand-mark-logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .brand-mark-top {
+        font-size: 1.45rem;
+    }
+
+    .brand-mark-bottom {
+        font-size: 0.72rem;
+        letter-spacing: 0.24em;
     }
 
     .display-title {
@@ -2242,6 +2299,15 @@ main {
 
     .site-footer {
         padding-bottom: 7rem;
+    }
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .footer-brand-logo {
+        width: 4rem;
+        height: 4rem;
     }
 
     .services-filter-nav {
