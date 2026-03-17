@@ -1,63 +1,66 @@
-<<<<<<< HEAD
 # Levels On Ice Salon
 
-Initial production-oriented ASP.NET Core MVC solution scaffold for the Levels On Ice Salon marketing website.
+Production-oriented ASP.NET Core MVC solution for the Levels On Ice Salon marketing website.
 
 ## Solution Structure
 
-- `LevelsOnIceSalon.Web`: MVC application, Razor views, admin area, view models, public UI
-- `LevelsOnIceSalon.Infrastructure`: EF Core, PostgreSQL, repositories, dependency injection
-- `LevelsOnIceSalon.Domain`: domain entities and shared abstractions
+- `LevelsOnIceSalon.Web`: MVC application, Razor views, public site, admin area shell, view models
+- `LevelsOnIceSalon.Infrastructure`: EF Core, database configuration, dependency injection, seed helpers
+- `LevelsOnIceSalon.Domain`: domain entities, enums, and shared abstractions
+
+## Current Database Strategy
+
+- Default provider: `SQLite`
+- Default development database: `LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.dev.db`
+- Default general database: `LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.db`
+- PostgreSQL support is still available in configuration for later migration when scaling requires it
 
 ## Prerequisites
 
 - .NET 8 SDK
-- PostgreSQL 15+ or compatible managed PostgreSQL service
 
 ## Getting Started
 
-1. Install the .NET 8 SDK.
-2. Update the PostgreSQL connection string in:
-   - `LevelsOnIceSalon.Web/appsettings.json`
-   - `LevelsOnIceSalon.Web/appsettings.Development.json`
-3. From the solution root, restore packages:
+1. Restore packages:
 
 ```powershell
-dotnet restore
+dotnet restore .\LevelsOnIceSalon.sln --configfile .\NuGet.Config
 ```
 
-4. Create the database migration:
-
-```powershell
-dotnet ef migrations add InitialCreate --project .\LevelsOnIceSalon.Infrastructure\LevelsOnIceSalon.Infrastructure.csproj --startup-project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj
-```
-
-5. Apply the migration:
-
-```powershell
-dotnet ef database update --project .\LevelsOnIceSalon.Infrastructure\LevelsOnIceSalon.Infrastructure.csproj --startup-project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj
-```
-
-6. Run the web app:
+2. Run the web app:
 
 ```powershell
 dotnet run --project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj
 ```
 
+3. On first startup, the app will:
+   - create the SQLite database automatically
+   - create the schema
+   - seed sample services, FAQs, contact details, and opening hours
+
+## Configuration
+
+SQLite is the default option in:
+
+- `LevelsOnIceSalon.Web/appsettings.json`
+- `LevelsOnIceSalon.Web/appsettings.Development.json`
+
+If you later want PostgreSQL again:
+
+1. Set `"Database": { "Provider": "PostgreSql" }`
+2. Update `ConnectionStrings:DefaultConnection` to a PostgreSQL connection string
+3. Use EF Core migrations against PostgreSQL as needed
+
 ## Initial Features Included
 
 - ASP.NET Core MVC site shell
-- Admin area shell
-- EF Core DbContext configured for PostgreSQL
-- Starter domain entities for services, gallery, FAQs, testimonials, bookings, and site settings
-- Shared layout, partials, and starter theme assets
-- Dependency injection registration entry points
+- premium public marketing pages
+- contact and booking forms saved to the database
+- gallery with local image fallback
+- SQLite-first startup for easier local and lightweight production hosting
+- PostgreSQL-ready infrastructure for future migration
 
 ## Notes
 
-- The `wwwroot/images/salon/` folder is ready for salon imagery.
-- The gallery import from Facebook should be handled as a controlled content workflow rather than live scraping.
-=======
-# levels_on_ice
-Luxury Hair Salon Web Platform!
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+- The `wwwroot/images/salon/` folder is ready for your real salon imagery.
+- Facebook gallery importing should remain a controlled content workflow rather than live scraping.

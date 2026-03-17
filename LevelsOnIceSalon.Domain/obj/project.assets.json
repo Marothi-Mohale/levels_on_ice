@@ -8,7 +8,7 @@
     "net8.0": []
   },
   "packageFolders": {
-    "c:\\Users\\Student\\levels_on_ice\\.nuget\\packages": {}
+    "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,7 +16,7 @@
       "projectUniqueName": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\LevelsOnIceSalon.Domain.csproj",
       "projectName": "LevelsOnIceSalon.Domain",
       "projectPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\LevelsOnIceSalon.Domain.csproj",
-      "packagesPath": "c:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
+      "packagesPath": "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
       "outputPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
@@ -60,20 +60,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.25, 8.0.25]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.25, 8.0.25]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.25, 8.0.25]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

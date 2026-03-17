@@ -1,4 +1,5 @@
 using LevelsOnIceSalon.Infrastructure.Data;
+using LevelsOnIceSalon.Infrastructure.Data.Seed;
 using LevelsOnIceSalon.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,12 +11,36 @@ public static class SeedData
     {
         await using var scope = serviceProvider.CreateAsyncScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        await dbContext.Database.MigrateAsync();
-        await EnsureContactDefaultsAsync(dbContext);
+
+        if (dbContext.Database.IsSqlite())
+        {
+            await dbContext.Database.EnsureCreatedAsync();
+        }
+        else
+        {
+            await dbContext.Database.MigrateAsync();
+        }
+
+        await EnsureApplicationSeedAsync(dbContext);
     }
 
-    private static async Task EnsureContactDefaultsAsync(ApplicationDbContext dbContext)
+    private static async Task EnsureApplicationSeedAsync(ApplicationDbContext dbContext)
     {
+        if (!await dbContext.ServiceCategories.AnyAsync())
+        {
+            dbContext.ServiceCategories.AddRange(SampleData.ServiceCategories);
+        }
+
+        if (!await dbContext.Services.AnyAsync())
+        {
+            dbContext.Services.AddRange(SampleData.Services);
+        }
+
+        if (!await dbContext.Faqs.AnyAsync())
+        {
+            dbContext.Faqs.AddRange(SampleData.Faqs);
+        }
+
         if (!await dbContext.SiteSettings.AnyAsync(setting => setting.Group == "Contact"))
         {
             dbContext.SiteSettings.AddRange(
