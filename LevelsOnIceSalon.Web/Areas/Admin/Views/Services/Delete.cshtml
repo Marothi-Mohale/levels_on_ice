@@ -1,0 +1,5 @@
+@model Service
+@{
+    ViewData["Title"] = "Delete Service";
+}
+<div class="admin-delete-card"><p class="eyebrow">Delete Service</p><h2>@Model.Name</h2><p class="u-text-muted">This permanently removes the service from the database.</p><form method="post" class="admin-form-actions"><button type="submit" class="btn btn-danger">Confirm Delete</button><a class="btn btn-soft" asp-action="Index">Cancel</a></form></div>

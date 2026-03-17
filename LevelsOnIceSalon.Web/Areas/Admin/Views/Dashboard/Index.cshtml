@@ -1,36 +1,24 @@
+@model AdminDashboardViewModel
 @{
-    ViewData["Title"] = "Admin Dashboard";
+    ViewData["Title"] = "Dashboard";
 }
 
-<section class="content-section">
-    <div class="container">
-        <p class="eyebrow">Admin</p>
-        <h1 class="display-title h2">Content Management Shell</h1>
-        <div class="row g-4 mt-1">
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <h3>Services</h3>
-                    <p>Manage categories, treatments, and featured offerings.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <h3>Gallery</h3>
-                    <p>Upload salon images and organize visual collections.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <h3>Testimonials</h3>
-                    <p>Control featured customer reviews and social proof.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <h3>Bookings</h3>
-                    <p>Review and update appointment request statuses.</p>
-                </div>
-            </div>
-        </div>
+<div class="admin-page-shell">
+    <div class="admin-stats-grid">
+        <div class="admin-stat-card"><span class="card-kicker">Services</span><strong>@Model.ServiceCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">Categories</span><strong>@Model.CategoryCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">Gallery</span><strong>@Model.GalleryImageCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">Testimonials</span><strong>@Model.TestimonialCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">FAQs</span><strong>@Model.FaqCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">Pending Appointments</span><strong>@Model.PendingAppointmentCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">New Messages</span><strong>@Model.NewContactMessageCount</strong></div>
+        <div class="admin-stat-card"><span class="card-kicker">Settings</span><strong>@Model.SiteSettingCount</strong></div>
     </div>
-</section>
+
+    <div class="admin-card-grid mt-4">
+        <a class="admin-action-card" asp-controller="Services" asp-action="Index"><h2>Manage Services</h2><p>Update pricing, descriptions, featured treatments, and booking visibility.</p></a>
+        <a class="admin-action-card" asp-controller="GalleryImages" asp-action="Index"><h2>Manage Gallery Images</h2><p>Upload visual content, set captions, and control published salon imagery.</p></a>
+        <a class="admin-action-card" asp-controller="Testimonials" asp-action="Index"><h2>Manage Testimonials</h2><p>Publish client love, curate featured reviews, and keep social proof current.</p></a>
+        <a class="admin-action-card" asp-controller="AppointmentRequests" asp-action="Index"><h2>Review Appointment Requests</h2><p>Update statuses, track notes, and stay on top of incoming enquiries.</p></a>
+    </div>
+</div>

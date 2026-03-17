@@ -1,0 +1,25 @@
+@model ServiceFormViewModel
+@{
+    ViewData["Title"] = Model.Id.HasValue ? "Edit Service" : "Create Service";
+}
+
+<form method="post" class="admin-form-card">
+    <div asp-validation-summary="ModelOnly" class="booking-status booking-status-error" role="alert"></div>
+    <div class="row g-4">
+        <div class="col-md-6"><label asp-for="ServiceCategoryId" class="form-label"></label><select asp-for="ServiceCategoryId" asp-items="ViewBag.Categories" class="form-select booking-input"><option value="">Select category</option></select><span asp-validation-for="ServiceCategoryId" class="field-validation text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="Name" class="form-label"></label><input asp-for="Name" class="form-control booking-input" /><span asp-validation-for="Name" class="field-validation text-danger"></span></div>
+        <div class="col-md-6"><label asp-for="Slug" class="form-label"></label><input asp-for="Slug" class="form-control booking-input" /><span asp-validation-for="Slug" class="field-validation text-danger"></span></div>
+        <div class="col-md-3"><label asp-for="Price" class="form-label"></label><input asp-for="Price" class="form-control booking-input" /><span asp-validation-for="Price" class="field-validation text-danger"></span></div>
+        <div class="col-md-3"><label asp-for="PricingType" class="form-label"></label><select asp-for="PricingType" asp-items="Html.GetEnumSelectList<ServicePricingType>()" class="form-select booking-input"></select></div>
+        <div class="col-md-3"><label asp-for="DurationMinutes" class="form-label"></label><input asp-for="DurationMinutes" class="form-control booking-input" /></div>
+        <div class="col-md-3"><label asp-for="DisplayOrder" class="form-label"></label><input asp-for="DisplayOrder" class="form-control booking-input" /></div>
+        <div class="col-12"><label asp-for="ShortDescription" class="form-label"></label><textarea asp-for="ShortDescription" class="form-control booking-input" rows="3"></textarea></div>
+        <div class="col-12"><label asp-for="FullDescription" class="form-label"></label><textarea asp-for="FullDescription" class="form-control booking-input booking-textarea" rows="5"></textarea></div>
+        <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsFeatured" class="form-check-input" /><label asp-for="IsFeatured" class="form-check-label"></label></div></div>
+        <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsBookableOnline" class="form-check-input" /><label asp-for="IsBookableOnline" class="form-check-label"></label></div></div>
+        <div class="col-md-4"><div class="form-check mt-3"><input asp-for="IsActive" class="form-check-input" /><label asp-for="IsActive" class="form-check-label"></label></div></div>
+    </div>
+    <div class="admin-form-actions"><button type="submit" class="btn btn-brand">Save Service</button><a class="btn btn-soft" asp-action="Index">Cancel</a></div>
+</form>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

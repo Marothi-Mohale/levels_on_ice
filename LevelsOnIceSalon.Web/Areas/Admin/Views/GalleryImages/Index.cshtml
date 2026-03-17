@@ -1,0 +1,25 @@
+@model PagedResult<GalleryImage>
+@{
+    ViewData["Title"] = "Gallery Images";
+}
+<div class="admin-list-shell">
+    <div class="admin-toolbar"><p class="u-text-muted mb-0">Upload and organize the salon gallery.</p><a class="btn btn-brand" asp-action="Create">Add Image</a></div>
+    <div class="admin-table-card">
+        <table class="table admin-table align-middle">
+            <thead><tr><th>Image</th><th>Type</th><th>Service</th><th>Status</th><th class="text-end">Actions</th></tr></thead>
+            <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td><div class="d-flex align-items-center gap-3">@if (!string.IsNullOrWhiteSpace(item.ImagePath)) { <img src="@item.ImagePath" alt="@item.AltText" class="admin-thumb" /> }<div><strong>@item.Title</strong><div class="admin-table-subtext">@item.Caption</div></div></div></td>
+                    <td>@item.ImageType</td>
+                    <td>@item.Service?.Name</td>
+                    <td>@(item.IsPublished ? "Published" : "Draft") / @(item.IsFeatured ? "Featured" : "Standard")</td>
+                    <td class="text-end"><a class="btn btn-sm btn-soft" asp-action="Edit" asp-route-id="@item.Id">Edit</a> <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <partial name="~/Areas/Admin/Views/Shared/_AdminPagination.cshtml" model="Model" />
+</div>

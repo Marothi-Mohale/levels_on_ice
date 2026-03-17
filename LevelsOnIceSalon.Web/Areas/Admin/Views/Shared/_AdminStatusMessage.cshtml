@@ -1,0 +1,16 @@
+@{
+    var message = TempData["AdminStatusMessage"] as string;
+    var statusType = TempData["AdminStatusType"] as string ?? "info";
+}
+
+@if (!string.IsNullOrWhiteSpace(message))
+{
+    var cssClass = statusType switch
+    {
+        "success" => "booking-status-success",
+        "error" => "booking-status-error",
+        _ => "admin-status-info"
+    };
+
+    <div class="booking-status @cssClass" role="status">@message</div>
+}

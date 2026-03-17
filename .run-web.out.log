@@ -1,8 +1,8 @@
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
       SELECT EXISTS (
           SELECT 1
           FROM "ServiceCategories" AS "s")
@@ -32,30 +32,6 @@ info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       SELECT EXISTS (
           SELECT 1
           FROM "OpeningHours" AS "o")
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?' (Size = 132), @p9='?' (DbType = Int32), @p10='?' (Size = 20), @p11='?' (DbType = Int32), @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Testimonials" ("Id", "CreatedAtUtc", "CustomerName", "DisplayOrder", "IsDeleted", "IsFeatured", "IsPublished", "PublishedAtUtc", "Quote", "Rating", "ServiceName", "SourceType", "SourceUrl", "UpdatedAtUtc")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 8), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?' (Size = 126), @p9='?' (DbType = Int32), @p10='?' (Size = 23), @p11='?' (DbType = Int32), @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Testimonials" ("Id", "CreatedAtUtc", "CustomerName", "DisplayOrder", "IsDeleted", "IsFeatured", "IsPublished", "PublishedAtUtc", "Quote", "Rating", "ServiceName", "SourceType", "SourceUrl", "UpdatedAtUtc")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 8), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?' (Size = 130), @p9='?' (DbType = Int32), @p10='?' (Size = 18), @p11='?' (DbType = Int32), @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Testimonials" ("Id", "CreatedAtUtc", "CustomerName", "DisplayOrder", "IsDeleted", "IsFeatured", "IsPublished", "PublishedAtUtc", "Quote", "Rating", "ServiceName", "SourceType", "SourceUrl", "UpdatedAtUtc")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 9), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?' (Size = 120), @p9='?' (DbType = Int32), @p10='?' (Size = 27), @p11='?' (DbType = Int32), @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Testimonials" ("Id", "CreatedAtUtc", "CustomerName", "DisplayOrder", "IsDeleted", "IsFeatured", "IsPublished", "PublishedAtUtc", "Quote", "Rating", "ServiceName", "SourceType", "SourceUrl", "UpdatedAtUtc")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 10), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?' (Size = 111), @p9='?' (DbType = Int32), @p10='?' (Size = 24), @p11='?' (DbType = Int32), @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Testimonials" ("Id", "CreatedAtUtc", "CustomerName", "DisplayOrder", "IsDeleted", "IsFeatured", "IsPublished", "PublishedAtUtc", "Quote", "Rating", "ServiceName", "SourceType", "SourceUrl", "UpdatedAtUtc")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
-info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 7), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?' (Size = 119), @p9='?' (DbType = Int32), @p10='?' (Size = 30), @p11='?' (DbType = Int32), @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
-      INSERT INTO "Testimonials" ("Id", "CreatedAtUtc", "CustomerName", "DisplayOrder", "IsDeleted", "IsFeatured", "IsPublished", "PublishedAtUtc", "Quote", "Rating", "ServiceName", "SourceType", "SourceUrl", "UpdatedAtUtc")
-      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://localhost:5099
 info: Microsoft.Hosting.Lifetime[0]
@@ -66,16 +42,121 @@ info: Microsoft.Hosting.Lifetime[0]
       Content root path: C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT "t"."CustomerName", "t"."Quote", "t"."Rating", "t"."ServiceName", "t"."IsFeatured", CASE
-          WHEN "t"."SourceType" = 1 THEN 'Client review'
-          ELSE 'Social proof'
-      END AS "SourceLabel"
-      FROM "Testimonials" AS "t"
-      WHERE "t"."IsPublished" AND NOT ("t"."IsDeleted")
-      ORDER BY "t"."IsFeatured" DESC, "t"."DisplayOrder", "t"."CustomerName"
+      SELECT COUNT(*)
+      FROM "Services" AS "s"
 info: Microsoft.EntityFrameworkCore.Database.Command[20101]
       Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-      SELECT "f"."Id", "f"."Question", "f"."Answer", COALESCE("f"."Category", 'General') AS "Category"
+      SELECT COUNT(*)
+      FROM "ServiceCategories" AS "s"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "GalleryImages" AS "g"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Testimonials" AS "t"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
       FROM "Faqs" AS "f"
-      WHERE "f"."IsPublished" AND NOT ("f"."IsDeleted")
-      ORDER BY "f"."Category", "f"."DisplayOrder"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "AppointmentRequests" AS "a"
+      WHERE "a"."Status" = 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "ContactMessages" AS "c"
+      WHERE "c"."Status" = 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "SiteSettings" AS "s"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "OpeningHours" AS "o"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Services" AS "s"
+      INNER JOIN "ServiceCategories" AS "s0" ON "s"."ServiceCategoryId" = "s0"."Id"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "s"."Id", "s"."CreatedAtUtc", "s"."DisplayOrder", "s"."DurationMinutes", "s"."FullDescription", "s"."IsActive", "s"."IsBookableOnline", "s"."IsDeleted", "s"."IsFeatured", "s"."Name", "s"."Price", "s"."PricingType", "s"."PublishedAtUtc", "s"."ServiceCategoryId", "s"."ShortDescription", "s"."Slug", "s"."UpdatedAtUtc", "s0"."Id", "s0"."CreatedAtUtc", "s0"."Description", "s0"."DisplayOrder", "s0"."IsActive", "s0"."IsDeleted", "s0"."Name", "s0"."PublishedAtUtc", "s0"."Slug", "s0"."UpdatedAtUtc"
+      FROM "Services" AS "s"
+      INNER JOIN "ServiceCategories" AS "s0" ON "s"."ServiceCategoryId" = "s0"."Id"
+      ORDER BY "s0"."DisplayOrder", "s"."DisplayOrder", "s"."Name"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "GalleryImages" AS "g"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "t"."Id", "t"."AltText", "t"."Caption", "t"."CreatedAtUtc", "t"."DisplayOrder", "t"."ImagePath", "t"."ImageType", "t"."IsDeleted", "t"."IsFeatured", "t"."IsPublished", "t"."PublishedAtUtc", "t"."ServiceId", "t"."SourceType", "t"."SourceUrl", "t"."ThumbnailPath", "t"."Title", "t"."UpdatedAtUtc", "s"."Id", "s"."CreatedAtUtc", "s"."DisplayOrder", "s"."DurationMinutes", "s"."FullDescription", "s"."IsActive", "s"."IsBookableOnline", "s"."IsDeleted", "s"."IsFeatured", "s"."Name", "s"."Price", "s"."PricingType", "s"."PublishedAtUtc", "s"."ServiceCategoryId", "s"."ShortDescription", "s"."Slug", "s"."UpdatedAtUtc"
+      FROM (
+          SELECT "g"."Id", "g"."AltText", "g"."Caption", "g"."CreatedAtUtc", "g"."DisplayOrder", "g"."ImagePath", "g"."ImageType", "g"."IsDeleted", "g"."IsFeatured", "g"."IsPublished", "g"."PublishedAtUtc", "g"."ServiceId", "g"."SourceType", "g"."SourceUrl", "g"."ThumbnailPath", "g"."Title", "g"."UpdatedAtUtc"
+          FROM "GalleryImages" AS "g"
+          ORDER BY "g"."IsFeatured" DESC, "g"."DisplayOrder", "g"."Title"
+          LIMIT @__p_1 OFFSET @__p_0
+      ) AS "t"
+      LEFT JOIN "Services" AS "s" ON "t"."ServiceId" = "s"."Id"
+      ORDER BY "t"."IsFeatured" DESC, "t"."DisplayOrder", "t"."Title"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Testimonials" AS "t"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "t"."Id", "t"."CreatedAtUtc", "t"."CustomerName", "t"."DisplayOrder", "t"."IsDeleted", "t"."IsFeatured", "t"."IsPublished", "t"."PublishedAtUtc", "t"."Quote", "t"."Rating", "t"."ServiceName", "t"."SourceType", "t"."SourceUrl", "t"."UpdatedAtUtc"
+      FROM "Testimonials" AS "t"
+      ORDER BY "t"."IsFeatured" DESC, "t"."DisplayOrder", "t"."CustomerName"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "Faqs" AS "f"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "f"."Id", "f"."Answer", "f"."Category", "f"."CreatedAtUtc", "f"."DisplayOrder", "f"."IsDeleted", "f"."IsPublished", "f"."PublishedAtUtc", "f"."Question", "f"."UpdatedAtUtc"
+      FROM "Faqs" AS "f"
+      ORDER BY "f"."Category", "f"."DisplayOrder", "f"."Question"
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "AppointmentRequests" AS "a"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "t"."Id", "t"."AdminNotes", "t"."CreatedAtUtc", "t"."Email", "t"."FullName", "t"."InspirationReference", "t"."IsDeleted", "t"."IsFirstTimeClient", "t"."Notes", "t"."Occasion", "t"."PhoneNumber", "t"."PreferredDate", "t"."PreferredStylistName", "t"."PreferredTime", "t"."PublishedAtUtc", "t"."ServiceId", "t"."Source", "t"."Status", "t"."TeamMemberId", "t"."UpdatedAtUtc", "s"."Id", "s"."CreatedAtUtc", "s"."DisplayOrder", "s"."DurationMinutes", "s"."FullDescription", "s"."IsActive", "s"."IsBookableOnline", "s"."IsDeleted", "s"."IsFeatured", "s"."Name", "s"."Price", "s"."PricingType", "s"."PublishedAtUtc", "s"."ServiceCategoryId", "s"."ShortDescription", "s"."Slug", "s"."UpdatedAtUtc"
+      FROM (
+          SELECT "a"."Id", "a"."AdminNotes", "a"."CreatedAtUtc", "a"."Email", "a"."FullName", "a"."InspirationReference", "a"."IsDeleted", "a"."IsFirstTimeClient", "a"."Notes", "a"."Occasion", "a"."PhoneNumber", "a"."PreferredDate", "a"."PreferredStylistName", "a"."PreferredTime", "a"."PublishedAtUtc", "a"."ServiceId", "a"."Source", "a"."Status", "a"."TeamMemberId", "a"."UpdatedAtUtc"
+          FROM "AppointmentRequests" AS "a"
+          ORDER BY "a"."CreatedAtUtc" DESC
+          LIMIT @__p_1 OFFSET @__p_0
+      ) AS "t"
+      LEFT JOIN "Services" AS "s" ON "t"."ServiceId" = "s"."Id"
+      ORDER BY "t"."CreatedAtUtc" DESC
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM "ContactMessages" AS "c"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."AdminReplyNotes", "c"."CreatedAtUtc", "c"."Email", "c"."FullName", "c"."IsDeleted", "c"."Message", "c"."PhoneNumber", "c"."PublishedAtUtc", "c"."Status", "c"."Subject", "c"."UpdatedAtUtc"
+      FROM "ContactMessages" AS "c"
+      ORDER BY "c"."CreatedAtUtc" DESC
+      LIMIT @__p_1 OFFSET @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "s"."Id", "s"."CreatedAtUtc", "s"."Description", "s"."Group", "s"."IsDeleted", "s"."Key", "s"."PublishedAtUtc", "s"."UpdatedAtUtc", "s"."Value"
+      FROM "SiteSettings" AS "s"
+      ORDER BY "s"."Group", "s"."Key"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "o"."Id", "o"."CloseTime", "o"."CreatedAtUtc", "o"."DayOfWeek", "o"."IsClosed", "o"."IsDeleted", "o"."Notes", "o"."OpenTime", "o"."PublishedAtUtc", "o"."UpdatedAtUtc"
+      FROM "OpeningHours" AS "o"
+      ORDER BY "o"."DayOfWeek"

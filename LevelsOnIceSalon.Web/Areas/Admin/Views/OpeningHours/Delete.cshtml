@@ -1,0 +1,3 @@
+@model OpeningHour
+@{ ViewData["Title"] = "Delete Opening Hour"; }
+<div class="admin-delete-card"><p class="eyebrow">Delete Opening Hours</p><h2>@Enum.GetName(typeof(DayOfWeek), Model.DayOfWeek)</h2><form method="post" class="admin-form-actions"><button type="submit" class="btn btn-danger">Confirm Delete</button><a class="btn btn-soft" asp-action="Index">Cancel</a></form></div>
