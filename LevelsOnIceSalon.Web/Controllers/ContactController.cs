@@ -18,7 +18,10 @@ public class ContactController(IContactPageService contactPageService) : Control
             isSuccess: !string.IsNullOrWhiteSpace(statusMessage),
             cancellationToken: cancellationToken);
 
-        ViewData["MetaDescription"] = model.MetaDescription;
+        this.ApplySeo(
+            model.PageTitle,
+            model.MetaDescription,
+            "/images/salon/salon-interior-01.jpg");
         return View(model);
     }
 
@@ -34,7 +37,10 @@ public class ContactController(IContactPageService contactPageService) : Control
                 isSuccess: false,
                 cancellationToken: cancellationToken);
 
-            ViewData["MetaDescription"] = invalidModel.MetaDescription;
+            this.ApplySeo(
+                invalidModel.PageTitle,
+                invalidModel.MetaDescription,
+                "/images/salon/salon-interior-01.jpg");
             return View(invalidModel);
         }
 
@@ -49,7 +55,10 @@ public class ContactController(IContactPageService contactPageService) : Control
                 isSuccess: false,
                 cancellationToken: cancellationToken);
 
-            ViewData["MetaDescription"] = failedModel.MetaDescription;
+            this.ApplySeo(
+                failedModel.PageTitle,
+                failedModel.MetaDescription,
+                "/images/salon/salon-interior-01.jpg");
             return View(failedModel);
         }
 

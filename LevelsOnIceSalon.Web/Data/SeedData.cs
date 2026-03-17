@@ -1,27 +1,170 @@
 using LevelsOnIceSalon.Infrastructure.Data;
 using LevelsOnIceSalon.Infrastructure.Data.Seed;
 using LevelsOnIceSalon.Domain.Entities;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
 namespace LevelsOnIceSalon.Web.Data;
 
 public static class SeedData
 {
+    private static readonly string[] LegacyAppTables =
+    [
+        "ServiceCategories",
+        "Services",
+        "GalleryImages",
+        "Testimonials",
+        "Faqs",
+        "AppointmentRequests",
+        "ContactMessages",
+        "SiteSettings",
+        "OpeningHours",
+        "TeamMembers",
+        "PromotionBanners"
+    ];
+
     public static async Task InitializeAsync(IServiceProvider serviceProvider)
     {
         await using var scope = serviceProvider.CreateAsyncScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
-        if (dbContext.Database.IsSqlite())
-        {
-            await dbContext.Database.EnsureCreatedAsync();
-        }
-        else
-        {
-            await dbContext.Database.MigrateAsync();
-        }
+        await RecoverLegacySqliteDatabaseAsync(dbContext);
+        await dbContext.Database.MigrateAsync();
 
         await EnsureApplicationSeedAsync(dbContext);
+    }
+
+    private static async Task RecoverLegacySqliteDatabaseAsync(ApplicationDbContext dbContext)
+    {
+        if (!dbContext.Database.IsSqlite())
+        {
+            return;
+        }
+
+        var databasePath = dbContext.Database.GetDbConnection().DataSource;
+        if (string.IsNullOrWhiteSpace(databasePath) || !File.Exists(databasePath))
+        {
+            return;
+        }
+
+        var hasMigrationHistoryTable = await HasTableAsync(dbContext, "__EFMigrationsHistory");
+        var hasAppliedMigrations = hasMigrationHistoryTable && await HasMigrationHistoryRowsAsync(dbContext);
+
+        var hasLegacyTables = false;
+        foreach (var tableName in LegacyAppTables)
+        {
+            if (await HasTableAsync(dbContext, tableName))
+            {
+                hasLegacyTables = true;
+                break;
+            }
+        }
+
+        if (hasAppliedMigrations || !hasLegacyTables)
+        {
+            return;
+        }
+
+        await dbContext.Database.CloseConnectionAsync();
+        SqliteConnection.ClearAllPools();
+
+        var timestamp = DateTime.UtcNow.ToString("yyyyMMddHHmmss");
+        BackupSqliteArtifact(databasePath, timestamp);
+        BackupSqliteArtifact($"{databasePath}-wal", timestamp);
+        BackupSqliteArtifact($"{databasePath}-shm", timestamp);
+    }
+
+    private static async Task<bool> HasTableAsync(ApplicationDbContext dbContext, string tableName)
+    {
+        var connection = dbContext.Database.GetDbConnection();
+        var shouldClose = connection.State != System.Data.ConnectionState.Open;
+
+        if (shouldClose)
+        {
+            await connection.OpenAsync();
+        }
+
+        try
+        {
+            await using var command = connection.CreateCommand();
+            command.CommandText = "SELECT COUNT(*) FROM sqlite_master WHERE type = 'table' AND name = $name;";
+
+            var parameter = command.CreateParameter();
+            parameter.ParameterName = "$name";
+            parameter.Value = tableName;
+            command.Parameters.Add(parameter);
+
+            var result = await command.ExecuteScalarAsync();
+            return Convert.ToInt32(result) > 0;
+        }
+        finally
+        {
+            if (shouldClose)
+            {
+                await connection.CloseAsync();
+            }
+        }
+    }
+
+    private static async Task<bool> HasMigrationHistoryRowsAsync(ApplicationDbContext dbContext)
+    {
+        var connection = dbContext.Database.GetDbConnection();
+        var shouldClose = connection.State != System.Data.ConnectionState.Open;
+
+        if (shouldClose)
+        {
+            await connection.OpenAsync();
+        }
+
+        try
+        {
+            await using var command = connection.CreateCommand();
+            command.CommandText = "SELECT COUNT(*) FROM \"__EFMigrationsHistory\";";
+
+            var result = await command.ExecuteScalarAsync();
+            return Convert.ToInt32(result) > 0;
+        }
+        finally
+        {
+            if (shouldClose)
+            {
+                await connection.CloseAsync();
+            }
+        }
+    }
+
+    private static void BackupSqliteArtifact(string path, string timestamp)
+    {
+        if (!File.Exists(path))
+        {
+            return;
+        }
+
+        var directory = Path.GetDirectoryName(path) ?? string.Empty;
+        var fileName = Path.GetFileName(path);
+        var backupPath = Path.Combine(directory, $"{fileName}.legacy-{timestamp}.bak");
+        ExecuteFileMoveWithRetry(path, backupPath);
+    }
+
+    private static void ExecuteFileMoveWithRetry(string sourcePath, string destinationPath)
+    {
+        const int maxAttempts = 6;
+
+        for (var attempt = 1; attempt <= maxAttempts; attempt++)
+        {
+            try
+            {
+                File.Move(sourcePath, destinationPath, overwrite: true);
+                return;
+            }
+            catch (IOException) when (attempt < maxAttempts)
+            {
+                SqliteConnection.ClearAllPools();
+                Thread.Sleep(250 * attempt);
+            }
+        }
+
+        File.Move(sourcePath, destinationPath, overwrite: true);
     }
 
     private static async Task EnsureApplicationSeedAsync(ApplicationDbContext dbContext)

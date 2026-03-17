@@ -168,7 +168,7 @@ public class SitePageContentService : ISitePageContentService
         {
             PageTitle = "About",
             NavigationTitle = "About",
-            Intro = "Levels On Ice Salon is built for women who want beauty that feels polished, fashion-forward, and genuinely worth booking ahead for.",
+            Intro = "Levels On Ice Salon in Mowbray, Cape Town is built for women who want beauty that feels polished, fashion-forward, and genuinely worth booking ahead for.",
             BrandStory = "The brand was shaped around a simple idea: salon visits should feel elevated from the moment you walk in to the moment you leave. Not stiff. Not intimidating. Just beautifully done, beautifully hosted, and designed for clients who love a classy finish with modern energy. Levels On Ice Salon brings together premium service, trend-aware beauty, and a warm atmosphere that makes clients feel looked after as much as they feel styled.",
             AudienceFit = "The salon speaks naturally to young women aged 15 to 35 who want everything from everyday polish to standout occasion beauty. That includes the girl booking her maintenance set, the friend getting ready for a birthday dinner, the graduate planning her entrance look, and the bride wanting soft luxury that still feels personal and current.",
             Atmosphere = "Inside the salon, the energy is stylish but welcoming. Clients can expect a clean, considered setting, a team that values detail, complimentary refreshments, free WiFi, and a beauty experience that never feels rushed. The goal is to make every appointment feel easy, personal, and quietly luxurious.",

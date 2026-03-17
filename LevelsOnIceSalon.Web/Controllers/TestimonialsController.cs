@@ -10,7 +10,10 @@ public class TestimonialsController(ITestimonialsPageService testimonialsPageSer
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var model = await testimonialsPageService.BuildPageModelAsync(cancellationToken);
-        ViewData["MetaDescription"] = model.MetaDescription;
+        this.ApplySeo(
+            model.PageTitle,
+            model.MetaDescription,
+            "/images/salon/hair-curls-01.jpg");
         return View(model);
     }
 }

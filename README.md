@@ -24,6 +24,7 @@ Production-oriented ASP.NET Core MVC solution for the Levels On Ice Salon market
 1. Restore packages:
 
 ```powershell
+dotnet tool restore
 dotnet restore .\LevelsOnIceSalon.sln --configfile .\NuGet.Config
 ```
 
@@ -34,9 +35,57 @@ dotnet run --project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj
 ```
 
 3. On first startup, the app will:
-   - create the SQLite database automatically
-   - create the schema
+   - apply EF Core migrations automatically
    - seed sample services, FAQs, contact details, and opening hours
+
+## SQLite Configuration
+
+SQLite is fully configured as the default provider for both development and lightweight production use.
+
+- Provider package: `Microsoft.EntityFrameworkCore.Sqlite`
+- Development connection string: `LevelsOnIceSalon.Web/appsettings.Development.json`
+- General connection string: `LevelsOnIceSalon.Web/appsettings.json`
+- Design-time EF Core support: `LevelsOnIceSalon.Infrastructure/Data/ApplicationDbContextFactory.cs`
+
+The SQLite database files are stored under:
+
+- `LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.dev.db`
+- `LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.db`
+
+## EF Core Migrations
+
+Run these commands from the solution root:
+
+1. Restore the local EF tool:
+
+```powershell
+dotnet tool restore
+```
+
+2. Create a new migration:
+
+```powershell
+dotnet ef migrations add YourMigrationName --project .\LevelsOnIceSalon.Infrastructure\LevelsOnIceSalon.Infrastructure.csproj --startup-project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj --context LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext
+```
+
+3. Apply migrations to the configured SQLite database:
+
+```powershell
+dotnet ef database update --project .\LevelsOnIceSalon.Infrastructure\LevelsOnIceSalon.Infrastructure.csproj --startup-project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj --context LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext
+```
+
+4. If you want to remove the last migration before applying it:
+
+```powershell
+dotnet ef migrations remove --project .\LevelsOnIceSalon.Infrastructure\LevelsOnIceSalon.Infrastructure.csproj --startup-project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj --context LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext
+```
+
+## Date, Time, and Money Handling
+
+- `DateOnly` and `TimeOnly` are used for booking dates, preferred times, opening hours, and promotion schedules.
+- Audit timestamps are normalized to UTC through EF Core value converters.
+- Service prices use `decimal` with precision configured as `(10,2)` through Fluent API.
+- Seed data only inserts application data when the target tables are empty, so startup remains safe and repeatable.
 
 ## Configuration
 

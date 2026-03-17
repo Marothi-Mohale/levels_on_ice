@@ -45,7 +45,7 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
         {
             PageTitle = "Gallery",
             BannerTitle = "A visual showcase of polished finishes, beautiful detail, and beauty work made to be remembered.",
-            BannerCopy = "Explore a gallery designed to feel premium, social-ready, and easy to browse. Today it can load from your local salon image folder, and when admin management is live it can switch seamlessly to database-driven content.",
+            BannerCopy = "Explore a Mowbray, Cape Town salon gallery designed to feel premium, social-ready, and easy to browse. Today it can load from your local salon image folder, and when admin management is live it can switch seamlessly to database-driven content.",
             PrimaryCta = new CallToActionViewModel
             {
                 Label = "Book Your Look",
@@ -96,7 +96,7 @@ public class GalleryPageService(ApplicationDbContext dbContext, IWebHostEnvironm
             Title = title,
             ImageUrl = $"/images/salon/{fileName}",
             ThumbnailUrl = $"/images/salon/{fileName}",
-            AltText = $"{title} from Levels On Ice Salon gallery",
+            AltText = ImageAltTextBuilder.ForGallery(title, category),
             Category = category,
             Caption = $"Levels On Ice Salon {category.ToLowerInvariant()} showcase",
             IsFeatured = index < 3,

@@ -13,9 +13,10 @@ builder.Logging.AddConsole();
 builder.Logging.AddDebug();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddResponseCaching();
 builder.Services.AddInfrastructure(builder.Configuration, builder.Environment.ContentRootPath);
-builder.Services.AddWebServices();
+builder.Services.AddWebServices(builder.Configuration);
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysPath))
     .SetApplicationName("LevelsOnIceSalon");
@@ -37,6 +38,8 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseResponseCaching();
 app.UseAuthorization();
+
+app.MapControllers();
 
 app.MapControllerRoute(
     name: "areas",

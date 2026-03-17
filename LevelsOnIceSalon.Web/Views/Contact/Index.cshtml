@@ -10,21 +10,4 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script type="application/ld+json">
-        {
-          "@@context": "https://schema.org",
-          "@@type": "BeautySalon",
-          "name": "Levels On Ice Salon",
-          "address": {
-            "@@type": "PostalAddress",
-            "streetAddress": "@Model.AddressLine",
-            "addressLocality": "Mowbray",
-            "addressRegion": "Cape Town",
-            "addressCountry": "ZA"
-          },
-          "telephone": "@Model.PhoneNumber",
-          "email": "@Model.Email",
-          "areaServed": "Cape Town"
-        }
-    </script>
 }

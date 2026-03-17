@@ -14,7 +14,7 @@ public class ServiceConfiguration : IEntityTypeConfiguration<Service>
         builder.Property(x => x.Slug).HasMaxLength(180).IsRequired();
         builder.Property(x => x.ShortDescription).HasMaxLength(300);
         builder.Property(x => x.FullDescription).HasMaxLength(2500);
-        builder.Property(x => x.Price).HasColumnType("numeric(10,2)");
+        builder.Property(x => x.Price).HasPrecision(10, 2);
 
         builder.HasIndex(x => x.Slug).IsUnique();
 

@@ -34,7 +34,7 @@ public class BookAppointmentService(
         {
             PageTitle = "Book Appointment",
             BannerTitle = "Book your next beauty appointment in a way that feels easy, clear, and worth looking forward to.",
-            BannerCopy = "Choose your service, share your preferred date and time, and send your request. The salon can confirm the details and follow up later by phone, WhatsApp, or email.",
+            BannerCopy = "Choose your service, share your preferred date and time, and send your request to Levels On Ice Salon in Mowbray, Cape Town. The salon can confirm the details and follow up later by phone, WhatsApp, or email.",
             MinimumPreferredDate = DateOnly.FromDateTime(DateTime.Today).ToString("yyyy-MM-dd"),
             StatusMessage = statusMessage,
             IsSuccess = isSuccess,

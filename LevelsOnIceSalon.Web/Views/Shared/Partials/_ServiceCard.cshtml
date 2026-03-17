@@ -5,6 +5,12 @@
     {
         <span class="service-feature-badge">Featured</span>
     }
+    @if (!string.IsNullOrWhiteSpace(Model.ImageUrl))
+    {
+        <figure class="service-card-media">
+            <img src="@Model.ImageUrl" alt="@Model.ImageAltText" loading="lazy" decoding="async" />
+        </figure>
+    }
     <div class="u-stack-sm">
         <h3>@Model.Name</h3>
         <p class="service-summary">@Model.Summary</p>

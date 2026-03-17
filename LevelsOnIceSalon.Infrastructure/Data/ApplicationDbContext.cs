@@ -1,5 +1,6 @@
 using LevelsOnIceSalon.Domain.Entities;
 using LevelsOnIceSalon.Infrastructure.Data.Seed;
+using LevelsOnIceSalon.Infrastructure.Data.Converters;
 using Microsoft.EntityFrameworkCore;
 
 namespace LevelsOnIceSalon.Infrastructure.Data;
@@ -27,6 +28,15 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<TeamMember> TeamMembers => Set<TeamMember>();
 
     public DbSet<PromotionBanner> PromotionBanners => Set<PromotionBanner>();
+
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        configurationBuilder.Properties<DateTime>()
+            .HaveConversion<UtcDateTimeConverter>();
+
+        configurationBuilder.Properties<DateTime?>()
+            .HaveConversion<NullableUtcDateTimeConverter>();
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

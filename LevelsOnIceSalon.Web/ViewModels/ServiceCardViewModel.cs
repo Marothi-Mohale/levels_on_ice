@@ -4,6 +4,10 @@ public class ServiceCardViewModel
 {
     public string Name { get; set; } = string.Empty;
 
+    public string? ImageUrl { get; set; }
+
+    public string ImageAltText { get; set; } = string.Empty;
+
     public string Summary { get; set; } = string.Empty;
 
     public string? Description { get; set; }

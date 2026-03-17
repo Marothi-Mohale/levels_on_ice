@@ -10,6 +10,10 @@ public class GalleryController(IGalleryPageService galleryPageService) : Control
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var model = await galleryPageService.GetGalleryPageAsync(cancellationToken);
+        this.ApplySeo(
+            model.PageTitle,
+            "Browse the Levels On Ice Salon gallery for premium nails, hairstyles, braids, and beauty inspiration from Mowbray, Cape Town.",
+            "/images/salon/nails-featured-02.jpg");
         return View(model);
     }
 }

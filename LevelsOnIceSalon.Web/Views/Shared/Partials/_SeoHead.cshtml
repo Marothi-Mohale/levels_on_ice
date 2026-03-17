@@ -1,0 +1,25 @@
+@using LevelsOnIceSalon.Web.ViewModels
+@model SeoMetadataViewModel
+
+<title>@Model.Title</title>
+<meta name="description" content="@Model.Description" />
+<meta name="robots" content="@Model.Robots" />
+<link rel="canonical" href="@Model.CanonicalUrl" />
+
+<meta property="og:site_name" content="Levels On Ice Salon" />
+<meta property="og:type" content="@Model.OpenGraphType" />
+<meta property="og:title" content="@Model.OpenGraphTitle" />
+<meta property="og:description" content="@Model.OpenGraphDescription" />
+<meta property="og:url" content="@Model.OpenGraphUrl" />
+<meta property="og:image" content="@Model.OpenGraphImageUrl" />
+<meta property="og:image:alt" content="@Model.OpenGraphImageAlt" />
+<meta property="og:locale" content="en_ZA" />
+
+<meta name="twitter:card" content="@Model.TwitterCard" />
+<meta name="twitter:title" content="@Model.TwitterTitle" />
+<meta name="twitter:description" content="@Model.TwitterDescription" />
+<meta name="twitter:image" content="@Model.TwitterImageUrl" />
+
+<script type="application/ld+json">
+@Html.Raw(Model.JsonLd)
+</script>

@@ -17,6 +17,10 @@ public class BookAppointmentController(IBookAppointmentService bookAppointmentSe
             statusMessage: statusMessage,
             isSuccess: !string.IsNullOrWhiteSpace(statusMessage),
             cancellationToken: cancellationToken);
+        this.ApplySeo(
+            model.PageTitle,
+            "Book a beauty appointment with Levels On Ice Salon in Mowbray, Cape Town for nails, hairstyles, braids, and special occasion glam.",
+            "/images/salon/hair-featured-01.jpg");
         return View(model);
     }
 
@@ -32,6 +36,10 @@ public class BookAppointmentController(IBookAppointmentService bookAppointmentSe
                 isSuccess: false,
                 cancellationToken: cancellationToken);
 
+            this.ApplySeo(
+                invalidModel.PageTitle,
+                "Book a beauty appointment with Levels On Ice Salon in Mowbray, Cape Town for nails, hairstyles, braids, and special occasion glam.",
+                "/images/salon/hair-featured-01.jpg");
             return View(invalidModel);
         }
 
@@ -46,6 +54,10 @@ public class BookAppointmentController(IBookAppointmentService bookAppointmentSe
                 isSuccess: false,
                 cancellationToken: cancellationToken);
 
+            this.ApplySeo(
+                failedModel.PageTitle,
+                "Book a beauty appointment with Levels On Ice Salon in Mowbray, Cape Town for nails, hairstyles, braids, and special occasion glam.",
+                "/images/salon/hair-featured-01.jpg");
             return View(failedModel);
         }
 

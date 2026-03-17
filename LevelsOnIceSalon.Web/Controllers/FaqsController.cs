@@ -10,7 +10,10 @@ public class FaqsController(IFaqsPageService faqsPageService) : Controller
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         var model = await faqsPageService.BuildPageModelAsync(cancellationToken);
-        ViewData["MetaDescription"] = model.MetaDescription;
+        this.ApplySeo(
+            model.PageTitle,
+            model.MetaDescription,
+            "/images/salon/salon-interior-02.jpg");
         return View(model);
     }
 }

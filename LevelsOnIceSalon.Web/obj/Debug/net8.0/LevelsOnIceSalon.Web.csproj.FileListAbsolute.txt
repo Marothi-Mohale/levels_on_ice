@@ -1,7 +1,6 @@
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\appsettings.json
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Web.staticwebassets.runtime.json
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Web.staticwebassets.endpoints.json
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Web.exe
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Web.deps.json
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Web.runtimeconfig.json
@@ -90,7 +89,6 @@ C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIce
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Infrastructure.pdb
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\LevelsOnIceSalon.Domain.pdb
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.csproj.AssemblyReference.cache
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.AssemblyInfoInputs.cache
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.AssemblyInfo.cs
@@ -98,15 +96,9 @@ C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIce
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.RazorAssemblyInfo.cache
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.RazorAssemblyInfo.cs
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\scopedcss\bundle\LevelsOnIceSalon.Web.styles.css
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\swae.build.ex.cache
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOn.147AF7BF.Up2Date
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\LevelsOnIceSalon.Web.dll
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\refint\LevelsOnIceSalon.Web.dll
@@ -139,3 +131,8 @@ C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\runtimes\wi
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets\msbuild.LevelsOnIceSalon.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets\msbuild.build.LevelsOnIceSalon.Web.props
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LevelsOnIceSalon.Web.props
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LevelsOnIceSalon.Web.props
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Web\obj\Debug\net8.0\staticwebassets.pack.json
