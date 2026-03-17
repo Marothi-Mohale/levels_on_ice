@@ -1,0 +1,11 @@
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\bin\Debug\net8.0\LevelsOnIceSalon.Domain.deps.json
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\bin\Debug\net8.0\LevelsOnIceSalon.Domain.dll
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\bin\Debug\net8.0\LevelsOnIceSalon.Domain.pdb
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.AssemblyInfoInputs.cache
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.AssemblyInfo.cs
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.dll
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\refint\LevelsOnIceSalon.Domain.dll
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\LevelsOnIceSalon.Domain.pdb
+C:\Users\Student\levels_on_ice\LevelsOnIceSalon.Domain\obj\Debug\net8.0\ref\LevelsOnIceSalon.Domain.dll
