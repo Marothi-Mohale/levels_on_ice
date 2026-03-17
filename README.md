@@ -60,4 +60,4 @@ dotnet run --project .\LevelsOnIceSalon.Web\LevelsOnIceSalon.Web.csproj
 =======
 # levels_on_ice
 Luxury Hair Salon Web Platform!
->>>>>>> a9e14e151571a3e88a65772b4b6387d423ed001b
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

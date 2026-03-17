@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\LevelsOnIceSalon.Domain.csproj",
         "projectName": "LevelsOnIceSalon.Domain",
         "projectPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\LevelsOnIceSalon.Domain.csproj",
-        "packagesPath": "c:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
+        "packagesPath": "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
         "outputPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -83,7 +83,7 @@
         "projectUniqueName": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Infrastructure\\LevelsOnIceSalon.Infrastructure.csproj",
         "projectName": "LevelsOnIceSalon.Infrastructure",
         "projectPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Infrastructure\\LevelsOnIceSalon.Infrastructure.csproj",
-        "packagesPath": "c:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
+        "packagesPath": "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
         "outputPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
@@ -190,7 +190,7 @@
         "projectUniqueName": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\LevelsOnIceSalon.Web.csproj",
         "projectName": "LevelsOnIceSalon.Web",
         "projectPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\LevelsOnIceSalon.Web.csproj",
-        "packagesPath": "c:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
+        "packagesPath": "C:\\Users\\Student\\levels_on_ice\\.nuget\\packages",
         "outputPath": "C:\\Users\\Student\\levels_on_ice\\LevelsOnIceSalon.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [

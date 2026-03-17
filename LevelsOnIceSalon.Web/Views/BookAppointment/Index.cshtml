@@ -1,6 +1,117 @@
-@model PageBlueprintViewModel
+@model BookAppointmentPageViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
 
-<partial name="Partials/_PageBlueprint" model="Model" />
+<section class="page-hero booking-hero">
+    <div class="container">
+        <div class="services-banner">
+            <div class="services-banner-copy">
+                <p class="eyebrow">Book Appointment</p>
+                <h1 class="display-title page-title">@Model.BannerTitle</h1>
+                <p class="hero-copy">@Model.BannerCopy</p>
+            </div>
+            <aside class="services-banner-aside">
+                <p class="eyebrow">Booking Notes</p>
+                <p class="u-text-muted mb-0">This form sends an appointment request, not an instant confirmation. The salon can later follow up by phone, email, or WhatsApp once notifications are connected.</p>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <div class="booking-form-shell">
+                    @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
+                    {
+                        <div class="booking-status @(Model.IsSuccess ? "booking-status-success" : "booking-status-error")" role="status" aria-live="polite">
+                            @Model.StatusMessage
+                        </div>
+                    }
+
+                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState[string.Empty]?.Errors.Count > 0)
+                    {
+                        <div class="booking-status booking-status-error" asp-validation-summary="ModelOnly" role="alert"></div>
+                    }
+
+                    <form asp-action="Index" asp-controller="BookAppointment" method="post" novalidate class="booking-form">
+                        @Html.AntiForgeryToken()
+                        <input asp-for="Form.Website" class="booking-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                        <input asp-for="Form.FormRenderedAtUnix" type="hidden" />
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label asp-for="Form.FullName" class="form-label"></label>
+                                <input asp-for="Form.FullName" class="form-control booking-input" autocomplete="name" />
+                                <span asp-validation-for="Form.FullName" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Form.PhoneNumber" class="form-label"></label>
+                                <input asp-for="Form.PhoneNumber" class="form-control booking-input" autocomplete="tel" />
+                                <span asp-validation-for="Form.PhoneNumber" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="Form.Email" class="form-label"></label>
+                                <input asp-for="Form.Email" class="form-control booking-input" autocomplete="email" />
+                                <span asp-validation-for="Form.Email" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="Form.PreferredServiceId" class="form-label"></label>
+                                <select asp-for="Form.PreferredServiceId" class="form-select booking-input" asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(Model.Services, nameof(ServiceOptionViewModel.Id), nameof(ServiceOptionViewModel.Name)))">
+                                    <option value="">Select a service</option>
+                                </select>
+                                <span asp-validation-for="Form.PreferredServiceId" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Form.PreferredDate" class="form-label"></label>
+                                <input asp-for="Form.PreferredDate" class="form-control booking-input" type="date" min="@Model.MinimumPreferredDate" />
+                                <span asp-validation-for="Form.PreferredDate" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Form.PreferredTime" class="form-label"></label>
+                                <input asp-for="Form.PreferredTime" class="form-control booking-input" type="time" />
+                                <span asp-validation-for="Form.PreferredTime" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="Form.Notes" class="form-label"></label>
+                                <textarea asp-for="Form.Notes" class="form-control booking-input booking-textarea" rows="5" placeholder="Tell the salon about your preferred look, occasion, or anything helpful for your appointment request."></textarea>
+                                <span asp-validation-for="Form.Notes" class="text-danger field-validation"></span>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-brand btn-lg booking-submit">Send Appointment Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="section-shell booking-side-panel u-stack-md">
+                    <div>
+                        <p class="eyebrow">What Happens Next</p>
+                        <h2 class="footer-title">Simple, clear, and easy to follow.</h2>
+                        <p class="u-text-muted">Submit the form, let the salon review your preferred service and timing, and expect a follow-up to confirm the final appointment details.</p>
+                    </div>
+                    <div class="booking-step-card">
+                        <strong>1. Send your request</strong>
+                        <p>Share the basics so the salon knows what you want and when you'd prefer to come in.</p>
+                    </div>
+                    <div class="booking-step-card">
+                        <strong>2. Wait for confirmation</strong>
+                        <p>The team can confirm availability and follow up later through phone, email, or WhatsApp.</p>
+                    </div>
+                    <div class="booking-step-card">
+                        <strong>3. Arrive ready for your beauty moment</strong>
+                        <p>Enjoy a polished, welcoming salon experience with the details already in place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
