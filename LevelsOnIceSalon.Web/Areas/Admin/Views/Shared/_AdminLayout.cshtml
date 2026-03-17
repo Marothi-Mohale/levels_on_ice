@@ -41,7 +41,14 @@
                     <p class="eyebrow mb-1">Content Management</p>
                     <h1 class="admin-page-title">@ViewData["Title"]</h1>
                 </div>
-                <a class="btn btn-soft" asp-controller="Home" asp-action="Index">View Website</a>
+                <div class="admin-topbar-actions">
+                    <span class="admin-user-chip">@User.Identity?.Name</span>
+                    <a class="btn btn-soft" asp-controller="Home" asp-action="Index">View Website</a>
+                    <form method="post" asp-area="Admin" asp-controller="Auth" asp-action="Logout" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-outline-danger">Logout</button>
+                    </form>
+                </div>
             </header>
 
             <div class="admin-content">

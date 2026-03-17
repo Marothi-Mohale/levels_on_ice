@@ -1,6 +1,8 @@
 using LevelsOnIceSalon.Web.Data;
 using LevelsOnIceSalon.Infrastructure.DependencyInjection;
+using LevelsOnIceSalon.Web.Options;
 using LevelsOnIceSalon.Web.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,11 +14,20 @@ builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 builder.Logging.AddDebug();
 
+builder.Services.Configure<AdminAuthOptions>(builder.Configuration.GetSection(AdminAuthOptions.SectionName));
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddResponseCaching();
 builder.Services.AddInfrastructure(builder.Configuration, builder.Environment.ContentRootPath);
 builder.Services.AddWebServices(builder.Configuration);
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/admin/login";
+        options.AccessDeniedPath = "/admin/login";
+        options.Cookie.Name = "LevelsOnIceSalon.AdminAuth";
+        options.SlidingExpiration = true;
+    });
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysPath))
     .SetApplicationName("LevelsOnIceSalon");
@@ -37,6 +48,7 @@ if (app.Configuration.GetValue<bool>("App:UseHttpsRedirection"))
 app.UseStaticFiles();
 app.UseRouting();
 app.UseResponseCaching();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

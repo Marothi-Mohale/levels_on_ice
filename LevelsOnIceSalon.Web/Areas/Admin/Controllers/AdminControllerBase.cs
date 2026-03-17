@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LevelsOnIceSalon.Web.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = AdminRoleName)]
 [AutoValidateAntiforgeryToken]
 public abstract class AdminControllerBase : Controller
 {
