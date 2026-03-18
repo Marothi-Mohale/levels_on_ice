@@ -8,7 +8,7 @@ COPY LevelsOnIceSalon.Domain/LevelsOnIceSalon.Domain.csproj ./LevelsOnIceSalon.D
 COPY LevelsOnIceSalon.Infrastructure/LevelsOnIceSalon.Infrastructure.csproj ./LevelsOnIceSalon.Infrastructure/
 COPY LevelsOnIceSalon.Web/LevelsOnIceSalon.Web.csproj ./LevelsOnIceSalon.Web/
 
-RUN dotnet restore ./LevelsOnIceSalon.sln --configfile ./NuGet.Config
+RUN dotnet restore ./LevelsOnIceSalon.Web/LevelsOnIceSalon.Web.csproj --configfile ./NuGet.Config
 
 COPY . .
 
