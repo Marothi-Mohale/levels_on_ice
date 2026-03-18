@@ -7,6 +7,7 @@ namespace LevelsOnIceSalon.Web.Tests.Infrastructure;
 
 public sealed class IntegrationTestWebApplicationFactory : WebApplicationFactory<Program>
 {
+    private const string TestMfaSharedKey = "KRSXG5CTMVRXEZLU";
     private readonly string seedDatabasePath = Path.GetFullPath(
         Path.Combine(AppContext.BaseDirectory, "../../../../LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.dev.db"));
     private readonly string sqliteDatabasePath = Path.Combine(
@@ -29,7 +30,7 @@ public sealed class IntegrationTestWebApplicationFactory : WebApplicationFactory
                 ["ASPNETCORE_ENVIRONMENT"] = "Development",
                 ["AdminAuth:Username"] = "test-admin",
                 ["AdminAuth:Password"] = "test-password",
-                ["AdminAuth:MfaSharedKey"] = "JBSWY3DPEHPK3PXP",
+                ["AdminAuth:MfaSharedKey"] = TestMfaSharedKey,
                 ["Site:BaseUrl"] = "http://localhost",
                 ["Captcha:Enabled"] = "false",
                 ["App:UseHttpsRedirection"] = "false",

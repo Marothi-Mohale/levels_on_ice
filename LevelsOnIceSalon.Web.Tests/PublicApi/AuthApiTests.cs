@@ -12,6 +12,7 @@ namespace LevelsOnIceSalon.Web.Tests.PublicApi;
 
 public sealed class AuthApiTests : IClassFixture<IntegrationTestWebApplicationFactory>
 {
+    private const string TestMfaSharedKey = "KRSXG5CTMVRXEZLU";
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
     private readonly HttpClient client;
 
@@ -27,7 +28,7 @@ public sealed class AuthApiTests : IClassFixture<IntegrationTestWebApplicationFa
         {
             Username = "test-admin",
             Password = "test-password",
-            OneTimeCode = GenerateTotp("JBSWY3DPEHPK3PXP")
+            OneTimeCode = GenerateTotp(TestMfaSharedKey)
         });
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -76,7 +77,7 @@ public sealed class AuthApiTests : IClassFixture<IntegrationTestWebApplicationFa
         {
             Username = "test-admin",
             Password = "test-password",
-            OneTimeCode = GenerateTotp("JBSWY3DPEHPK3PXP")
+            OneTimeCode = GenerateTotp(TestMfaSharedKey)
         });
 
         var token = await tokenResponse.Content.ReadFromJsonAsync<AccessTokenResponse>(JsonOptions);

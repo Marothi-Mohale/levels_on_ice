@@ -1,29 +1,57 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
+using LevelsOnIceSalon.Infrastructure.Data;
 using LevelsOnIceSalon.Web.Data;
 using LevelsOnIceSalon.Web.Extensions;
 using LevelsOnIceSalon.Infrastructure.DependencyInjection;
 using LevelsOnIceSalon.Web.Middleware;
 using LevelsOnIceSalon.Web.OpenApi;
 using LevelsOnIceSalon.Web.Options;
+using LevelsOnIceSalon.Web.Observability;
 using LevelsOnIceSalon.Web.Security;
 using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging.Console;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using System.Text;
 using System.IO.Compression;
 using System.Security.Claims;
 using System.Threading.RateLimiting;
+
+static bool ShouldTraceRequest(HttpContext context)
+{
+    var path = context.Request.Path;
+    if (path.StartsWithSegments("/health", StringComparison.OrdinalIgnoreCase))
+    {
+        return false;
+    }
+
+    var extension = Path.GetExtension(path.Value);
+    return !string.Equals(extension, ".css", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".js", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".jpg", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".jpeg", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".png", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".svg", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".ico", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".webp", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".woff", StringComparison.OrdinalIgnoreCase)
+        && !string.Equals(extension, ".woff2", StringComparison.OrdinalIgnoreCase);
+}
 
 var builder = WebApplication.CreateBuilder(args);
 var dataProtectionKeysPath = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "DataProtection-Keys");
@@ -91,6 +119,11 @@ builder.Services
     .Bind(builder.Configuration.GetSection(ApiTokenOptions.SectionName))
     .ValidateDataAnnotations()
     .ValidateOnStart();
+builder.Services
+    .AddOptions<ObservabilityOptions>()
+    .Bind(builder.Configuration.GetSection(ObservabilityOptions.SectionName))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
 builder.Services.AddProblemDetails();
 builder.Services.AddControllersWithViews();
 builder.Services.AddApiVersioning(options =>
@@ -129,6 +162,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<Microsoft.Extensions.Options.IConfigureOptions<Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions>, ConfigureSwaggerOptions>();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<SelfHealthCheck>();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
@@ -180,6 +214,91 @@ builder.Services.Configure<BrotliCompressionProviderOptions>(options => options.
 builder.Services.Configure<GzipCompressionProviderOptions>(options => options.Level = CompressionLevel.Fastest);
 builder.Services.AddInfrastructure(builder.Configuration, builder.Environment.ContentRootPath);
 builder.Services.AddWebServices(builder.Configuration);
+builder.Services.AddHealthChecks()
+    .AddCheck<SelfHealthCheck>(
+        "self",
+        failureStatus: HealthStatus.Unhealthy,
+        tags: [ObservabilityConstants.LiveHealthTag])
+    .AddDbContextCheck<ApplicationDbContext>(
+        "database",
+        failureStatus: HealthStatus.Unhealthy,
+        tags: [ObservabilityConstants.ReadyHealthTag]);
+
+var observabilityOptions = builder.Configuration
+    .GetSection(ObservabilityOptions.SectionName)
+    .Get<ObservabilityOptions>() ?? new ObservabilityOptions();
+var serviceVersion = string.IsNullOrWhiteSpace(observabilityOptions.ServiceVersion)
+    ? typeof(Program).Assembly.GetName().Version?.ToString() ?? "1.0.0"
+    : observabilityOptions.ServiceVersion;
+
+var openTelemetryBuilder = builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resource => resource
+        .AddService(
+            serviceName: observabilityOptions.ServiceName,
+            serviceVersion: serviceVersion,
+            serviceInstanceId: Environment.MachineName)
+        .AddAttributes([
+            new KeyValuePair<string, object>("deployment.environment", builder.Environment.EnvironmentName)
+        ]));
+
+openTelemetryBuilder.WithTracing(tracing =>
+{
+    tracing
+        .AddAspNetCoreInstrumentation(options =>
+        {
+            options.RecordException = true;
+            options.Filter = ShouldTraceRequest;
+        })
+        .AddHttpClientInstrumentation(options =>
+        {
+            options.RecordException = true;
+        })
+        .AddSource(ObservabilityConstants.ActivitySourceName)
+        .AddSource("Microsoft.EntityFrameworkCore");
+
+    if (Uri.TryCreate(observabilityOptions.Otlp.Endpoint, UriKind.Absolute, out var tracingEndpoint))
+    {
+        tracing.AddOtlpExporter(options =>
+        {
+            options.Endpoint = tracingEndpoint;
+            options.Protocol = string.Equals(observabilityOptions.Otlp.Protocol, "http/protobuf", StringComparison.OrdinalIgnoreCase)
+                ? OpenTelemetry.Exporter.OtlpExportProtocol.HttpProtobuf
+                : OpenTelemetry.Exporter.OtlpExportProtocol.Grpc;
+        });
+    }
+    else if (observabilityOptions.Console.TracingEnabled)
+    {
+        tracing.AddConsoleExporter();
+    }
+});
+
+openTelemetryBuilder.WithMetrics(metrics =>
+{
+    metrics
+        .AddAspNetCoreInstrumentation()
+        .AddHttpClientInstrumentation()
+        .AddRuntimeInstrumentation()
+        .AddMeter(ObservabilityConstants.MeterName)
+        .AddMeter("Microsoft.AspNetCore.Hosting")
+        .AddMeter("Microsoft.AspNetCore.Server.Kestrel")
+        .AddMeter("System.Net.Http");
+
+    if (Uri.TryCreate(observabilityOptions.Otlp.Endpoint, UriKind.Absolute, out var metricsEndpoint))
+    {
+        metrics.AddOtlpExporter(options =>
+        {
+            options.Endpoint = metricsEndpoint;
+            options.Protocol = string.Equals(observabilityOptions.Otlp.Protocol, "http/protobuf", StringComparison.OrdinalIgnoreCase)
+                ? OpenTelemetry.Exporter.OtlpExportProtocol.HttpProtobuf
+                : OpenTelemetry.Exporter.OtlpExportProtocol.Grpc;
+        });
+    }
+    else if (observabilityOptions.Console.MetricsEnabled)
+    {
+        metrics.AddConsoleExporter();
+    }
+});
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -323,6 +442,16 @@ if (swaggerEnabled)
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapHealthChecks("/health/live", new HealthCheckOptions
+{
+    Predicate = registration => registration.Tags.Contains(ObservabilityConstants.LiveHealthTag),
+    ResponseWriter = (context, report) => HealthCheckResponseWriter.WriteJsonAsync(context, report)
+});
+app.MapHealthChecks("/health/ready", new HealthCheckOptions
+{
+    Predicate = registration => registration.Tags.Contains(ObservabilityConstants.ReadyHealthTag),
+    ResponseWriter = (context, report) => HealthCheckResponseWriter.WriteJsonAsync(context, report)
+});
 app.MapControllers();
 
 app.MapControllerRoute(
