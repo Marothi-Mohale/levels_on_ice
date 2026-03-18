@@ -275,3 +275,8 @@ C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/staticwebas
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/LevelsOnIceSalon.Web.genruntimeconfig.cache
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/ref/LevelsOnIceSalon.Web.dll
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/App_Data/levels-on-ice-salon.db
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/LevelsOnIceSalon.Web.MvcApplicationPartsAssemblyInfo.cs
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll

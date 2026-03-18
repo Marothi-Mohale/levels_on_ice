@@ -1,0 +1,5 @@
+{
+  "LevelsOnIceSalon.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/workspaces\/levels_on_ice\/LevelsOnIceSalon.Domain",
+  "LevelsOnIceSalon.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/workspaces\/levels_on_ice\/LevelsOnIceSalon.Infrastructure",
+  "LevelsOnIceSalon.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/workspaces\/levels_on_ice\/LevelsOnIceSalon.Web"
+}

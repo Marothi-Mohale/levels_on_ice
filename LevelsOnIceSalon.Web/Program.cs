@@ -6,9 +6,11 @@ using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Net.Http.Headers;
+using Microsoft.OpenApi.Models;
 using System.IO.Compression;
 using System.Threading.RateLimiting;
 
@@ -55,6 +57,17 @@ builder.Services
         "Site:BaseUrl must be a valid absolute URL.")
     .ValidateOnStart();
 builder.Services.AddControllersWithViews();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Levels On Ice Salon API",
+        Version = "v1",
+        Description = "Read-only public API endpoints for service discovery and future frontend client integration."
+    });
+    options.SupportNonNullableReferenceTypes();
+});
 builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
@@ -114,11 +127,23 @@ builder.Services.AddDataProtection()
     .SetApplicationName("LevelsOnIceSalon");
 
 var app = builder.Build();
+var swaggerEnabled = app.Configuration.GetValue<bool?>("ApiDocumentation:Enabled") ?? app.Environment.IsDevelopment();
 
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
+}
+
+if (swaggerEnabled)
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.RoutePrefix = "swagger";
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Levels On Ice Salon API v1");
+        options.DocumentTitle = "Levels On Ice Salon API Docs";
+    });
 }
 
 app.UseForwardedHeaders();
@@ -168,3 +193,5 @@ await SeedData.InitializeAsync(
     seedSampleData: app.Configuration.GetValue<bool>("Database:SeedSampleDataOnStartup"));
 
 app.Run();
+
+public partial class Program;

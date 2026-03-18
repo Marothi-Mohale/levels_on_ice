@@ -18,6 +18,7 @@ public static class WebServiceCollectionExtensions
         services.AddScoped<ITestimonialsPageService, TestimonialsPageService>();
         services.AddScoped<IFaqsPageService, FaqsPageService>();
         services.AddScoped<IContactPageService, ContactPageService>();
+        services.AddScoped<IPublicCatalogApiService, PublicCatalogApiService>();
         services.AddScoped<IBookAppointmentService, BookAppointmentService>();
         services.AddScoped<IAppointmentNotificationService, NullAppointmentNotificationService>();
         services.AddScoped<ISeoMetadataService, SeoMetadataService>();

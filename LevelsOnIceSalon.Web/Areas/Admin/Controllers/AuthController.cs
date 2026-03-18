@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using LevelsOnIceSalon.Web.Areas.Admin.ViewModels;
 using LevelsOnIceSalon.Web.Options;
+using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
