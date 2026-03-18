@@ -37,4 +37,6 @@ public class ContactPageViewModel
     public IList<ContactOpeningHourViewModel> OpeningHours { get; set; } = [];
 
     public ContactFormViewModel Form { get; set; } = new();
+
+    public CaptchaWidgetViewModel Captcha { get; set; } = new();
 }

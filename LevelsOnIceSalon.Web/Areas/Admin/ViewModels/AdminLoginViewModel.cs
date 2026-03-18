@@ -13,6 +13,11 @@ public class AdminLoginViewModel
     [Display(Name = "Password")]
     public string Password { get; set; } = string.Empty;
 
+    [Required]
+    [Display(Name = "Authenticator Code")]
+    [StringLength(12)]
+    public string OneTimeCode { get; set; } = string.Empty;
+
     public string? ReturnUrl { get; set; }
 
     public string? StatusMessage { get; set; }

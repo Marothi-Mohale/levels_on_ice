@@ -8,6 +8,8 @@ namespace LevelsOnIceSalon.Web.Services;
 
 public class ContactPageService(
     ApplicationDbContext dbContext,
+    ICaptchaVerificationService captchaVerificationService,
+    IFormInputSanitizer formInputSanitizer,
     ILogger<ContactPageService> logger) : IContactPageService
 {
     private const int MinimumSubmitSeconds = 3;
@@ -86,7 +88,8 @@ public class ContactPageService(
             Form = form ?? new ContactFormViewModel
             {
                 FormRenderedAtUnix = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
-            }
+            },
+            Captcha = captchaVerificationService.BuildWidget()
         };
     }
 
@@ -105,13 +108,43 @@ public class ContactPageService(
             return ContactSubmissionResult.Failure("Please take a moment to review your message and submit again.");
         }
 
+        var captchaResult = await captchaVerificationService.VerifyAsync(
+            form.CaptchaToken,
+            remoteIpAddress: null,
+            cancellationToken);
+        if (!captchaResult.Success)
+        {
+            logger.LogWarning("Rejected contact form submission because CAPTCHA verification failed.");
+            return ContactSubmissionResult.Failure(captchaResult.Message);
+        }
+
+        var fullName = formInputSanitizer.SanitizeSingleLine(form.FullName);
+        var email = formInputSanitizer.SanitizeSingleLine(form.Email);
+        var phoneNumber = formInputSanitizer.SanitizeSingleLine(form.PhoneNumber);
+        var subject = formInputSanitizer.SanitizeSingleLine(form.Subject);
+        var message = formInputSanitizer.SanitizeMultiline(form.Message);
+
+        if (fullName is null || email is null || subject is null || message is null)
+        {
+            logger.LogWarning("Rejected contact form submission because sanitized required fields were empty.");
+            return ContactSubmissionResult.Failure("Please review the required fields and try again.");
+        }
+
+        if (formInputSanitizer.ContainsMarkup(fullName)
+            || formInputSanitizer.ContainsMarkup(subject)
+            || formInputSanitizer.ContainsMarkup(message))
+        {
+            logger.LogWarning("Rejected contact form submission because HTML markup was detected.");
+            return ContactSubmissionResult.Failure("Please submit plain text only.");
+        }
+
         var contactMessage = new ContactMessage
         {
-            FullName = Normalize(form.FullName)!,
-            Email = Normalize(form.Email)!,
-            PhoneNumber = Normalize(form.PhoneNumber),
-            Subject = Normalize(form.Subject)!,
-            Message = Normalize(form.Message)!,
+            FullName = fullName,
+            Email = email,
+            PhoneNumber = phoneNumber,
+            Subject = subject,
+            Message = message,
             Status = ContactMessageStatus.New
         };
 
@@ -162,14 +195,4 @@ public class ContactPageService(
         settings.TryGetValue(key, out var value) && !string.IsNullOrWhiteSpace(value)
             ? value
             : fallback;
-
-    private static string? Normalize(string? value)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            return null;
-        }
-
-        return value.Trim();
-    }
 }

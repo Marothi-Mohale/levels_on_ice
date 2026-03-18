@@ -26,6 +26,7 @@
                     @Html.AntiForgeryToken()
                     <input asp-for="Form.Website" class="booking-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
                     <input asp-for="Form.FormRenderedAtUnix" type="hidden" />
+                    <input asp-for="Form.CaptchaToken" type="hidden" />
 
                     <div class="row g-4">
                         <div class="col-md-6">
@@ -52,6 +53,17 @@
                             <label asp-for="Form.Message" class="form-label"></label>
                             <textarea asp-for="Form.Message" class="form-control booking-input booking-textarea" rows="6" placeholder="Tell us what you need, whether it is service advice, booking help, occasion planning, or a quick question before you visit."></textarea>
                             <span asp-validation-for="Form.Message" class="text-danger field-validation"></span>
+                        </div>
+                        <div class="col-12">
+                            @if (Model.Captcha.Enabled)
+                            {
+                                <div
+                                    class="security-captcha"
+                                    data-captcha-provider="@Model.Captcha.Provider"
+                                    data-captcha-site-key="@Model.Captcha.SiteKey"
+                                    data-captcha-input-id="@Html.IdFor(model => model.Form.CaptchaToken)"></div>
+                                <span asp-validation-for="Form.CaptchaToken" class="text-danger field-validation"></span>
+                            }
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-brand btn-lg booking-submit">Send Message</button>

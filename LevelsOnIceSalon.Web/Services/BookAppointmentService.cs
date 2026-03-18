@@ -9,6 +9,8 @@ namespace LevelsOnIceSalon.Web.Services;
 public class BookAppointmentService(
     ApplicationDbContext dbContext,
     IAppointmentNotificationService appointmentNotificationService,
+    ICaptchaVerificationService captchaVerificationService,
+    IFormInputSanitizer formInputSanitizer,
     ILogger<BookAppointmentService> logger) : IBookAppointmentService
 {
     private const int MinimumSubmitSeconds = 3;
@@ -43,7 +45,8 @@ public class BookAppointmentService(
             Form = form ?? new BookAppointmentFormViewModel
             {
                 FormRenderedAtUnix = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
-            }
+            },
+            Captcha = captchaVerificationService.BuildWidget()
         };
     }
 
@@ -60,6 +63,16 @@ public class BookAppointmentService(
         {
             logger.LogWarning("Rejected booking request because the form was submitted too quickly.");
             return AppointmentSubmissionResult.Failure("Please take a moment to review your details and submit again.");
+        }
+
+        var captchaResult = await captchaVerificationService.VerifyAsync(
+            form.CaptchaToken,
+            remoteIpAddress: null,
+            cancellationToken);
+        if (!captchaResult.Success)
+        {
+            logger.LogWarning("Rejected booking request because CAPTCHA verification failed.");
+            return AppointmentSubmissionResult.Failure(captchaResult.Message);
         }
 
         if (form.PreferredDate < DateOnly.FromDateTime(DateTime.Today))
@@ -80,15 +93,32 @@ public class BookAppointmentService(
             return AppointmentSubmissionResult.Failure("The selected service is no longer available. Please choose another service.");
         }
 
+        var fullName = formInputSanitizer.SanitizeSingleLine(form.FullName);
+        var phoneNumber = formInputSanitizer.SanitizeSingleLine(form.PhoneNumber);
+        var email = formInputSanitizer.SanitizeSingleLine(form.Email);
+        var notes = formInputSanitizer.SanitizeMultiline(form.Notes);
+
+        if (fullName is null || phoneNumber is null)
+        {
+            logger.LogWarning("Rejected booking request because sanitized required fields were empty.");
+            return AppointmentSubmissionResult.Failure("Please review the required fields and try again.");
+        }
+
+        if (formInputSanitizer.ContainsMarkup(fullName) || formInputSanitizer.ContainsMarkup(notes))
+        {
+            logger.LogWarning("Rejected booking request because HTML markup was detected.");
+            return AppointmentSubmissionResult.Failure("Please submit plain text only.");
+        }
+
         var appointmentRequest = new AppointmentRequest
         {
-            FullName = Normalize(form.FullName)!,
-            PhoneNumber = Normalize(form.PhoneNumber)!,
-            Email = Normalize(form.Email),
+            FullName = fullName,
+            PhoneNumber = phoneNumber,
+            Email = email,
             ServiceId = form.PreferredServiceId,
             PreferredDate = form.PreferredDate,
             PreferredTime = form.PreferredTime,
-            Notes = Normalize(form.Notes),
+            Notes = notes,
             Status = AppointmentRequestStatus.Pending,
             Source = AppointmentRequestSource.Website
         };
@@ -103,15 +133,5 @@ public class BookAppointmentService(
             appointmentRequest.ServiceId);
 
         return AppointmentSubmissionResult.Successful("Your booking request is in. We will be in touch soon to confirm the final details.");
-    }
-
-    private static string? Normalize(string? value)
-    {
-        if (string.IsNullOrWhiteSpace(value))
-        {
-            return null;
-        }
-
-        return value.Trim();
     }
 }

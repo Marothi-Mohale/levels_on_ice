@@ -40,6 +40,7 @@
                         @Html.AntiForgeryToken()
                         <input asp-for="Form.Website" class="booking-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
                         <input asp-for="Form.FormRenderedAtUnix" type="hidden" />
+                        <input asp-for="Form.CaptchaToken" type="hidden" />
 
                         <div class="row g-4">
                             <div class="col-md-6">
@@ -80,6 +81,17 @@
                                 <span asp-validation-for="Form.Notes" class="text-danger field-validation"></span>
                             </div>
                             <div class="col-12">
+                                @if (Model.Captcha.Enabled)
+                                {
+                                    <div
+                                        class="security-captcha"
+                                        data-captcha-provider="@Model.Captcha.Provider"
+                                        data-captcha-site-key="@Model.Captcha.SiteKey"
+                                        data-captcha-input-id="@Html.IdFor(model => model.Form.CaptchaToken)"></div>
+                                    <span asp-validation-for="Form.CaptchaToken" class="text-danger field-validation"></span>
+                                }
+                            </div>
+                            <div class="col-12">
                                 <button type="submit" class="btn btn-brand btn-lg booking-submit">Send Booking Request</button>
                             </div>
                         </div>
@@ -113,4 +125,53 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    @if (Model.Captcha.Enabled)
+    {
+        <script src="@Model.Captcha.ScriptSource" async defer></script>
+        <script>
+            window.levelsOnIceCaptchaRenderers = window.levelsOnIceCaptchaRenderers || [];
+            window.levelsOnIceCaptchaRenderers.push(function () {
+                document.querySelectorAll(".security-captcha").forEach(function (element) {
+                    if (element.dataset.captchaRendered === "true") {
+                        return;
+                    }
+
+                    var provider = element.dataset.captchaProvider;
+                    var siteKey = element.dataset.captchaSiteKey;
+                    var input = document.getElementById(element.dataset.captchaInputId);
+                    var callback = function (token) {
+                        if (input) {
+                            input.value = token || "";
+                        }
+                    };
+
+                    if (provider === "hCaptcha" && window.hcaptcha) {
+                        window.hcaptcha.render(element, {
+                            sitekey: siteKey,
+                            callback: callback,
+                            "expired-callback": function () { callback(""); }
+                        });
+                        element.dataset.captchaRendered = "true";
+                        return;
+                    }
+
+                    if (window.turnstile) {
+                        window.turnstile.render(element, {
+                            sitekey: siteKey,
+                            callback: callback,
+                            "expired-callback": function () { callback(""); }
+                        });
+                        element.dataset.captchaRendered = "true";
+                    }
+                });
+            });
+
+            window.levelsOnIceCaptchaOnLoad = function () {
+                (window.levelsOnIceCaptchaRenderers || []).forEach(function (render) { render(); });
+            };
+            document.addEventListener("DOMContentLoaded", function () {
+                (window.levelsOnIceCaptchaRenderers || []).forEach(function (render) { render(); });
+            });
+        </script>
+    }
 }

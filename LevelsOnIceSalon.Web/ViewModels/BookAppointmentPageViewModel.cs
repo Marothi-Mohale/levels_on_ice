@@ -17,4 +17,6 @@ public class BookAppointmentPageViewModel
     public IList<ServiceOptionViewModel> Services { get; set; } = [];
 
     public BookAppointmentFormViewModel Form { get; set; } = new();
+
+    public CaptchaWidgetViewModel Captcha { get; set; } = new();
 }

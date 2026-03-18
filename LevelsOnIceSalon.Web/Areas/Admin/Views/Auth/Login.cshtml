@@ -20,7 +20,7 @@
         <section class="admin-login-card">
             <p class="eyebrow mb-2">Admin Access</p>
             <h1 class="admin-login-title">Levels On Ice Salon Admin</h1>
-            <p class="u-text-muted mb-4">Sign in to manage services, gallery images, testimonials, FAQs, bookings, and contact messages.</p>
+            <p class="u-text-muted mb-4">Sign in to manage services, gallery images, testimonials, FAQs, bookings, and contact messages. MFA is required for every admin session.</p>
 
             @if (!string.IsNullOrWhiteSpace(Model.StatusMessage))
             {
@@ -42,6 +42,12 @@
                     <label asp-for="Password" class="form-label"></label>
                     <input asp-for="Password" class="form-control booking-input" autocomplete="current-password" />
                     <span asp-validation-for="Password" class="field-validation text-danger"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="OneTimeCode" class="form-label"></label>
+                    <input asp-for="OneTimeCode" class="form-control booking-input" inputmode="numeric" autocomplete="one-time-code" />
+                    <span asp-validation-for="OneTimeCode" class="field-validation text-danger"></span>
                 </div>
 
                 <button type="submit" class="btn btn-brand btn-lg w-100">Sign In To Admin</button>

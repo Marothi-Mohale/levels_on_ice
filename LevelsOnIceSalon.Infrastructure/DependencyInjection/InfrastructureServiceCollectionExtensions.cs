@@ -12,6 +12,7 @@ public static class InfrastructureServiceCollectionExtensions
         var connectionString = configuration.GetConnectionString("DefaultConnection")
             ?? throw new InvalidOperationException("Connection string 'DefaultConnection' was not found.");
         var provider = configuration["Database:Provider"]?.Trim().ToLowerInvariant() ?? "sqlite";
+        connectionString = RemoveVerboseErrorDetailFlag(connectionString, configuration);
 
         services.AddDbContext<ApplicationDbContext>(options =>
         {
@@ -66,5 +67,17 @@ public static class InfrastructureServiceCollectionExtensions
         }
 
         return connectionString;
+    }
+
+    private static string RemoveVerboseErrorDetailFlag(string connectionString, IConfiguration configuration)
+    {
+        var environment = configuration["ASPNETCORE_ENVIRONMENT"];
+        if (string.Equals(environment, "Development", StringComparison.OrdinalIgnoreCase))
+        {
+            return connectionString;
+        }
+
+        const string includeErrorDetail = "Include Error Detail=true";
+        return connectionString.Replace(includeErrorDetail, "Include Error Detail=false", StringComparison.OrdinalIgnoreCase);
     }
 }
