@@ -12,6 +12,7 @@ public static class WebServiceCollectionExtensions
         services.AddSingleton<IImageMetadataService, ImageMetadataService>();
         services.AddSingleton<IFormInputSanitizer, FormInputSanitizer>();
         services.AddSingleton<IAdminMfaService, AdminMfaService>();
+        services.AddScoped<IApiAccessTokenService, ApiAccessTokenService>();
         services.AddScoped<ISitePageContentService, SitePageContentService>();
         services.AddScoped<IServicesPageService, ServicesPageService>();
         services.AddScoped<IGalleryPageService, GalleryPageService>();

@@ -4,6 +4,51 @@
         <name>LevelsOnIceSalon.Web</name>
     </assembly>
     <members>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse">
+            <summary>
+            Represents a successful bearer token response.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse.AccessToken">
+            <summary>
+            Gets or sets the JWT bearer access token.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse.TokenType">
+            <summary>
+            Gets or sets the token type. Always <c>Bearer</c>.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse.ExpiresIn">
+            <summary>
+            Gets or sets the access token lifetime in seconds.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse">
+            <summary>
+            Represents the authenticated API principal.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.Username">
+            <summary>
+            Gets or sets the authenticated username.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.AuthenticationScheme">
+            <summary>
+            Gets or sets the authentication scheme used by the principal.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.Roles">
+            <summary>
+            Gets or sets the roles assigned to the principal.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.AuthenticationMethods">
+            <summary>
+            Gets or sets the authentication methods recorded for the token.
+            </summary>
+        </member>
         <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1">
             <summary>
             Represents a page of API results together with paging metadata.
@@ -38,6 +83,26 @@
         <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.TotalPages">
             <summary>
             Gets the total number of pages available for the current page size.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest">
+            <summary>
+            Represents the credentials required to mint an API access token for an admin user.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest.Username">
+            <summary>
+            Gets or sets the configured admin username.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest.Password">
+            <summary>
+            Gets or sets the configured admin password.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest.OneTimeCode">
+            <summary>
+            Gets or sets the current six-digit authenticator code.
             </summary>
         </member>
         <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest">
@@ -329,6 +394,30 @@
             <summary>
             Gets the parent category reference for the service.
             </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Controllers.Api.AuthController">
+            <summary>
+            Exposes token issuance and authenticated principal inspection endpoints for the public API.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.AuthController.#ctor(LevelsOnIceSalon.Web.Services.IApiAccessTokenService,Microsoft.Extensions.Logging.ILogger{LevelsOnIceSalon.Web.Controllers.Api.AuthController})">
+            <summary>
+            Exposes token issuance and authenticated principal inspection endpoints for the public API.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.AuthController.CreateToken(LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Exchanges configured admin credentials and an MFA code for a short-lived bearer token.
+            </summary>
+            <param name="request">The admin credentials and one-time authenticator code.</param>
+            <param name="cancellationToken">The request cancellation token.</param>
+            <returns>A bearer access token response.</returns>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.AuthController.Me">
+            <summary>
+            Returns the authenticated principal represented by the supplied bearer token.
+            </summary>
+            <returns>The authenticated API user.</returns>
         </member>
         <member name="T:LevelsOnIceSalon.Web.Controllers.Api.ServiceCategoriesController">
             <summary>

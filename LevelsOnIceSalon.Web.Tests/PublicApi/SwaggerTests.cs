@@ -26,10 +26,15 @@ public sealed class SwaggerTests : IClassFixture<IntegrationTestWebApplicationFa
 
         Assert.Contains("/api/v1/service-categories", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("/api/v1/services", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("/api/v1/auth/token", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("/api/v1/auth/me", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("Levels On Ice Salon Public API", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("Levels On Ice Salon Engineering", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("\"Bearer\"", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Authentication", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("Catalog / Services", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("Catalog / Service Categories", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Auth_Me_v1", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("Services_GetAll_v1", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("ServiceCategories_GetAll_v1", swaggerJson, StringComparison.Ordinal);
         Assert.DoesNotContain("\"/about\"", swaggerJson, StringComparison.Ordinal);

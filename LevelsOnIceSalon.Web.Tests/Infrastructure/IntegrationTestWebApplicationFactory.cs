@@ -35,6 +35,10 @@ public sealed class IntegrationTestWebApplicationFactory : WebApplicationFactory
                 ["Database:ApplyMigrationsOnStartup"] = "false",
                 ["Database:SeedSampleDataOnStartup"] = "false",
                 ["ApiDocumentation:Enabled"] = "true",
+                ["ApiTokens:SigningKey"] = "test-signing-key-with-at-least-32-bytes!!",
+                ["ApiTokens:Issuer"] = "LevelsOnIceSalon.Tests",
+                ["ApiTokens:Audience"] = "LevelsOnIceSalon.Tests.Api",
+                ["ApiTokens:AccessTokenLifetimeMinutes"] = "60",
                 ["ConnectionStrings:DefaultConnection"] = $"Data Source={sqliteDatabasePath}"
             });
         });

@@ -1,20 +1,27 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using LevelsOnIceSalon.Web.Data;
+using LevelsOnIceSalon.Web.Extensions;
 using LevelsOnIceSalon.Infrastructure.DependencyInjection;
 using LevelsOnIceSalon.Web.Middleware;
 using LevelsOnIceSalon.Web.OpenApi;
 using LevelsOnIceSalon.Web.Options;
+using LevelsOnIceSalon.Web.Security;
 using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
+using System.Text;
 using System.IO.Compression;
+using System.Security.Claims;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -58,6 +65,11 @@ builder.Services
     .Validate(
         options => Uri.TryCreate(options.BaseUrl, UriKind.Absolute, out _),
         "Site:BaseUrl must be a valid absolute URL.")
+    .ValidateOnStart();
+builder.Services
+    .AddOptions<ApiTokenOptions>()
+    .Bind(builder.Configuration.GetSection(ApiTokenOptions.SectionName))
+    .ValidateDataAnnotations()
     .ValidateOnStart();
 builder.Services.AddProblemDetails();
 builder.Services.AddControllersWithViews();
@@ -124,6 +136,18 @@ builder.Services.AddRateLimiter(options =>
             AutoReplenishment = true
         });
     });
+    options.AddPolicy("api-token", context =>
+    {
+        var partitionKey = context.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+        return RateLimitPartition.GetFixedWindowLimiter(partitionKey, _ => new FixedWindowRateLimiterOptions
+        {
+            PermitLimit = 10,
+            Window = TimeSpan.FromMinutes(1),
+            QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+            QueueLimit = 0,
+            AutoReplenishment = true
+        });
+    });
 });
 builder.Services.AddResponseCompression(options =>
 {
@@ -149,7 +173,66 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
             : CookieSecurePolicy.Always;
         options.SlidingExpiration = true;
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
+    })
+    .AddJwtBearer(AuthConstants.BearerScheme, _ => { });
+builder.Services.AddOptions<JwtBearerOptions>(AuthConstants.BearerScheme)
+    .Configure<IOptions<ApiTokenOptions>, IWebHostEnvironment>((options, apiTokenOptions, environment) =>
+    {
+        var tokenOptions = apiTokenOptions.Value;
+        var signingKeyBytes = Encoding.UTF8.GetBytes(tokenOptions.SigningKey);
+
+        options.RequireHttpsMetadata = !environment.IsDevelopment();
+        options.IncludeErrorDetails = environment.IsDevelopment();
+        options.SaveToken = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(signingKeyBytes),
+            ValidateIssuer = true,
+            ValidIssuer = tokenOptions.Issuer,
+            ValidateAudience = true,
+            ValidAudience = tokenOptions.Audience,
+            ValidateLifetime = true,
+            RequireExpirationTime = true,
+            ClockSkew = TimeSpan.FromSeconds(30),
+            NameClaimType = ClaimTypes.Name,
+            RoleClaimType = ClaimTypes.Role
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnChallenge = async context =>
+            {
+                if (context.Response.HasStarted)
+                {
+                    return;
+                }
+
+                context.HandleResponse();
+                await AuthenticationProblemDetailsWriter.WriteAsync(
+                    context.HttpContext,
+                    StatusCodes.Status401Unauthorized,
+                    "Authentication required.",
+                    "A valid bearer access token is required to access this resource.",
+                    context.HttpContext.RequestAborted);
+            },
+            OnForbidden = context =>
+                AuthenticationProblemDetailsWriter.WriteAsync(
+                    context.HttpContext,
+                    StatusCodes.Status403Forbidden,
+                    "Forbidden.",
+                    "The authenticated principal does not have access to this resource.",
+                    context.HttpContext.RequestAborted)
+        };
     });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy(AuthConstants.ApiAdminPolicy, policy =>
+    {
+        policy.AddAuthenticationSchemes(AuthConstants.BearerScheme);
+        policy.RequireAuthenticatedUser();
+        policy.RequireRole(AuthConstants.AdminRole);
+    });
+});
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysPath))
     .SetApplicationName("LevelsOnIceSalon");

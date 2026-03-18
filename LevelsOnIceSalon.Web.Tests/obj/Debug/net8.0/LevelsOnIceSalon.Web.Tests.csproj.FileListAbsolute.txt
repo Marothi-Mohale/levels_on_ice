@@ -477,3 +477,11 @@
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Http.dll
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Mvc.dll
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
