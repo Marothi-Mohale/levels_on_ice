@@ -30,4 +30,6 @@ public class ContactFormViewModel
     public string? Website { get; set; }
 
     public long FormRenderedAtUnix { get; set; }
+
+    public string? CaptchaToken { get; set; }
 }

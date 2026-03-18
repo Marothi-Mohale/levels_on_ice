@@ -11,4 +11,9 @@ public class AdminAuthOptions
 
     [Required]
     public string Password { get; set; } = string.Empty;
+
+    public bool RequireMfa { get; set; } = true;
+
+    [RegularExpression("^[A-Z2-7=\\s]*$", ErrorMessage = "AdminAuth:MfaSharedKey must be a Base32 value.")]
+    public string MfaSharedKey { get; set; } = string.Empty;
 }

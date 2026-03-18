@@ -14,6 +14,7 @@ namespace LevelsOnIceSalon.Web.Areas.Admin.Controllers;
 [AllowAnonymous]
 public class AuthController(
     IOptions<AdminAuthOptions> adminAuthOptions,
+    IAdminMfaService adminMfaService,
     ILogger<AuthController> logger) : Controller
 {
     private readonly AdminAuthOptions authOptions = adminAuthOptions.Value;
@@ -53,10 +54,22 @@ public class AuthController(
             return View(model);
         }
 
+        if (!adminMfaService.ValidateCode(model.OneTimeCode))
+        {
+            logger.LogWarning(
+                "Invalid admin MFA code attempt for username '{Username}' from IP '{IpAddress}'.",
+                model.Username?.Trim(),
+                HttpContext.Connection.RemoteIpAddress?.ToString());
+            ModelState.AddModelError(string.Empty, "The username, password, or authenticator code is incorrect.");
+            model.StatusMessage = "Admin access requires the configured MFA code.";
+            return View(model);
+        }
+
         var claims = new List<Claim>
         {
             new(ClaimTypes.Name, model.Username.Trim()),
-            new(ClaimTypes.Role, AdminControllerBase.AdminRoleName)
+            new(ClaimTypes.Role, AdminControllerBase.AdminRoleName),
+            new("amr", "mfa")
         };
 
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

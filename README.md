@@ -1,12 +1,60 @@
 # Levels On Ice Salon
 
-A production-oriented ASP.NET Core MVC salon website built as a portfolio-quality project with a polished public brand experience, a lightweight admin area, and a pragmatic content workflow powered by EF Core.
+An ASP.NET Core 8 MVC portfolio project built to demonstrate the kind of full stack engineering expected in a modern product team: clean backend structure, practical database design, secure admin workflows, polished UI delivery, and production-conscious application behavior.
 
-This project is designed to showcase how a modern service business site can be delivered with strong fundamentals: clean separation between web, infrastructure, and domain layers; server-rendered performance; manageable content administration; and a deployment path that stays simple for smaller teams.
+This repository is especially relevant for mid-level full stack roles centered on C#, .NET, SQL-backed applications, secure web delivery, and shipping end-to-end features in a small, high-impact team.
+
+## Why This Project Fits The Role
+
+This codebase aligns well with a mid-level Full Stack Developer position focused on ASP.NET Core, SQL, secure engineering, and product delivery:
+
+- Builds production-style features in C# and .NET 8
+- Uses a layered architecture across web, infrastructure, and domain projects
+- Works with EF Core and relational database patterns
+- Includes authenticated admin functionality and security-minded configuration
+- Delivers full stack user-facing features from persistence to UI
+- Shows pragmatic engineering choices for a small team shipping quickly
+
+It is not a one-to-one match for every item in the job description. This repo strongly demonstrates .NET, MVC, EF Core, SQL-backed workflows, secure configuration, and full stack feature delivery. It does not currently showcase a TypeScript SPA, AWS infrastructure, Kubernetes, OpenTelemetry, or OIDC/OAuth2 flows.
+
+## Role-Relevant Skills Demonstrated
+
+### Backend and API-Oriented Thinking
+
+- ASP.NET Core 8 application structure with clear service registration and startup composition
+- Controller and service-based request handling
+- Environment-aware configuration and fail-fast option validation
+- Separation of concerns between web, infrastructure, and domain layers
+
+While this project is MVC-first rather than REST API-first, the same backend fundamentals apply directly to API development: dependency injection, validation, persistence orchestration, authentication, and production configuration.
+
+### Full Stack Delivery
+
+- End-to-end public site flows for browsing services, viewing gallery content, and submitting booking or contact forms
+- Admin-side workflows for updating content and managing operational data
+- Server-rendered Razor UI with lightweight JavaScript enhancements
+- Responsive, content-driven pages designed for real-world business usage
+
+### Data and Persistence
+
+- EF Core 8 with migrations in source control
+- SQLite as the default provider with PostgreSQL-ready infrastructure
+- Structured entity configurations and database-backed content management
+- Typical CRUD and query flows through `ApplicationDbContext`
+
+### Security and Reliability
+
+- Cookie-authenticated admin area
+- MFA-protected admin sign-in
+- Rate limiting and hardened cookie settings
+- Secrets moved out of committed config and into environment variables
+- Production-minded static asset caching and response compression
+
+These choices align well with teams that care about secure engineering culture and OWASP-style thinking, even though this repository is not positioned as a formal security showcase.
 
 ## Project Overview
 
-Levels On Ice Salon is a multi-page beauty and salon website focused on:
+Levels On Ice Salon is a multi-page salon and beauty website focused on:
 
 - premium brand presentation
 - service discovery and pricing
@@ -15,51 +63,20 @@ Levels On Ice Salon is a multi-page beauty and salon website focused on:
 - gallery and testimonial storytelling
 - admin-side content management
 
-The application uses server-rendered Razor views instead of a heavy front-end SPA, which keeps the stack approachable, fast to load, and easier to host on modest infrastructure.
+The app uses server-rendered Razor views instead of a frontend SPA. That keeps the stack approachable, fast to load, and easier to operate for small teams while still demonstrating full stack product delivery.
 
 ## Tech Stack
 
-- ASP.NET Core 8 MVC
-- Razor Views and partial-based UI composition
 - C#
+- .NET 8
+- ASP.NET Core MVC
+- Razor Views
 - Entity Framework Core 8
-- SQLite for default local and lightweight production usage
-- PostgreSQL-ready infrastructure for future scaling
-- Cookie authentication for the admin area
-- Native browser JavaScript for lightweight UI behavior
-- CSS in `wwwroot` with asset versioning and production-friendly caching
-
-## Features
-
-- Public marketing pages for home, about, services, gallery, testimonials, FAQs, booking, and contact
-- Premium salon-focused copy and content structure
-- Admin area for managing services, categories, FAQs, testimonials, gallery images, contact messages, appointment requests, opening hours, and site settings
-- Database-backed booking and contact forms
-- Search-engine-conscious metadata flow
-- Image lazy loading and responsive image support where practical
-- Static asset caching and response compression
-- Upload validation and safer gallery image handling
-- SQLite-first local setup with optional PostgreSQL configuration
-
-## Architecture Summary
-
-The solution is split into three projects with clear responsibilities:
-
-- `LevelsOnIceSalon.Web`
-  Hosts the ASP.NET Core MVC application, controllers, services, Razor views, admin area, options binding, and web-specific orchestration.
-- `LevelsOnIceSalon.Infrastructure`
-  Owns EF Core, database context, entity configurations, migrations, provider setup, and seed support.
-- `LevelsOnIceSalon.Domain`
-  Contains the core entities, enums, and shared domain base types.
-
-At a high level, the request flow looks like this:
-
-1. A controller receives a request.
-2. Web-layer services prepare page content, forms, and SEO metadata.
-3. Infrastructure persists and queries data through `ApplicationDbContext`.
-4. Razor views render the final server-side HTML.
-
-This keeps the public site lean while making the project easy to extend without overengineering.
+- SQLite
+- PostgreSQL-ready provider support
+- Cookie authentication
+- Native browser JavaScript
+- CSS and static assets in `wwwroot`
 
 ## Solution Structure
 
@@ -100,6 +117,57 @@ This keeps the public site lean while making the project easy to extend without 
 `-- LevelsOnIceSalon.sln
 ```
 
+## Architecture Summary
+
+The solution is split into three projects with clear responsibilities:
+
+- `LevelsOnIceSalon.Web`
+  Hosts the ASP.NET Core MVC app, controllers, Razor views, admin area, options binding, and web-specific orchestration.
+- `LevelsOnIceSalon.Infrastructure`
+  Owns EF Core, database context, migrations, provider setup, and seed support.
+- `LevelsOnIceSalon.Domain`
+  Contains the core entities, enums, and shared domain types.
+
+At a high level, the request flow looks like this:
+
+1. A controller receives a request.
+2. Web-layer services prepare content, forms, and page metadata.
+3. Infrastructure persists and queries data through `ApplicationDbContext`.
+4. Razor views render the final server-side HTML.
+
+## Features
+
+- Public marketing pages for home, about, services, gallery, testimonials, FAQs, booking, and contact
+- Admin area for managing services, categories, FAQs, testimonials, gallery images, contact messages, appointment requests, opening hours, and site settings
+- Database-backed booking and contact forms
+- Search-engine-conscious metadata flow
+- Image lazy loading and responsive image support where practical
+- Static asset caching and response compression
+- Upload validation and safer gallery image handling
+- SQLite-first local setup with optional PostgreSQL configuration
+
+## Screenshots
+
+### Home Page
+
+![Home page screenshot](docs/screenshots/home-page.png)
+
+### Services Page
+
+![Services page screenshot](docs/screenshots/services-page.png)
+
+### Gallery Page
+
+![Gallery page screenshot](docs/screenshots/gallery-page.png)
+
+### Booking Page
+
+![Booking page screenshot](docs/screenshots/booking-page.png)
+
+### Admin Dashboard
+
+![Admin dashboard screenshot](docs/screenshots/admin-dashboard.png)
+
 ## Local Setup
 
 ### Prerequisites
@@ -117,53 +185,47 @@ dotnet restore ./LevelsOnIceSalon.sln --configfile ./NuGet.Config
 dotnet run --project ./LevelsOnIceSalon.Web/LevelsOnIceSalon.Web.csproj
 ```
 
-The app will start the MVC site locally. By default, development configuration points to SQLite and can apply migrations plus seed sample data on startup.
+By default, development configuration points to SQLite and can apply migrations plus seed sample data on startup.
 
 ### Required Configuration
 
-Before using the admin area outside throwaway local testing, set real values for:
+Secrets are configured through environment variables:
 
-- `AdminAuth:Username`
-- `AdminAuth:Password`
-- `Site:BaseUrl`
+- `AdminAuth__Username`
+- `AdminAuth__Password`
+- `AdminAuth__MfaSharedKey`
+- `Captcha__SiteKey`
+- `Captcha__SecretKey`
+- `ConnectionStrings__DefaultConnection`
 
-The app now validates key options on startup and will fail fast if required values are missing or left as placeholders.
+Non-secret settings such as `Site__BaseUrl` can still be configured through appsettings or environment variables.
 
-## SQLite Setup
+### Example Local Environment Variables
 
-SQLite is the default database provider and the easiest way to run the project locally.
+```bash
+export AdminAuth__Username="admin"
+export AdminAuth__Password="use-a-long-random-password"
+export AdminAuth__MfaSharedKey="YOUR_BASE32_TOTP_SECRET"
+export Site__BaseUrl="http://localhost:5099"
 
-### Default SQLite Files
+# Optional CAPTCHA
+export Captcha__Enabled="true"
+export Captcha__Provider="Turnstile"
+export Captcha__SiteKey="your-site-key"
+export Captcha__SecretKey="your-secret-key"
+```
 
-- Development database: `LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.dev.db`
-- General database: `LevelsOnIceSalon.Web/App_Data/levels-on-ice-salon.db`
-
-### Development Configuration
-
-SQLite is already configured in:
-
-- `LevelsOnIceSalon.Web/appsettings.Development.json`
-- `LevelsOnIceSalon.Web/appsettings.json`
-
-### Typical SQLite Workflow
-
-1. Restore tools and packages.
-2. Run the web project.
-3. Let startup apply migrations and sample data in development, or run migrations manually if preferred.
-
-If you want a clean local database, stop the app, remove the SQLite file in `App_Data`, and run migrations again.
-
-## EF Core Migration Commands
+## EF Core Commands
 
 Run all commands from the solution root.
 
-### Restore the EF Core Tool
+### Restore The EF Core Tool
 
 ```bash
 dotnet tool restore
 ```
 
-### Add a Migration
+### Add A Migration
 
 ```bash
 dotnet ef migrations add YourMigrationName \
@@ -181,7 +243,7 @@ dotnet ef database update \
   --context LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext
 ```
 
-### Remove the Last Migration
+### Remove The Last Migration
 
 ```bash
 dotnet ef migrations remove \
@@ -190,100 +252,22 @@ dotnet ef migrations remove \
   --context LevelsOnIceSalon.Infrastructure.Data.ApplicationDbContext
 ```
 
-## Key Implementation Notes
+## Notes For Reviewers And Hiring Teams
 
-### Public Site
+If you are reviewing this project against a role similar to:
 
-- Server-rendered pages keep the experience fast and SEO-friendly.
-- Shared partials are used to compose branded sections across the site.
-- Performance work includes response compression, static asset caching, image lazy loading, responsive images, and reduced JavaScript weight.
+- ASP.NET Core and C# backend development
+- EF Core and relational database work
+- secure web application delivery
+- full stack ownership in a small engineering team
 
-### Admin Area
+then the strongest signals in this repo are the application structure, database-backed content workflows, security-conscious admin implementation, and the ability to ship complete features across backend and UI layers.
 
-- Cookie-authenticated admin area under `Areas/Admin`
-- CRUD workflows for core content management
-- Validation improvements for content editing and uploads
-- Basic security hardening including safer cookie settings, upload checks, and login rate limiting
+If needed, this project could be extended next with:
 
-### Data Layer
-
-- Entity configurations live in Infrastructure rather than in the entities themselves
-- EF Core migrations are versioned in source control
-- SQLite is the default provider, with PostgreSQL support still available for future migration
-
-## Screenshots
-
-Replace these placeholders with real product screenshots before publishing the project portfolio.
-
-### Public Home Page
-
-`docs/screenshots/home-page.png`
-
-### Services Page
-
-`docs/screenshots/services-page.png`
-
-### Gallery Page
-
-`docs/screenshots/gallery-page.png`
-
-### Booking Flow
-
-`docs/screenshots/booking-page.png`
-
-### Admin Dashboard
-
-`docs/screenshots/admin-dashboard.png`
-
-## Deployment Notes
-
-This project is suitable for small-to-medium production hosting with a lightweight infrastructure footprint.
-
-### Production Checklist
-
-- Set real `AdminAuth` credentials through environment-specific configuration or secret storage
-- Set a correct public `Site:BaseUrl`
-- Keep `App:UseHttpsRedirection` enabled in production
-- Review `Database:ApplyMigrationsOnStartup` and `Database:SeedSampleDataOnStartup` before deployment
-- Persist the `App_Data/DataProtection-Keys` directory across deployments if using multiple restarts or instances
-- Confirm write access for `wwwroot/uploads/gallery` if admin uploads are enabled in production
-- Serve the site behind HTTPS and, if applicable, a reverse proxy or CDN
-
-### Static Assets
-
-The app uses versioned static assets and long-lived cache headers. In production, that makes it safe to cache CSS, JS, and images aggressively.
-
-### Minification And Bundling Guidance
-
-The current front end is intentionally lightweight, so the recommended bundling strategy is a small `esbuild` step rather than a heavier SPA toolchain.
-
-```bash
-npx esbuild LevelsOnIceSalon.Web/wwwroot/js/site.js --bundle --minify --outfile=LevelsOnIceSalon.Web/wwwroot/js/site.min.js
-npx esbuild LevelsOnIceSalon.Web/wwwroot/css/site.css --minify --outfile=LevelsOnIceSalon.Web/wwwroot/css/site.min.css
-```
-
-This approach fits the project well because:
-
-- there is one primary CSS entry point
-- there is one primary JavaScript entry point
-- the site is server-rendered and does not need a complex client build system
-
-## Future Improvements
-
-- Replace shared config-based admin credentials with ASP.NET Identity or another proper multi-user admin system
-- Add automated tests for services, controllers, validation, and critical page flows
-- Refactor admin CRUD controllers toward a more consistent service-based pattern
-- Add image processing or thumbnail generation as part of the upload pipeline
-- Introduce CI validation for build, migrations, and formatting
-- Add a real screenshot gallery and deployment diagram to strengthen the portfolio presentation
-- Expand observability with structured logging and error monitoring integration
-
-## Portfolio Positioning
-
-This project is intentionally more than a brochure site. It demonstrates:
-
-- full-stack .NET application structure
-- pragmatic architecture for a real business website
-- admin and content-management workflows
-- production-minded performance and security improvements
-- a polished, brand-led front-end experience without unnecessary framework weight
+- REST APIs with Swagger/OpenAPI
+- a TypeScript frontend client
+- cloud deployment on AWS
+- CI/CD automation
+- observability instrumentation
+- stronger automated test coverage

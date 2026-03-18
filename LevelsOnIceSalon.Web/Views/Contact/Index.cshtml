@@ -10,4 +10,53 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    @if (Model.Captcha.Enabled)
+    {
+        <script src="@Model.Captcha.ScriptSource" async defer></script>
+        <script>
+            window.levelsOnIceCaptchaRenderers = window.levelsOnIceCaptchaRenderers || [];
+            window.levelsOnIceCaptchaRenderers.push(function () {
+                document.querySelectorAll(".security-captcha").forEach(function (element) {
+                    if (element.dataset.captchaRendered === "true") {
+                        return;
+                    }
+
+                    var provider = element.dataset.captchaProvider;
+                    var siteKey = element.dataset.captchaSiteKey;
+                    var input = document.getElementById(element.dataset.captchaInputId);
+                    var callback = function (token) {
+                        if (input) {
+                            input.value = token || "";
+                        }
+                    };
+
+                    if (provider === "hCaptcha" && window.hcaptcha) {
+                        window.hcaptcha.render(element, {
+                            sitekey: siteKey,
+                            callback: callback,
+                            "expired-callback": function () { callback(""); }
+                        });
+                        element.dataset.captchaRendered = "true";
+                        return;
+                    }
+
+                    if (window.turnstile) {
+                        window.turnstile.render(element, {
+                            sitekey: siteKey,
+                            callback: callback,
+                            "expired-callback": function () { callback(""); }
+                        });
+                        element.dataset.captchaRendered = "true";
+                    }
+                });
+            });
+
+            window.levelsOnIceCaptchaOnLoad = function () {
+                (window.levelsOnIceCaptchaRenderers || []).forEach(function (render) { render(); });
+            };
+            document.addEventListener("DOMContentLoaded", function () {
+                (window.levelsOnIceCaptchaRenderers || []).forEach(function (render) { render(); });
+            });
+        </script>
+    }
 }

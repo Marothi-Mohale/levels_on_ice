@@ -8,7 +8,10 @@ public static class WebServiceCollectionExtensions
 {
     public static IServiceCollection AddWebServices(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddHttpClient<ICaptchaVerificationService, CaptchaVerificationService>();
         services.AddSingleton<IImageMetadataService, ImageMetadataService>();
+        services.AddSingleton<IFormInputSanitizer, FormInputSanitizer>();
+        services.AddSingleton<IAdminMfaService, AdminMfaService>();
         services.AddScoped<ISitePageContentService, SitePageContentService>();
         services.AddScoped<IServicesPageService, ServicesPageService>();
         services.AddScoped<IGalleryPageService, GalleryPageService>();
@@ -18,6 +21,7 @@ public static class WebServiceCollectionExtensions
         services.AddScoped<IBookAppointmentService, BookAppointmentService>();
         services.AddScoped<IAppointmentNotificationService, NullAppointmentNotificationService>();
         services.AddScoped<ISeoMetadataService, SeoMetadataService>();
+        services.AddHostedService<CustomerDataBackupService>();
         return services;
     }
 }

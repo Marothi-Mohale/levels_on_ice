@@ -1,9 +1,11 @@
 using LevelsOnIceSalon.Web.Data;
 using LevelsOnIceSalon.Infrastructure.DependencyInjection;
+using LevelsOnIceSalon.Web.Middleware;
 using LevelsOnIceSalon.Web.Options;
 using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Net.Http.Headers;
@@ -24,9 +26,25 @@ builder.Services
     .Bind(builder.Configuration.GetSection(AdminAuthOptions.SectionName))
     .ValidateDataAnnotations()
     .Validate(
-        options => !string.Equals(options.Username, "CHANGE_ME", StringComparison.OrdinalIgnoreCase)
-            && !string.Equals(options.Password, "CHANGE_ME", StringComparison.OrdinalIgnoreCase),
-        "AdminAuth credentials must be configured with real values.")
+        options => !string.IsNullOrWhiteSpace(options.Username) && !string.IsNullOrWhiteSpace(options.Password),
+        "AdminAuth credentials must be configured through environment variables.")
+    .Validate(
+        options => !options.RequireMfa || !string.IsNullOrWhiteSpace(options.MfaSharedKey),
+        "Admin MFA must be configured through AdminAuth__MfaSharedKey when MFA is required.")
+    .ValidateOnStart();
+builder.Services
+    .AddOptions<CaptchaOptions>()
+    .Bind(builder.Configuration.GetSection(CaptchaOptions.SectionName))
+    .ValidateDataAnnotations()
+    .Validate(
+        options => !options.Enabled
+            || (!string.IsNullOrWhiteSpace(options.SiteKey) && !string.IsNullOrWhiteSpace(options.SecretKey)),
+        "CAPTCHA is enabled but Captcha__SiteKey and Captcha__SecretKey are not configured.")
+    .ValidateOnStart();
+builder.Services
+    .AddOptions<DataBackupOptions>()
+    .Bind(builder.Configuration.GetSection(DataBackupOptions.SectionName))
+    .ValidateDataAnnotations()
     .ValidateOnStart();
 builder.Services
     .AddOptions<SiteOptions>()
@@ -38,6 +56,17 @@ builder.Services
     .ValidateOnStart();
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+builder.Services.Configure<HttpsRedirectionOptions>(options =>
+{
+    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+    options.HttpsPort = null;
+});
 builder.Services.AddResponseCaching();
 builder.Services.AddRateLimiter(options =>
 {
@@ -92,7 +121,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-if (app.Configuration.GetValue<bool>("App:UseHttpsRedirection"))
+app.UseForwardedHeaders();
+app.UseMiddleware<SuspiciousTrafficLoggingMiddleware>();
+app.UseMiddleware<SecurityHeadersMiddleware>();
+
+if (!app.Environment.IsDevelopment() || app.Configuration.GetValue<bool>("App:UseHttpsRedirection"))
 {
     app.UseHttpsRedirection();
 }
