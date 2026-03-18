@@ -1,6 +1,8 @@
 using System.Security.Claims;
 using LevelsOnIceSalon.Web.Areas.Admin.ViewModels;
 using LevelsOnIceSalon.Web.Options;
+using LevelsOnIceSalon.Web.Security;
+using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -68,7 +70,7 @@ public class AuthController(
         var claims = new List<Claim>
         {
             new(ClaimTypes.Name, model.Username.Trim()),
-            new(ClaimTypes.Role, AdminControllerBase.AdminRoleName),
+            new(ClaimTypes.Role, AuthConstants.AdminRole),
             new("amr", "mfa")
         };
 

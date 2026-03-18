@@ -12,12 +12,14 @@ public static class WebServiceCollectionExtensions
         services.AddSingleton<IImageMetadataService, ImageMetadataService>();
         services.AddSingleton<IFormInputSanitizer, FormInputSanitizer>();
         services.AddSingleton<IAdminMfaService, AdminMfaService>();
+        services.AddScoped<IApiAccessTokenService, ApiAccessTokenService>();
         services.AddScoped<ISitePageContentService, SitePageContentService>();
         services.AddScoped<IServicesPageService, ServicesPageService>();
         services.AddScoped<IGalleryPageService, GalleryPageService>();
         services.AddScoped<ITestimonialsPageService, TestimonialsPageService>();
         services.AddScoped<IFaqsPageService, FaqsPageService>();
         services.AddScoped<IContactPageService, ContactPageService>();
+        services.AddScoped<IPublicCatalogApiService, PublicCatalogApiService>();
         services.AddScoped<IBookAppointmentService, BookAppointmentService>();
         services.AddScoped<IAppointmentNotificationService, NullAppointmentNotificationService>();
         services.AddScoped<ISeoMetadataService, SeoMetadataService>();

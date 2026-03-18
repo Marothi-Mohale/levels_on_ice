@@ -1,0 +1,766 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LevelsOnIceSalon.Web</name>
+    </assembly>
+    <members>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse">
+            <summary>
+            Represents a successful bearer token response.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse.AccessToken">
+            <summary>
+            Gets or sets the JWT bearer access token.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse.TokenType">
+            <summary>
+            Gets or sets the token type. Always <c>Bearer</c>.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.AccessTokenResponse.ExpiresIn">
+            <summary>
+            Gets or sets the access token lifetime in seconds.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse">
+            <summary>
+            Represents the authenticated API principal.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.Username">
+            <summary>
+            Gets or sets the authenticated username.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.AuthenticationScheme">
+            <summary>
+            Gets or sets the authentication scheme used by the principal.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.Roles">
+            <summary>
+            Gets or sets the roles assigned to the principal.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.CurrentUserResponse.AuthenticationMethods">
+            <summary>
+            Gets or sets the authentication methods recorded for the token.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1">
+            <summary>
+            Represents a page of API results together with paging metadata.
+            </summary>
+            <typeparam name="T">The item type contained in the current page.</typeparam>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.#ctor(System.Collections.Generic.IReadOnlyList{`0},System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1"/> class.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.Items">
+            <summary>
+            Gets the items in the current page.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.Page">
+            <summary>
+            Gets the current one-based page number.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.PageSize">
+            <summary>
+            Gets the requested page size.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.TotalCount">
+            <summary>
+            Gets the total number of matching items before paging.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.PagedResponse`1.TotalPages">
+            <summary>
+            Gets the total number of pages available for the current page size.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest">
+            <summary>
+            Represents the credentials required to mint an API access token for an admin user.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest.Username">
+            <summary>
+            Gets or sets the configured admin username.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest.Password">
+            <summary>
+            Gets or sets the configured admin password.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest.OneTimeCode">
+            <summary>
+            Gets or sets the current six-digit authenticator code.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest">
+            <summary>
+            Represents query-string filters, sort options, and paging controls for the services collection endpoint.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.Category">
+            <summary>
+            Gets the category slug filter.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.Featured">
+            <summary>
+            Gets a value indicating whether only featured services should be returned.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.BookableOnline">
+            <summary>
+            Gets a value indicating whether only online-bookable services should be returned.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.Search">
+            <summary>
+            Gets the free-text search term applied to service names and descriptions.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.Page">
+            <summary>
+            Gets the one-based page number to return.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.PageSize">
+            <summary>
+            Gets the number of items to return per page.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.Sort">
+            <summary>
+            Gets the sort field. Supported values are <c>displayOrder</c>, <c>durationMinutes</c>, <c>name</c>, and <c>price</c>.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest.Direction">
+            <summary>
+            Gets the sort direction. Supported values are <c>asc</c> and <c>desc</c>.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse">
+            <summary>
+            Represents the detailed service category resource returned by a single-item lookup.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.#ctor(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse})">
+            <summary>
+            Initializes a new instance of the <see cref="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.Id">
+            <summary>
+            Gets the category identifier.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.Name">
+            <summary>
+            Gets the category display name.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.Slug">
+            <summary>
+            Gets the stable slug used in URLs and client lookups.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.Description">
+            <summary>
+            Gets the short descriptive text for the category.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.DisplayOrder">
+            <summary>
+            Gets the configured display order for presentation.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.ServiceCount">
+            <summary>
+            Gets the number of active services in the category.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryDetailResponse.Services">
+            <summary>
+            Gets the active services that belong to the category.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse">
+            <summary>
+            Represents a compact category reference embedded in a service response.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse.Id">
+            <summary>
+            Gets the category identifier.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse.Name">
+            <summary>
+            Gets the category display name.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse.Slug">
+            <summary>
+            Gets the category slug.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse">
+            <summary>
+            Represents a lightweight service category view for collection responses.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.#ctor(System.Int32,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.Id">
+            <summary>
+            Gets the category identifier.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.Name">
+            <summary>
+            Gets the user-facing category name.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.Slug">
+            <summary>
+            Gets the stable slug used in URLs and client lookups.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.Description">
+            <summary>
+            Gets the short descriptive text for the category.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.DisplayOrder">
+            <summary>
+            Gets the configured display order for presentation.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategorySummaryResponse.ServiceCount">
+            <summary>
+            Gets the number of active services in the category.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse">
+            <summary>
+            Represents the detailed service resource returned by a single-item lookup.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.Nullable{System.Decimal},System.String,System.Nullable{System.Int32},System.Boolean,System.Boolean,System.Int32,LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.Id">
+            <summary>
+            Gets the service identifier.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.Name">
+            <summary>
+            Gets the service display name.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.Slug">
+            <summary>
+            Gets the stable slug used in URLs and client lookups.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.ShortDescription">
+            <summary>
+            Gets the short marketing summary for the service.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.FullDescription">
+            <summary>
+            Gets the full detailed description for the service.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.Price">
+            <summary>
+            Gets the configured price when a numeric price is available.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.PricingType">
+            <summary>
+            Gets the pricing mode, for example <c>From</c> or <c>Fixed</c>.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.DurationMinutes">
+            <summary>
+            Gets the expected appointment duration in minutes when known.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.IsFeatured">
+            <summary>
+            Gets a value indicating whether the service is featured in marketing surfaces.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.IsBookableOnline">
+            <summary>
+            Gets a value indicating whether the service can be requested online.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.DisplayOrder">
+            <summary>
+            Gets the configured display order for presentation.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceDetailResponse.Category">
+            <summary>
+            Gets the parent category reference for the service.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse">
+            <summary>
+            Represents a lightweight service view for collection responses.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.#ctor(System.Int32,System.String,System.String,System.String,System.Nullable{System.Decimal},System.String,System.Nullable{System.Int32},System.Boolean,System.Boolean,System.Int32,LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceCategoryReferenceResponse)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse"/> class.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.Id">
+            <summary>
+            Gets the service identifier.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.Name">
+            <summary>
+            Gets the service display name.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.Slug">
+            <summary>
+            Gets the stable slug used in URLs and client lookups.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.ShortDescription">
+            <summary>
+            Gets the short marketing summary for the service.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.Price">
+            <summary>
+            Gets the configured price when a numeric price is available.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.PricingType">
+            <summary>
+            Gets the pricing mode, for example <c>From</c> or <c>Fixed</c>.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.DurationMinutes">
+            <summary>
+            Gets the expected appointment duration in minutes when known.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.IsFeatured">
+            <summary>
+            Gets a value indicating whether the service is featured in marketing surfaces.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.IsBookableOnline">
+            <summary>
+            Gets a value indicating whether the service can be requested online.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.DisplayOrder">
+            <summary>
+            Gets the configured display order for presentation.
+            </summary>
+        </member>
+        <member name="P:LevelsOnIceSalon.Web.Contracts.PublicApi.ServiceSummaryResponse.Category">
+            <summary>
+            Gets the parent category reference for the service.
+            </summary>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Controllers.Api.AuthController">
+            <summary>
+            Exposes token issuance and authenticated principal inspection endpoints for the public API.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.AuthController.#ctor(LevelsOnIceSalon.Web.Services.IApiAccessTokenService,Microsoft.Extensions.Logging.ILogger{LevelsOnIceSalon.Web.Controllers.Api.AuthController})">
+            <summary>
+            Exposes token issuance and authenticated principal inspection endpoints for the public API.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.AuthController.CreateToken(LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.CreateAccessTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Exchanges configured admin credentials and an MFA code for a short-lived bearer token.
+            </summary>
+            <param name="request">The admin credentials and one-time authenticator code.</param>
+            <param name="cancellationToken">The request cancellation token.</param>
+            <returns>A bearer access token response.</returns>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.AuthController.Me">
+            <summary>
+            Returns the authenticated principal represented by the supplied bearer token.
+            </summary>
+            <returns>The authenticated API user.</returns>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Controllers.Api.ServiceCategoriesController">
+            <summary>
+            Exposes public service category endpoints used by frontend clients and external consumers.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.ServiceCategoriesController.#ctor(LevelsOnIceSalon.Web.Services.IPublicCatalogApiService)">
+            <summary>
+            Exposes public service category endpoints used by frontend clients and external consumers.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.ServiceCategoriesController.GetAll(System.Threading.CancellationToken)">
+            <summary>
+            Returns all active service categories as summary resources.
+            </summary>
+            <param name="cancellationToken">The request cancellation token.</param>
+            <returns>The available service category summaries.</returns>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.ServiceCategoriesController.GetBySlug(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns a single active service category by slug.
+            </summary>
+            <param name="slug">The stable category slug.</param>
+            <param name="cancellationToken">The request cancellation token.</param>
+            <returns>The detailed service category resource.</returns>
+        </member>
+        <member name="T:LevelsOnIceSalon.Web.Controllers.Api.ServicesController">
+            <summary>
+            Exposes public service catalog endpoints used by frontend clients and external consumers.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.ServicesController.#ctor(LevelsOnIceSalon.Web.Services.IPublicCatalogApiService)">
+            <summary>
+            Exposes public service catalog endpoints used by frontend clients and external consumers.
+            </summary>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.ServicesController.GetAll(LevelsOnIceSalon.Web.Contracts.PublicApi.Requests.GetServicesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a paged list of active salon services.
+            </summary>
+            <param name="request">The query-string filters, paging options, and sort options.</param>
+            <param name="cancellationToken">The request cancellation token.</param>
+            <returns>A paged collection of service summaries.</returns>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Controllers.Api.ServicesController.GetBySlug(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns a single active service by slug.
+            </summary>
+            <param name="slug">The stable service slug.</param>
+            <param name="cancellationToken">The request cancellation token.</param>
+            <returns>The detailed service resource.</returns>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Extensions.RequestCorrelationExtensions.CorrelationIdPattern">
+            <remarks>
+            Pattern:<br/>
+            <code>^[A-Za-z0-9._\\-]{1,64}$</code><br/>
+            Options:<br/>
+            <code>RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match if at the beginning of the string.<br/>
+            ○ Match a character in the set [-.0-9A-Z_a-z] atomically at least 1 and at most 64 times.<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Services.FormInputSanitizer.ControlCharactersRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>[\\u0000-\\u001F\\u007F]+</code><br/>
+            Options:<br/>
+            <code>RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match a character in the set [\0-\u001F\u007F] atomically at least once.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Services.FormInputSanitizer.UnsafeControlCharactersRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>[^\\P{Cc}\\n\\t]+</code><br/>
+            Options:<br/>
+            <code>RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match a character in the set [^\t\n\P{Cc}] atomically at least once.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Services.FormInputSanitizer.MultiWhitespaceRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>\\s{2,}</code><br/>
+            Options:<br/>
+            <code>RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match a whitespace character atomically at least twice.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Services.FormInputSanitizer.MultiBlankLinesRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>\\n{3,}</code><br/>
+            Options:<br/>
+            <code>RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match '\n' atomically at least 3 times.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:LevelsOnIceSalon.Web.Services.FormInputSanitizer.HtmlTagRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>&lt;[^&gt;]+&gt;</code><br/>
+            Options:<br/>
+            <code>RegexOptions.Compiled</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match '&lt;'.<br/>
+            ○ Match a character other than '&gt;' atomically at least once.<br/>
+            ○ Match '&gt;'.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the CorrelationIdPattern method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.CorrelationIdPattern_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the ControlCharactersRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.ControlCharactersRegex_1.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the UnsafeControlCharactersRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.UnsafeControlCharactersRegex_2.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the MultiWhitespaceRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiWhitespaceRegex_3.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the MultiBlankLinesRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultiBlankLinesRegex_4.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.HtmlTagRegex_5">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the HtmlTagRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.HtmlTagRegex_5.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.IndexOfAnyWhiteSpace(System.ReadOnlySpan{System.Char})">
+            <summary>Finds the next index of any character that matches a whitespace character.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.IndexOfNonAsciiOrAny_059FB7E2902DF46DEF49BEE5AEE833143B43197D9852B4A383BF611865C1C019(System.ReadOnlySpan{System.Char})">
+            <summary>Finds the next index of any character that matches a character in the set [^\t\n\P{Cc}].</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_asciiControl">
+            <summary>Supports searching for characters in or not in "\0\u0001\u0002\u0003\u0004\u0005\u0006\a\b\t\n\v\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f\u007f".</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_asciiExceptWhiteSpace">
+            <summary>Supports searching for characters in or not in "\0\u0001\u0002\u0003\u0004\u0005\u0006\a\b\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f!\"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u007f".</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_ascii_60000FFFFFFFFFFFFFFFFFFFFFF7F">
+            <summary>Supports searching for characters in or not in "\t\n !\"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~".</summary>
+        </member>
+    </members>
+</doc>

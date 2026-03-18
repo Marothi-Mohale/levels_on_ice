@@ -1,3 +1,5 @@
+using LevelsOnIceSalon.Web.Extensions;
+
 namespace LevelsOnIceSalon.Web.Middleware;
 
 public class SuspiciousTrafficLoggingMiddleware(RequestDelegate next, ILogger<SuspiciousTrafficLoggingMiddleware> logger)
@@ -18,11 +20,13 @@ public class SuspiciousTrafficLoggingMiddleware(RequestDelegate next, ILogger<Su
         if (SuspiciousPathFragments.Any(fragment => requestPath.Contains(fragment, StringComparison.OrdinalIgnoreCase)))
         {
             logger.LogWarning(
-                "Suspicious request probe detected. Path={Path}, Method={Method}, IP={IpAddress}, UserAgent={UserAgent}",
+                "Suspicious request probe detected. Path={Path}, Method={Method}, IP={IpAddress}, UserAgent={UserAgent}, CorrelationId={CorrelationId}, RequestId={RequestId}",
                 requestPath,
                 context.Request.Method,
                 context.Connection.RemoteIpAddress?.ToString(),
-                context.Request.Headers.UserAgent.ToString());
+                context.Request.Headers.UserAgent.ToString(),
+                context.GetOrCreateCorrelationId(),
+                context.GetRequestId());
         }
 
         await next(context);
@@ -32,11 +36,13 @@ public class SuspiciousTrafficLoggingMiddleware(RequestDelegate next, ILogger<Su
             && context.Response.StatusCode >= StatusCodes.Status400BadRequest)
         {
             logger.LogWarning(
-                "Failed form or auth submission recorded. Path={Path}, StatusCode={StatusCode}, IP={IpAddress}, UserAgent={UserAgent}",
+                "Failed form or auth submission recorded. Path={Path}, StatusCode={StatusCode}, IP={IpAddress}, UserAgent={UserAgent}, CorrelationId={CorrelationId}, RequestId={RequestId}",
                 requestPath,
                 context.Response.StatusCode,
                 context.Connection.RemoteIpAddress?.ToString(),
-                context.Request.Headers.UserAgent.ToString());
+                context.Request.Headers.UserAgent.ToString(),
+                context.GetOrCreateCorrelationId(),
+                context.GetRequestId());
         }
     }
 }
