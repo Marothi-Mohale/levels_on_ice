@@ -16,44 +16,45 @@ public sealed class ServiceCategoriesApiTests : IClassFixture<IntegrationTestWeb
     }
 
     [Fact]
-    public async Task GetAll_ReturnsSeededCategoriesWithServices()
+    public async Task GetAll_ReturnsCategorySummaries()
     {
         var response = await client.GetAsync("/api/v1/service-categories");
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
-        var categories = await response.Content.ReadFromJsonAsync<List<ServiceCategoryResponse>>(JsonOptions);
+        var categories = await response.Content.ReadFromJsonAsync<List<ServiceCategorySummaryResponse>>(JsonOptions);
 
         Assert.NotNull(categories);
         Assert.NotEmpty(categories);
-        Assert.All(categories, category => Assert.NotEmpty(category.Services));
+        Assert.All(categories, category => Assert.True(category.ServiceCount > 0));
     }
 
     [Fact]
-    public async Task GetBySlug_ReturnsRequestedCategory()
+    public async Task GetBySlug_ReturnsRequestedCategoryDetail()
     {
-        var categories = await client.GetFromJsonAsync<List<ServiceCategoryResponse>>("/api/v1/service-categories", JsonOptions);
+        var categories = await client.GetFromJsonAsync<List<ServiceCategorySummaryResponse>>("/api/v1/service-categories", JsonOptions);
         Assert.NotNull(categories);
 
         var expectedCategory = categories![0];
-
         var response = await client.GetAsync($"/api/v1/service-categories/{expectedCategory.Slug}");
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 
-        var category = await response.Content.ReadFromJsonAsync<ServiceCategoryResponse>(JsonOptions);
+        var category = await response.Content.ReadFromJsonAsync<ServiceCategoryDetailResponse>(JsonOptions);
 
         Assert.NotNull(category);
         Assert.Equal(expectedCategory.Id, category!.Id);
         Assert.Equal(expectedCategory.Name, category.Name);
+        Assert.True(category.ServiceCount >= category.Services.Count);
         Assert.NotEmpty(category.Services);
     }
 
     [Fact]
-    public async Task GetBySlug_ForMissingCategory_ReturnsNotFound()
+    public async Task GetBySlug_ForMissingCategory_ReturnsProblemDetails()
     {
         var response = await client.GetAsync("/api/v1/service-categories/not-a-real-category");
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+        Assert.Equal("application/problem+json", response.Content.Headers.ContentType?.MediaType);
     }
 }

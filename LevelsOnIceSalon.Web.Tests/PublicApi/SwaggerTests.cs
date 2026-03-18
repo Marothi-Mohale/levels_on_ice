@@ -13,7 +13,7 @@ public sealed class SwaggerTests : IClassFixture<IntegrationTestWebApplicationFa
     }
 
     [Fact]
-    public async Task SwaggerJson_ListsServiceCategoryEndpoints()
+    public async Task SwaggerJson_ListsApiEndpoints()
     {
         var response = await client.GetAsync("/swagger/v1/swagger.json");
 
@@ -22,6 +22,7 @@ public sealed class SwaggerTests : IClassFixture<IntegrationTestWebApplicationFa
         var swaggerJson = await response.Content.ReadAsStringAsync();
 
         Assert.Contains("/api/v1/service-categories", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("/api/v1/services", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("Levels On Ice Salon API", swaggerJson, StringComparison.Ordinal);
     }
 }
