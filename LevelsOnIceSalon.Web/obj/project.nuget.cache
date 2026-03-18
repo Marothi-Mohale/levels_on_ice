@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "s+wY8J7YoFY=",
+  "dgSpecHash": "gDyL/1hb3x0=",
   "success": true,
   "projectFilePath": "/workspaces/levels_on_ice/LevelsOnIceSalon.Web/LevelsOnIceSalon.Web.csproj",
   "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/asp.versioning.abstractions/8.1.0/asp.versioning.abstractions.8.1.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/asp.versioning.http/8.1.0/asp.versioning.http.8.1.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/asp.versioning.mvc/8.1.0/asp.versioning.mvc.8.1.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/asp.versioning.mvc.apiexplorer/8.1.0/asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
     "/home/codespace/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/codespace/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "/home/codespace/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.3/microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

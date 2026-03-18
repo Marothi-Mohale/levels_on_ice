@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using LevelsOnIceSalon.Web.Contracts.PublicApi;
 using LevelsOnIceSalon.Web.Contracts.PublicApi.Requests;
 using LevelsOnIceSalon.Web.Extensions;
@@ -10,7 +11,8 @@ namespace LevelsOnIceSalon.Web.Controllers.Api;
 /// Exposes public service catalog endpoints used by frontend clients and external consumers.
 /// </summary>
 [ApiController]
-[Route("api/v1/services")]
+[ApiVersion(1.0)]
+[Route("api/v{version:apiVersion}/services")]
 public sealed class ServicesController(IPublicCatalogApiService publicCatalogApiService) : ControllerBase
 {
     /// <summary>

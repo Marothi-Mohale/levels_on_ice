@@ -21,6 +21,7 @@ public sealed class ServicesApiTests : IClassFixture<IntegrationTestWebApplicati
         var response = await client.GetAsync("/api/v1/services?page=1&pageSize=3");
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("1.0", string.Join(",", response.Headers.GetValues("api-supported-versions")));
 
         var page = await response.Content.ReadFromJsonAsync<PagedResponse<ServiceSummaryResponse>>(JsonOptions);
 

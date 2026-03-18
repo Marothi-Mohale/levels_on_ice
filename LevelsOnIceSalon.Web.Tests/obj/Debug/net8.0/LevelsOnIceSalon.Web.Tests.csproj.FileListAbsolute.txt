@@ -473,3 +473,7 @@
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/obj/Debug/net8.0/LevelsOnIceSalon.Web.Tests.genruntimeconfig.cache
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/obj/Debug/net8.0/ref/LevelsOnIceSalon.Web.Tests.dll
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/LevelsOnIceSalon.Web.xml
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Abstractions.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Http.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Mvc.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll
