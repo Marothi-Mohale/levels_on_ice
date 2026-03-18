@@ -13,7 +13,7 @@ public sealed class SwaggerTests : IClassFixture<IntegrationTestWebApplicationFa
     }
 
     [Fact]
-    public async Task SwaggerJson_ListsApiEndpoints()
+    public async Task SwaggerJson_ContainsClientGenerationMetadata()
     {
         var response = await client.GetAsync("/swagger/v1/swagger.json");
 
@@ -23,6 +23,13 @@ public sealed class SwaggerTests : IClassFixture<IntegrationTestWebApplicationFa
 
         Assert.Contains("/api/v1/service-categories", swaggerJson, StringComparison.Ordinal);
         Assert.Contains("/api/v1/services", swaggerJson, StringComparison.Ordinal);
-        Assert.Contains("Levels On Ice Salon API", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Levels On Ice Salon Public API", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Levels On Ice Salon Engineering", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Catalog / Services", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Catalog / Service Categories", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("Services_GetAll", swaggerJson, StringComparison.Ordinal);
+        Assert.Contains("ServiceCategories_GetAll", swaggerJson, StringComparison.Ordinal);
+        Assert.DoesNotContain("\"/about\"", swaggerJson, StringComparison.Ordinal);
+        Assert.DoesNotContain("\"/admin/login\"", swaggerJson, StringComparison.Ordinal);
     }
 }

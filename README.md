@@ -187,6 +187,16 @@ dotnet run --project ./LevelsOnIceSalon.Web/LevelsOnIceSalon.Web.csproj
 
 By default, development configuration points to SQLite and can apply migrations plus seed sample data on startup.
 
+### Swagger And OpenAPI
+
+The public API exposes Swagger UI at `/swagger` when `ApiDocumentation:Enabled=true`. Development config enables this by default, while production config keeps it disabled unless you opt in explicitly.
+
+For production deployments, the safer default is:
+
+- keep `ApiDocumentation:Enabled=false` on public environments
+- enable it only for internal review, staging, or protected environments
+- treat the generated `/swagger/v1/swagger.json` file as the contract used for client generation
+
 ### Required Configuration
 
 Secrets are configured through environment variables:

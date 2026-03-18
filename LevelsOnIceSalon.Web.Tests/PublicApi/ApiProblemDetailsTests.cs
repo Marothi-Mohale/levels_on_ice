@@ -43,9 +43,9 @@ public sealed class ApiProblemDetailsTests : IClassFixture<IntegrationTestWebApp
 
         Assert.NotNull(problem);
         Assert.Equal(StatusCodes.Status400BadRequest, problem!.Status);
-        Assert.Contains("Page", problem.Errors.Keys);
-        Assert.Contains("PageSize", problem.Errors.Keys);
-        Assert.Contains("Sort", problem.Errors.Keys);
-        Assert.Contains("Direction", problem.Errors.Keys);
+        Assert.Contains("page", problem.Errors.Keys);
+        Assert.Contains("pageSize", problem.Errors.Keys);
+        Assert.Contains("sort", problem.Errors.Keys);
+        Assert.Contains("direction", problem.Errors.Keys);
     }
 }

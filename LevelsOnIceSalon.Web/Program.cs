@@ -1,6 +1,7 @@
 using LevelsOnIceSalon.Web.Data;
 using LevelsOnIceSalon.Infrastructure.DependencyInjection;
 using LevelsOnIceSalon.Web.Middleware;
+using LevelsOnIceSalon.Web.OpenApi;
 using LevelsOnIceSalon.Web.Options;
 using LevelsOnIceSalon.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -12,8 +13,27 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.IO.Compression;
 using System.Threading.RateLimiting;
+
+static string BuildOpenApiSchemaId(Type type)
+{
+    if (!type.IsGenericType)
+    {
+        return type.Name.Replace("+", ".");
+    }
+
+    var genericTypeName = type.GetGenericTypeDefinition().Name;
+    var backtickIndex = genericTypeName.IndexOf('`');
+    if (backtickIndex >= 0)
+    {
+        genericTypeName = genericTypeName[..backtickIndex];
+    }
+
+    var genericArguments = string.Join("And", type.GetGenericArguments().Select(BuildOpenApiSchemaId));
+    return $"{genericTypeName}Of{genericArguments}";
+}
 
 var builder = WebApplication.CreateBuilder(args);
 var dataProtectionKeysPath = Path.Combine(builder.Environment.ContentRootPath, "App_Data", "DataProtection-Keys");
@@ -85,11 +105,49 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Levels On Ice Salon API",
+        Title = "Levels On Ice Salon Public API",
         Version = "v1",
-        Description = "Read-only public API endpoints for service discovery and future frontend client integration."
+        Description = "Read-only catalog API for service discovery and frontend client generation. This specification is intended to support TypeScript client generation and cross-team API review.",
+        Contact = new OpenApiContact
+        {
+            Name = "Levels On Ice Salon Engineering",
+            Email = "levelsonicegroup@gmail.com",
+            Url = new Uri("https://www.levelsonicesalon.co.za")
+        }
+    });
+    options.CustomSchemaIds(BuildOpenApiSchemaId);
+    options.CustomOperationIds(apiDescription =>
+    {
+        var controller = apiDescription.ActionDescriptor.RouteValues["controller"];
+        var action = apiDescription.ActionDescriptor.RouteValues["action"];
+        return $"{controller}_{action}";
+    });
+    options.OrderActionsBy(apiDescription => apiDescription.RelativePath);
+    options.TagActionsBy(apiDescription =>
+    {
+        var controller = apiDescription.ActionDescriptor.RouteValues["controller"];
+        return controller switch
+        {
+            "Services" => ["Catalog / Services"],
+            "ServiceCategories" => ["Catalog / Service Categories"],
+            _ => [controller ?? "API"]
+        };
     });
     options.SupportNonNullableReferenceTypes();
+    options.OperationFilter<JsonOnlyResponsesOperationFilter>();
+    options.DocumentFilter<ApiOnlyDocumentFilter>();
+    options.MapType<decimal>(() => new OpenApiSchema
+    {
+        Type = "number",
+        Format = "decimal"
+    });
+
+    var xmlDocumentationFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlDocumentationPath = Path.Combine(AppContext.BaseDirectory, xmlDocumentationFile);
+    if (File.Exists(xmlDocumentationPath))
+    {
+        options.IncludeXmlComments(xmlDocumentationPath, includeControllerXmlComments: true);
+    }
 });
 builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
@@ -166,8 +224,11 @@ if (swaggerEnabled)
     app.UseSwaggerUI(options =>
     {
         options.RoutePrefix = "swagger";
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Levels On Ice Salon API v1");
-        options.DocumentTitle = "Levels On Ice Salon API Docs";
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Levels On Ice Salon Public API v1");
+        options.DocumentTitle = "Levels On Ice Salon Public API Docs";
+        options.DisplayRequestDuration();
+        options.EnableTryItOutByDefault();
+        options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
     });
 }
 

@@ -472,3 +472,4 @@
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/obj/Debug/net8.0/LevelsOnIceSalon.Web.Tests.pdb
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/obj/Debug/net8.0/LevelsOnIceSalon.Web.Tests.genruntimeconfig.cache
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/obj/Debug/net8.0/ref/LevelsOnIceSalon.Web.Tests.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web.Tests/bin/Debug/net8.0/LevelsOnIceSalon.Web.xml

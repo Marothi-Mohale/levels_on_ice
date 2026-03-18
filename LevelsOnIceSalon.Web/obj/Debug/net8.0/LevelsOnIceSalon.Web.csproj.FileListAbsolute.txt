@@ -280,3 +280,5 @@ C:/Users/Student/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/staticwebas
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/bin/Debug/net8.0/LevelsOnIceSalon.Web.xml
+/workspaces/levels_on_ice/LevelsOnIceSalon.Web/obj/Debug/net8.0/LevelsOnIceSalon.Web.xml
