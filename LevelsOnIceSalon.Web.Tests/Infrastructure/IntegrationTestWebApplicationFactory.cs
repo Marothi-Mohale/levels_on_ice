@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace LevelsOnIceSalon.Web.Tests.Infrastructure;
 
@@ -11,6 +12,9 @@ public sealed class IntegrationTestWebApplicationFactory : WebApplicationFactory
     private readonly string sqliteDatabasePath = Path.Combine(
         Path.GetTempPath(),
         $"levels-on-ice-tests-{Guid.NewGuid():N}.db");
+    private readonly TestLogCollector logCollector = new();
+
+    public IReadOnlyList<TestLogEntry> GetLogs() => logCollector.Snapshot();
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
@@ -41,6 +45,10 @@ public sealed class IntegrationTestWebApplicationFactory : WebApplicationFactory
                 ["ApiTokens:AccessTokenLifetimeMinutes"] = "60",
                 ["ConnectionStrings:DefaultConnection"] = $"Data Source={sqliteDatabasePath}"
             });
+        });
+        builder.ConfigureLogging(logging =>
+        {
+            logging.AddProvider(new TestLoggerProvider(logCollector));
         });
     }
 

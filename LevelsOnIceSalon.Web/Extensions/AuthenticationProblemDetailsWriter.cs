@@ -18,7 +18,7 @@ public static class AuthenticationProblemDetailsWriter
             Instance = httpContext.Request.Path
         };
 
-        problemDetails.Extensions["traceId"] = httpContext.TraceIdentifier;
+        problemDetails.AddRequestCorrelation(httpContext);
         return httpContext.Response.WriteAsync(
             JsonSerializer.Serialize(problemDetails),
             cancellationToken);

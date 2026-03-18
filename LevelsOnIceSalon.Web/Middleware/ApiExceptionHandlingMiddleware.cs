@@ -1,3 +1,4 @@
+using LevelsOnIceSalon.Web.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LevelsOnIceSalon.Web.Middleware;
@@ -15,7 +16,12 @@ public sealed class ApiExceptionHandlingMiddleware(
         }
         catch (OperationCanceledException) when (context.RequestAborted.IsCancellationRequested)
         {
-            logger.LogInformation("Request was cancelled for path '{Path}'.", context.Request.Path);
+            logger.LogInformation(
+                "API request was cancelled {RequestMethod} {RequestPath} CorrelationId={CorrelationId} RequestId={RequestId}",
+                context.Request.Method,
+                context.Request.Path,
+                context.GetOrCreateCorrelationId(),
+                context.GetRequestId());
         }
         catch (Exception exception)
         {
@@ -24,7 +30,13 @@ public sealed class ApiExceptionHandlingMiddleware(
                 throw;
             }
 
-            logger.LogError(exception, "Unhandled API exception for path '{Path}'.", context.Request.Path);
+            logger.LogError(
+                exception,
+                "Unhandled API exception {RequestMethod} {RequestPath} CorrelationId={CorrelationId} RequestId={RequestId}",
+                context.Request.Method,
+                context.Request.Path,
+                context.GetOrCreateCorrelationId(),
+                context.GetRequestId());
 
             context.Response.Clear();
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
@@ -40,7 +52,7 @@ public sealed class ApiExceptionHandlingMiddleware(
                 Instance = context.Request.Path
             };
 
-            problemDetails.Extensions["traceId"] = context.TraceIdentifier;
+            problemDetails.AddRequestCorrelation(context);
 
             await context.Response.WriteAsJsonAsync(
                 problemDetails,

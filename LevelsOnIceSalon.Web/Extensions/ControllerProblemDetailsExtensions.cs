@@ -18,7 +18,7 @@ public static class ControllerProblemDetailsExtensions
             Instance = controller.HttpContext.Request.Path
         };
 
-        problemDetails.Extensions["traceId"] = controller.HttpContext.TraceIdentifier;
+        problemDetails.AddRequestCorrelation(controller.HttpContext);
 
         return new ObjectResult(problemDetails)
         {

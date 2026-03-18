@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging.Console;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
 using System.Text;
@@ -30,8 +31,27 @@ var dataProtectionKeysPath = Path.Combine(builder.Environment.ContentRootPath, "
 Directory.CreateDirectory(dataProtectionKeysPath);
 
 builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
-builder.Logging.AddDebug();
+builder.Logging.Configure(options =>
+{
+    options.ActivityTrackingOptions =
+        ActivityTrackingOptions.TraceId |
+        ActivityTrackingOptions.SpanId |
+        ActivityTrackingOptions.ParentId;
+});
+builder.Logging.AddJsonConsole(options =>
+{
+    options.IncludeScopes = true;
+    options.TimestampFormat = "O";
+    options.UseUtcTimestamp = true;
+    options.JsonWriterOptions = new System.Text.Json.JsonWriterOptions
+    {
+        Indented = false
+    };
+});
+if (builder.Environment.IsDevelopment())
+{
+    builder.Logging.AddDebug();
+}
 
 builder.Services
     .AddOptions<AdminAuthOptions>()
@@ -96,7 +116,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
             Instance = context.HttpContext.Request.Path
         };
 
-        problemDetails.Extensions["traceId"] = context.HttpContext.TraceIdentifier;
+        problemDetails.AddRequestCorrelation(context.HttpContext);
 
         return new ObjectResult(problemDetails)
         {
@@ -241,6 +261,9 @@ var app = builder.Build();
 var swaggerEnabled = app.Configuration.GetValue<bool?>("ApiDocumentation:Enabled") ?? app.Environment.IsDevelopment();
 var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
+app.UseForwardedHeaders();
+app.UseMiddleware<RequestCorrelationMiddleware>();
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -248,28 +271,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ApiExceptionHandlingMiddleware>();
-
-if (swaggerEnabled)
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.RoutePrefix = "swagger";
-        foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)
-        {
-            options.SwaggerEndpoint(
-                $"/swagger/{description.GroupName}/swagger.json",
-                $"Levels On Ice Salon Public API {description.GroupName.ToUpperInvariant()}");
-        }
-
-        options.DocumentTitle = "Levels On Ice Salon Public API Docs";
-        options.DisplayRequestDuration();
-        options.EnableTryItOutByDefault();
-        options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
-    });
-}
-
-app.UseForwardedHeaders();
 app.UseMiddleware<SuspiciousTrafficLoggingMiddleware>();
 app.UseMiddleware<SecurityHeadersMiddleware>();
 
@@ -294,9 +295,31 @@ app.UseStaticFiles(new StaticFileOptions
         context.Context.Response.Headers[HeaderNames.XContentTypeOptions] = "nosniff";
     }
 });
+app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseRouting();
 app.UseRateLimiter();
 app.UseResponseCaching();
+
+if (swaggerEnabled)
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.RoutePrefix = "swagger";
+        foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)
+        {
+            options.SwaggerEndpoint(
+                $"/swagger/{description.GroupName}/swagger.json",
+                $"Levels On Ice Salon Public API {description.GroupName.ToUpperInvariant()}");
+        }
+
+        options.DocumentTitle = "Levels On Ice Salon Public API Docs";
+        options.DisplayRequestDuration();
+        options.EnableTryItOutByDefault();
+        options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List);
+    });
+}
+
 app.UseAuthentication();
 app.UseAuthorization();
 
